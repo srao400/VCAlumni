@@ -1,0 +1,46 @@
+{
+  "username" : "srao",
+  "password" : "7b6a43524a063d146a7e6b2d4e3f78700d662158",
+  "url" : "jdbc:mysql://vancodbinstance.ccwib6wtwnf7.us-west-2.rds.amazonaws.com:55501/VCADB_users?useUnicode=yes&characterEncoding=UTF-8&zeroDateTimeBehavior=convertToNull",
+  "driverClass" : "com.mysql.jdbc.Driver",
+  "dialect" : "com.wavemaker.runtime.data.dialect.MySQLDialect",
+  "serviceId" : "VCADB_users",
+  "packageName" : "com.vcalumni.vcadb_users",
+  "dbType" : "MySQL",
+  "host" : "vancodbinstance.ccwib6wtwnf7.us-west-2.rds.amazonaws.com",
+  "dbName" : "VCADB_users",
+  "port" : "55501",
+  "schemaName" : null,
+  "tableFilter" : [ {
+    "table" : "attendees",
+    "schema" : null
+  }, {
+    "table" : "events",
+    "schema" : null
+  }, {
+    "table" : "eventtype",
+    "schema" : null
+  }, {
+    "table" : "users",
+    "schema" : null
+  }, {
+    "table" : "venues",
+    "schema" : null
+  } ],
+  "schemaFilter" : [ ],
+  "impersonateUser" : false,
+  "activeDirectoryDomain" : null,
+  "hbm2ddl" : "none",
+  "maxPageSize" : 100,
+  "minPoolSize" : 2,
+  "maxPoolSize" : 4,
+  "transactionTimeout" : 30,
+  "dataSourceType" : "WM_MANAGED_DATASOURCE",
+  "jndiName" : "",
+  "reloadInfo" : {
+    "reload" : false,
+    "reason" : null,
+    "message" : null
+  },
+  "readOnly" : false
+}

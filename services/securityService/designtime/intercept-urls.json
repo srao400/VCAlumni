@@ -1,6 +1,21 @@
 [ {
+  "urlPattern" : "/pages/Login/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/pages/SignUp/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
   "urlPattern" : "/**",
   "permission" : "Authenticated",
   "roles" : null,
+  "httpMethod" : null
+}, {
+  "urlPattern" : "/services/VCADB_users/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
   "httpMethod" : null
 } ]

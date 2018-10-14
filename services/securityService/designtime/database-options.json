@@ -1,0 +1,19 @@
+{
+  "modelName" : "VCADB_users",
+  "entityName" : "Users",
+  "tableName" : "users",
+  "unamePropertyName" : "email",
+  "unameColumnName" : "email",
+  "uidPropertyName" : "email",
+  "uidColumnName" : "email",
+  "pwPropertyName" : "password",
+  "pwColumnName" : "password",
+  "rolePropertyName" : "role",
+  "roleColumnName" : "role",
+  "useRolesQuery" : false,
+  "rolesByUsernameQuery" : "",
+  "tenantIdField" : null,
+  "defTenantId" : 0,
+  "tenantIdPropertyName" : null,
+  "queryType" : "HQL"
+}

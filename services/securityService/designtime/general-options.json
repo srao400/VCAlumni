@@ -1,12 +1,12 @@
 {
-  "enforceSecurity" : false,
+  "enforceSecurity" : true,
   "loginConfig" : {
     "type" : "PAGE",
     "pageName" : "Login",
     "sessionTimeout" : {
-      "type" : "DIALOG",
-      "pageName" : null,
-      "timeoutValue" : 30
+      "type" : "PAGE",
+      "pageName" : "Login",
+      "timeoutValue" : 5
     }
   },
   "rememberMeConfig" : null,
@@ -40,7 +40,7 @@
     "parameter" : "WM_AUTH_TOKEN",
     "tokenValiditySeconds" : 1800
   },
-  "authProviders" : [ "DEMO" ],
+  "authProviders" : [ "DATABASE" ],
   "frameOptions" : {
     "enabled" : true,
     "mode" : "SAMEORIGIN",
