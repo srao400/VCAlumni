@@ -29,6 +29,44 @@
     } ],
     "operation" : "toast"
   },
+  "datasyncPull" : {
+    "_id" : "wm-datasyncPull-wm.DeviceVariable-1539535918897",
+    "name" : "datasyncPull",
+    "owner" : "App",
+    "category" : "wm.DeviceVariable",
+    "dataBinding" : [ ],
+    "service" : "datasync",
+    "operation" : "pull",
+    "dataSet" : {
+      "tasksCompleted" : 0,
+      "tasksTotal" : 0,
+      "inProgress" : false
+    },
+    "startUpdate" : true,
+    "autoUpdate" : false,
+    "clearData" : true,
+    "showProgress" : false
+  },
+  "datasyncPush" : {
+    "_id" : "wm-datasyncPush-wm.DeviceVariable-1539535918897",
+    "name" : "datasyncPush",
+    "owner" : "App",
+    "category" : "wm.DeviceVariable",
+    "dataBinding" : [ ],
+    "service" : "datasync",
+    "operation" : "push",
+    "dataSet" : {
+      "success" : 0,
+      "error" : 0,
+      "completed" : 0,
+      "total" : 0,
+      "inProgress" : false
+    },
+    "spinnerContext" : "page",
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "showProgress" : false
+  },
   "deviceInfo" : {
     "_id" : "wm-deviceInfo-getDeviceInfo-wm.DeviceVariable-1444134852623",
     "name" : "deviceInfo",
@@ -62,6 +100,28 @@
     "type" : "string",
     "isList" : true,
     "saveInPhonegap" : false
+  },
+  "getUserVar" : {
+    "_id" : "wm-getUserVar-wm.ServiceVariable-1539534190436",
+    "name" : "getUserVar",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ ],
+    "type" : "com.vcalumni.vcadb_users.models.query.GetuserResponse",
+    "service" : "VCADB_users",
+    "operation" : "executeGetuser",
+    "operationId" : "QueryExecutionController_executeGetuser",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
   },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
@@ -142,6 +202,31 @@
     "transformationRequired" : false,
     "redirectTo" : "Login",
     "useDefaultSuccessHandler" : true
+  },
+  "networkInfo" : {
+    "_id" : "wm-networkInfo-wm.DeviceVariable-1539535918897",
+    "name" : "networkInfo",
+    "owner" : "App",
+    "category" : "wm.DeviceVariable",
+    "dataBinding" : [ {
+      "target" : "networkStatus",
+      "value" : "bind:$root.networkStatus",
+      "type" : "boolean"
+    } ],
+    "service" : "device",
+    "operation" : "getNetworkInfo",
+    "dataSet" : {
+      "connectionType" : "NONE",
+      "isConnecting" : false,
+      "isNetworkAvailable" : true,
+      "isOnline" : true,
+      "isOffline" : false
+    },
+    "onOnline" : "Variables.datasyncPush.invoke()",
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "networkStatus" : "bind:$root.networkStatus",
+    "showProgress" : false
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",

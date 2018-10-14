@@ -2,4 +2,17 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+    <sql-query name="getuser">
+        <![CDATA[
+        select * from users where email = :email
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="getuser__count">
+        <![CDATA[
+        select count(*) from (select * from users where email = :email) wmTempTable
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
 </hibernate-mapping>

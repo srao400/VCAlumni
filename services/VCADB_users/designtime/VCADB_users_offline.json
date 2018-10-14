@@ -1,0 +1,94 @@
+{
+  "name" : "VCADB_users",
+  "entities" : [ {
+    "name" : "attendees",
+    "enabled" : true,
+    "pullConfig" : {
+      "size" : 20,
+      "filter" : [ ],
+      "query" : "",
+      "orderBy" : "",
+      "maxNumberOfRecords" : 100,
+      "deltaFieldName" : null,
+      "pullType" : "BUNDLED"
+    },
+    "pushConfig" : {
+      "insertEnabled" : true,
+      "updateEnabled" : true,
+      "deleteEnabled" : true,
+      "readEnabled" : true
+    }
+  }, {
+    "name" : "events",
+    "enabled" : true,
+    "pullConfig" : {
+      "size" : 20,
+      "filter" : [ ],
+      "query" : null,
+      "orderBy" : "",
+      "maxNumberOfRecords" : 100,
+      "deltaFieldName" : null,
+      "pullType" : "LIVE"
+    },
+    "pushConfig" : {
+      "insertEnabled" : false,
+      "updateEnabled" : false,
+      "deleteEnabled" : false,
+      "readEnabled" : true
+    }
+  }, {
+    "name" : "eventtype",
+    "enabled" : true,
+    "pullConfig" : {
+      "size" : 20,
+      "filter" : [ ],
+      "query" : null,
+      "orderBy" : "",
+      "maxNumberOfRecords" : 100,
+      "deltaFieldName" : null,
+      "pullType" : "LIVE"
+    },
+    "pushConfig" : {
+      "insertEnabled" : false,
+      "updateEnabled" : false,
+      "deleteEnabled" : false,
+      "readEnabled" : true
+    }
+  }, {
+    "name" : "users",
+    "enabled" : true,
+    "pullConfig" : {
+      "size" : 20,
+      "filter" : [ ],
+      "query" : null,
+      "orderBy" : "",
+      "maxNumberOfRecords" : 100,
+      "deltaFieldName" : null,
+      "pullType" : "LIVE"
+    },
+    "pushConfig" : {
+      "insertEnabled" : false,
+      "updateEnabled" : false,
+      "deleteEnabled" : false,
+      "readEnabled" : true
+    }
+  }, {
+    "name" : "venues",
+    "enabled" : true,
+    "pullConfig" : {
+      "size" : 20,
+      "filter" : [ ],
+      "query" : null,
+      "orderBy" : "",
+      "maxNumberOfRecords" : 100,
+      "deltaFieldName" : null,
+      "pullType" : "LIVE"
+    },
+    "pushConfig" : {
+      "insertEnabled" : false,
+      "updateEnabled" : false,
+      "deleteEnabled" : false,
+      "readEnabled" : true
+    }
+  } ]
+}
