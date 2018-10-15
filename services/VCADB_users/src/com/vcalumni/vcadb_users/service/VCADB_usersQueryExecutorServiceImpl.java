@@ -35,6 +35,74 @@ public class VCADB_usersQueryExecutorServiceImpl implements VCADB_usersQueryExec
 
     @Transactional(value = "VCADB_usersTransactionManager", readOnly = true)
     @Override
+    public Page<RegisteredAttendeesResponse> executeRegisteredAttendees(String eventId, Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("event_id", eventId);
+
+        return queryExecutor.executeNamedQuery("RegisteredAttendees", params, RegisteredAttendeesResponse.class, pageable);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportRegisteredAttendees(String eventId, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("event_id", eventId);
+
+        QueryProcedureInput queryInput = new QueryProcedureInput("RegisteredAttendees", params, RegisteredAttendeesResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", readOnly = true)
+    @Override
+    public Page<EventsListResponse> executeEventsList(String eventtype, Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("eventtype", eventtype);
+
+        return queryExecutor.executeNamedQuery("EventsList", params, EventsListResponse.class, pageable);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportEventsList(String eventtype, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("eventtype", eventtype);
+
+        QueryProcedureInput queryInput = new QueryProcedureInput("EventsList", params, EventsListResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", readOnly = true)
+    @Override
+    public Page<AttendeeEventDetailsResponse> executeAttendeeEventDetails(String email, String eventname, Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(2);
+
+        params.put("email", email);
+        params.put("eventname", eventname);
+
+        return queryExecutor.executeNamedQuery("AttendeeEventDetails", params, AttendeeEventDetailsResponse.class, pageable);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportAttendeeEventDetails(String email, String eventname, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(2);
+
+        params.put("email", email);
+        params.put("eventname", eventname);
+
+        QueryProcedureInput queryInput = new QueryProcedureInput("AttendeeEventDetails", params, AttendeeEventDetailsResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", readOnly = true)
+    @Override
     public Page<GetuserResponse> executeGetuser(String email, Pageable pageable) {
         Map<String, Object> params = new HashMap<>(1);
 
@@ -51,6 +119,62 @@ public class VCADB_usersQueryExecutorServiceImpl implements VCADB_usersQueryExec
         params.put("email", email);
 
         QueryProcedureInput queryInput = new QueryProcedureInput("getuser", params, GetuserResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", readOnly = true)
+    @Override
+    public Page<EventParticipantsResponse> executeEventParticipants(String eventname, Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("eventname", eventname);
+
+        return queryExecutor.executeNamedQuery("EventParticipants", params, EventParticipantsResponse.class, pageable);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportEventParticipants(String eventname, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("eventname", eventname);
+
+        QueryProcedureInput queryInput = new QueryProcedureInput("EventParticipants", params, EventParticipantsResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager")
+    @Override
+    public Integer executeUpdateAttendees(UpdateAttendeesRequest updateAttendeesRequest) {
+        Map<String, Object> params = new HashMap<>(3);
+
+        params.put("attended", updateAttendeesRequest.getAttended());
+        params.put("email", updateAttendeesRequest.getEmail());
+        params.put("eventname", updateAttendeesRequest.getEventname());
+
+        return queryExecutor.executeNamedQueryForUpdate("UpdateAttendees", params);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", readOnly = true)
+    @Override
+    public Page<EventDetailsResponse> executeEventDetails(String eventId, Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("event_id", eventId);
+
+        return queryExecutor.executeNamedQuery("EventDetails", params, EventDetailsResponse.class, pageable);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportEventDetails(String eventId, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("event_id", eventId);
+
+        QueryProcedureInput queryInput = new QueryProcedureInput("EventDetails", params, EventDetailsResponse.class);
 
         queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
     }

@@ -1,1 +1,64 @@
-{ }
+{
+  "add_attendee" : {
+    "procedureString" : "CALL add_attendee(?,?,?)",
+    "parameters" : [ {
+      "name" : "email_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "event_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "action_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "change_attendee" : {
+    "procedureString" : "CALL change_attendee(?,?,?)",
+    "parameters" : [ {
+      "name" : "email_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "event_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "action_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  }
+}

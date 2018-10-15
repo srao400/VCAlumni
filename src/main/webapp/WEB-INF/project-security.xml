@@ -203,7 +203,7 @@
             <map key-type="java.lang.String" value-type="com.wavemaker.commons.model.security.RoleConfig">
                 <entry key="admin">
                     <bean class="com.wavemaker.commons.model.security.RoleConfig">
-                        <property name="landingPage" value="Main"/>
+                        <property name="landingPage" value="EditEvents"/>
                     </bean>
                 </entry>
                 <entry key="user">

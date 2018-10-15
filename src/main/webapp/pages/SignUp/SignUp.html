@@ -1,35 +1,60 @@
-<wm-page data-ng-controller="SignUpPageController"> 
-    <wm-mobile-navbar></wm-mobile-navbar> 
-    <wm-content> 
-        <wm-page-content columnwidth="12"> 
-            <wm-layoutgrid name="layoutgrid1"> 
-                <wm-gridrow name="gridrow4"> 
-                    <wm-gridcolumn columnwidth="12" name="gridcolumn4" padding="1em 0em 0em 1em "> 
-                        <wm-label caption="Account" class="text-uppercase h4" color="#918a8a" name="detailsLbl"></wm-label> 
-                    </wm-gridcolumn> 
-                </wm-gridrow> 
-                <wm-gridrow name="gridrow1" backgroundcolor="#ffffff"> 
-                    <wm-gridcolumn name="gridcolumn1"> 
-                        <wm-text tabindex="1" placeholder="Email" name="email" type="email"></wm-text> 
-                        <wm-text tabindex="1" placeholder="Password" name="password" type="password"></wm-text> 
-                        <wm-text tabindex="1" placeholder="Retype Password" name="retypepassword" type="password" margin="0px"></wm-text> 
-                    </wm-gridcolumn> 
-                </wm-gridrow> 
-                <wm-gridrow name="gridrow4"> 
-                    <wm-gridcolumn columnwidth="12" name="gridcolumn4" padding="1em 0em 0em 1em "> 
-                        <wm-label caption="Details" class="text-uppercase h4" color="#918a8a" name="detailsLbl"></wm-label> 
-                    </wm-gridcolumn> 
-                </wm-gridrow> 
-                <wm-gridrow name="gridrow5" backgroundcolor="#ffffff"> 
-                    <wm-gridcolumn columnwidth="12" name="gridcolumn5"> 
-                        <wm-text placeholder="Name" name="name"></wm-text> 
-                        <wm-select name="genderSelect" placeholder="Gender" dataset="Male, Female"></wm-select> 
-                        <wm-label caption="Date of birth" name="detailsLbl"></wm-label> 
-                        <wm-text placeholder="Date of birth" name="dob" type="date"></wm-text> 
-                        <wm-text placeholder="Age" name="age" type="number" margin="0px"></wm-text> 
-                    </wm-gridcolumn> 
-                </wm-gridrow> 
-            </wm-layoutgrid> 
-        </wm-page-content> 
-    </wm-content> 
+<wm-page data-ng-controller="SignUpPageController" name="page1">
+    <wm-mobile-navbar name="mobile_navbar1" title="Sign Up"></wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-liveform errormessage="" title="Account Information" iconclass="wi wi-edit" formlayout="inline" defaultmode="Edit" dataset="bind:Variables.VCADB_usersUsersData.dataSet" captionalign="left" captionposition="top" name="UsersLiveForm1" class="text-capitalized">
+                <wm-layoutgrid columns="1" name="layoutgrid1">
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                            <wm-form-field name="email" displayname="Email" show="true" primary-key="true" generator="assigned" period="false" key="email" type="string" readonly="false" required="true" widget="text" maxchars="255" inputtype="email" placeholder="Email address"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow2">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn2">
+                            <wm-form-field name="password" displayname="Password" show="true" primary-key="false" generator="assigned" period="false" key="password" type="string" readonly="false" required="true" widget="text" maxchars="10" inputtype="text"
+                                placeholder="Password"></wm-form-field>
+                            <wm-form-field displayname="Confirm Password" show="true" primary-key="false" generator="assigned" period="false" key="password" type="string" readonly="false" required="true" widget="text" maxchars="10" inputtype="text"
+                                placeholder="Retype Password" name="form_field17"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow3">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                            <wm-form-field name="firstname" displayname="First name" show="true" primary-key="false" generator="assigned" period="false" key="firstname" type="string" readonly="false" required="true" widget="text" maxchars="255" inputtype="text"
+                                placeholder="First name"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow4">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn4">
+                            <wm-form-field name="lastname" displayname="Last name" show="true" primary-key="false" generator="assigned" period="false" key="lastname" type="string" readonly="false" required="true" widget="text" maxchars="255" inputtype="text"
+                                placeholder="Last name"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow5">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                            <wm-form-field name="phone" displayname="Phone" show="true" primary-key="false" generator="assigned" period="false" key="phone" type="string" readonly="false" required="true" widget="text" maxchars="12" inputtype="tel" placeholder="Phone number"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow6">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn6">
+                            <wm-form-field name="association" displayname="Affiliation" show="true" primary-key="false" generator="assigned" period="false" key="association" type="string" readonly="false" widget="select" inputtype="text" required="true" dataset="bind:Variables.association.dataSet"
+                                datafield="dataValue" displayfield="dataValue"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow7">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                            <wm-form-field name="yearof" displayname="Graduation year" show="true" primary-key="false" generator="assigned" period="false" key="yearof" type="short" readonly="false" required="false" step="0" widget="number" inputtype="number"
+                                placeholder="Enter year" minvalue="1920" maxvalue="2020"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow8">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn8">
+                            <wm-form-field name="role" displayname="Role" show="false" primary-key="false" generator="assigned" period="false" key="role" type="string" readonly="false" required="false" widget="text" maxchars="10" inputtype="text" placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-secondary" iconclass="wi wi-refresh" title="Reset" action="reset()" disabled="false" type="button" update-mode="true"></wm-form-action>
+                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action>
+            </wm-liveform>
+        </wm-page-content>
+    </wm-content>
 </wm-page>

@@ -2,6 +2,78 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+    <sql-query name="RegisteredAttendees">
+        <![CDATA[
+        select firstname, lastname, a.email, eventname
+from attendees as a left join users as b on a.email = b.email 
+where eventname = :event_id
+        ]]>
+    <query-param name="event_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="RegisteredAttendees__count">
+        <![CDATA[
+        select count(*) from (select firstname, lastname, a.email, eventname
+from attendees as a left join users as b on a.email = b.email 
+where eventname = :event_id) wmTempTable
+        ]]>
+    <query-param name="event_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="EventsList">
+        <![CDATA[
+        Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode
+from events as a left join venues as b on a.venuename = b.venuename
+where eventtype= :eventtype
+        ]]>
+    <query-param name="eventtype" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="EventsList__count">
+        <![CDATA[
+        select count(*) from (Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode
+from events as a left join venues as b on a.venuename = b.venuename
+where eventtype= :eventtype) wmTempTable
+        ]]>
+    <query-param name="eventtype" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="AttendeeEventDetails">
+        <![CDATA[
+        Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, 
+case when status is null then 'Get ticket' 
+     when status =  1 then 'Your going'
+     else 'Your not going' end as button, 
+case when status = 1 then 'Your not going' 
+     else 'Your going' end as next_status, 
+case when  email is not null and email <> :email then 1 else 0 end as includerow 
+from events as a left join venues as b on a.venuename = b.venuename 
+left join attendees as c on a.eventname = c.eventname
+where a.eventname = :eventname
+having includerow = 0
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    <query-param name="eventname" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="AttendeeEventDetails__count">
+        <![CDATA[
+        select count(*) from (Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, 
+case when status is null then 'Get ticket' 
+     when status =  1 then 'Your going'
+     else 'Your not going' end as button, 
+case when status = 1 then 'Your not going' 
+     else 'Your going' end as next_status, 
+case when  email is not null and email <> :email then 1 else 0 end as includerow 
+from events as a left join venues as b on a.venuename = b.venuename 
+left join attendees as c on a.eventname = c.eventname
+where a.eventname = :eventname
+having includerow = 0) wmTempTable
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    <query-param name="eventname" type="java.lang.String"/>
+    </sql-query>
+
     <sql-query name="getuser">
         <![CDATA[
         select * from users where email = :email
@@ -14,5 +86,51 @@
         select count(*) from (select * from users where email = :email) wmTempTable
         ]]>
     <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="EventParticipants">
+        <![CDATA[
+        Select a.email, status, eventname, firstname, lastname, attended
+from attendees as a left join users as b on a.email = b.email
+where eventname = :eventname and status is not NULL
+        ]]>
+    <query-param name="eventname" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="EventParticipants__count">
+        <![CDATA[
+        select count(*) from (Select a.email, status, eventname, firstname, lastname, attended
+from attendees as a left join users as b on a.email = b.email
+where eventname = :eventname and status is not NULL) wmTempTable
+        ]]>
+    <query-param name="eventname" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="UpdateAttendees">
+        <![CDATA[
+        Update attendees set attended = :attended
+where email = :email and eventname = :eventname
+        ]]>
+    <query-param name="attended" type="java.lang.String"/>
+    <query-param name="email" type="java.lang.String"/>
+    <query-param name="eventname" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="EventDetails">
+        <![CDATA[
+        Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode
+from events as a left join venues as b on a.venuename = b.venuename
+where eventname = :event_id
+        ]]>
+    <query-param name="event_id" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="EventDetails__count">
+        <![CDATA[
+        select count(*) from (Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode
+from events as a left join venues as b on a.venuename = b.venuename
+where eventname = :event_id) wmTempTable
+        ]]>
+    <query-param name="event_id" type="java.lang.String"/>
     </sql-query>
 </hibernate-mapping>

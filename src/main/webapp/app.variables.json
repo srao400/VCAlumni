@@ -29,6 +29,32 @@
     } ],
     "operation" : "toast"
   },
+  "association" : {
+    "_id" : "wm-association-wm.Variable-1539546527687",
+    "name" : "association",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "id" : "1",
+      "dataValue" : "Alumni"
+    }, {
+      "id" : "2",
+      "dataValue" : "Parent"
+    }, {
+      "id" : "3",
+      "dataValue" : "Grand Parent"
+    }, {
+      "id" : "4",
+      "dataValue" : "Donor"
+    }, {
+      "id" : "5",
+      "dataValue" : "Well wisher"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
   "datasyncPull" : {
     "_id" : "wm-datasyncPull-wm.DeviceVariable-1539535918897",
     "name" : "datasyncPull",
@@ -123,6 +149,92 @@
     "saveInPhonegap" : false,
     "controller" : "QueryExecution"
   },
+  "goToPage_AddEvent" : {
+    "_id" : "wm-goToPage_AddEvent-wm.NavigationVariable-1539625734399",
+    "name" : "goToPage_AddEvent",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "AddEvent",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_AddVenue" : {
+    "_id" : "wm-goToPage_AddVenue-wm.NavigationVariable-1539625494694",
+    "name" : "goToPage_AddVenue",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "AddVenue",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_EditEvents" : {
+    "_id" : "wm-goToPage_EditEvents-wm.NavigationVariable-1539624066541",
+    "name" : "goToPage_EditEvents",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "EditEvents",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_EditVenues" : {
+    "_id" : "wm-goToPage_EdirVenues-wm.NavigationVariable-1539624339340",
+    "name" : "goToPage_EditVenues",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "EditVenues",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_EventDetails" : {
+    "_id" : "wm-goToPage_EventDetails-wm.NavigationVariable-1539560318385",
+    "name" : "goToPage_EventDetails",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "EventDetails",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "pageName" : "EventDetails",
+    "dataSet" : [ {
+      "type" : "string",
+      "target" : "email",
+      "value" : "bind:Variables.loggedInUser.dataSet.id"
+    }, {
+      "type" : "string",
+      "target" : "eventname",
+      "value" : "bind:Widgets.executeEventsListList1.selecteditem.eventname"
+    } ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_EventsList" : {
+    "_id" : "wm-goToPage_EventsList-wm.NavigationVariable-1539551404365",
+    "name" : "goToPage_EventsList",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "EventsList",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "pageName" : "EventsList",
+    "dataSet" : [ {
+      "type" : "string",
+      "target" : "eventtype",
+      "value" : "bind:Widgets.event_typesList1.selectedItemWidgets.Name.caption"
+    } ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",
@@ -132,7 +244,7 @@
     "pageName" : "Main"
   },
   "goToPage_SignUp" : {
-    "_id" : "wm-goToPage_SignUp-wm.NavigationVariable-1539477779117",
+    "_id" : "wm-goToPage_SignUp-wm.NavigationVariable-1539547369450",
     "name" : "goToPage_SignUp",
     "owner" : "App",
     "category" : "wm.NavigationVariable",
@@ -227,6 +339,26 @@
     "autoUpdate" : true,
     "networkStatus" : "bind:$root.networkStatus",
     "showProgress" : false
+  },
+  "notificationAction1" : {
+    "_id" : "wm-notificationAction1-wm.NotificationVariable-1539620074062",
+    "name" : "notificationAction1",
+    "owner" : "App",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Your ticket fr this event has been reserved",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Ticket Confirmation",
+      "type" : "string"
+    }, {
+      "target" : "alerttype",
+      "value" : "success",
+      "type" : "string"
+    } ],
+    "operation" : "alert"
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",

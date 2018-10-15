@@ -1,0 +1,98 @@
+<wm-page data-ng-controller="EditEventsPageController" name="page1">
+    <wm-mobile-navbar name="mobile_navbar1" title="Edit Events" defaultview="actionview">
+        <wm-menu caption="" autoclose="outsideClick" name="menu1" iconclass="wi wi-more-vert" type="anchor" dataset="Logout" on-select="Actions.logoutAction.invoke()"></wm-menu>
+    </wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-container name="container1">
+                <wm-container name="container5">
+                    <wm-layoutgrid name="layoutgrid2">
+                        <wm-gridrow name="gridrow10">
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn14">
+                                <wm-anchor margin="unset 0.5em" name="anchor3" on-tap="Actions.goToPage_AddEvent.invoke()" caption="Add Event" on-doubletap="Actions.goToPage_AddEvents.invoke()"></wm-anchor>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn15">
+                                <wm-anchor margin="unset 0.5em" name="anchor4" caption="Add Venue" on-tap="Actions.goToPage_AddVenue.invoke()"></wm-anchor>
+                            </wm-gridcolumn>
+                            <wm-gridcolumn columnwidth="4" name="gridcolumn11">
+                                <wm-anchor margin="unset 0.5em" name="anchor5" caption="Edit Venues" on-tap="Actions.goToPage_EditVenues.invoke()"></wm-anchor>
+                            </wm-gridcolumn>
+                        </wm-gridrow>
+                        <wm-gridrow name="gridrow11"></wm-gridrow>
+                    </wm-layoutgrid>
+                </wm-container>
+            </wm-container>
+            <wm-list listclass="list-group" itemclass="list-group-item media" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="EventsList1" dataset="bind:Variables.VCADB_usersEventsData.dataSet" navigation="Pager">
+                <wm-listtemplate layout="media" name="listtemplate1">
+                    <wm-container class="media-left" name="container2"></wm-container>
+                    <wm-container class="media-body" name="container3">
+                        <wm-label caption="bind:Variables.VCADB_usersEventsData.dataSet.eventname" name="Name" class="p media-heading"></wm-label>
+                        <wm-label caption="bind:Variables.VCADB_usersEventsData.dataSet.eventdetails" class="p text-muted" name="Title"></wm-label>
+                    </wm-container>
+                    <wm-container class="media-right media-top" width="20%" name="container9" horizontalalign="right">
+                        <wm-buttongroup name="buttongroup1">
+                            <wm-button class="btn-transparent edit-list-item" caption="" name="button1" iconclass="wi wi-pencil fa-2x" margin="unset 0.2em unset unset"></wm-button>
+                            <wm-button class="btn-transparent delete-list-item" caption="" name="button2" iconclass="wi wi-trash fa-2x"></wm-button>
+                        </wm-buttongroup>
+                    </wm-container>
+                </wm-listtemplate>
+            </wm-list>
+            <wm-liveform errormessage="" title="Events Info" formlayout="dialog" iconclass="wi wi-edit" defaultmode="Edit" dataset="bind:Variables.VCADB_usersEventsData.dataSet" captionalign="left" captionposition="top" name="liveform1" formdata="bind:Widgets.EventsList1.selecteditem"
+                dependson="EventsList1">
+                <wm-layoutgrid columns="1" name="layoutgrid1">
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                            <wm-form-field name="eventtype" displayname="Event Type" required="true" show="true" generator="assigned" primary-key="false" key="eventtype" type="string" is-related="false" maxchars="20" pc-display="true" mobile-display="true"
+                                widget="text"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow2">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn2">
+                            <wm-form-field name="eventname" displayname="Event" required="true" show="true" generator="assigned" primary-key="true" key="eventname" type="string" is-related="false" maxchars="60" pc-display="true" mobile-display="true" widget="text"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow3">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                            <wm-form-field name="eventdetails" displayname="Details" required="true" show="true" generator="assigned" primary-key="false" key="eventdetails" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                widget="textarea"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow4">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn4">
+                            <wm-form-field name="eventdate" displayname="Date" required="true" show="true" generator="assigned" primary-key="false" key="eventdate" type="date" is-related="false" pc-display="true" mobile-display="true" widget="date"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow5">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                            <wm-form-field name="eventtime" displayname="Time" required="true" show="true" generator="assigned" primary-key="false" key="eventtime" type="time" is-related="false" pc-display="true" mobile-display="true" widget="time"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow6">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn6">
+                            <wm-form-field name="venues" displayname="Venue" required="true" show="true" generator="assigned" primary-key="false" key="venues" type="list" is-related="true" maxchars="40" pc-display="true" mobile-display="true" widget="select"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow7">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                            <wm-form-field name="deadlinedate" displayname="Registration Deadline" required="false" show="true" generator="assigned" primary-key="false" key="deadlinedate" type="date" is-related="false" pc-display="true" mobile-display="true"
+                                widget="date"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow8">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn8">
+                            <wm-form-field name="fees" displayname="Fees" required="false" show="true" generator="assigned" primary-key="false" key="fees" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow9">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn9">
+                            <wm-form-field name="maxtickets" displayname="Max. no of tickets" required="false" show="true" generator="assigned" primary-key="false" key="maxtickets" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true"
+                                widget="number"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
+                <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+            </wm-liveform>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

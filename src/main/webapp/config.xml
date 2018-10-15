@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.vca" version="0.0.5">
+<widget id="com.vca" version="0.0.8">
     <name>VCAlumni</name>
-    <description></description>
+    <description>Vancouver College Alumni Association</description>
     <author email="srao.yvr@gmail.com" href="">Srinivas Rao</author>
     <content src="index.html"/>
     <access origin="http://*/*"/>
@@ -54,42 +54,42 @@
         <preference name="SplashScreenDelay" value="25000"/>
     </platform>
     <platform name="ios">
-        <splash height="320" src="resources/assets/ios/splashes/default_Landscape@1x_iphone_480x320.png" width="480"/>
-        <splash height="480" src="resources/assets/ios/splashes/default_iphone.png" width="320"/>
-        <splash height="640" src="resources/assets/ios/splashes/default_Landscape@2x_iphone_960x640.png" width="960"/>
-        <splash height="640" src="resources/assets/ios/splashes/default_Landscape@2x_iphone_1136x640.png" width="1136"/>
-        <splash height="748" src="resources/assets/ios/splashes/default_Landscape_ipad_1024x748.png" width="1024"/>
-        <splash height="750" src="resources/assets/ios/splashes/default_750@2x_iphone6_landscape_1334x750.png" width="1334"/>
-        <splash height="768" src="resources/assets/ios/splashes/default_Landscape_ipad_1024x768.png" width="1024"/>
-        <splash height="960" src="resources/assets/ios/splashes/default@2x_iphone_640x960.png" width="640"/>
-        <splash height="1004" src="resources/assets/ios/splashes/default.png" width="768"/>
-        <splash height="1024" src="resources/assets/ios/splashes/default_Portrait_ipad_768x1024.png" width="768"/>
-        <splash height="1125" src="resources/assets/ios/splashes/default_1125@3x_iphoneX_landscape_2436x1125.png" width="2436"/>
-        <splash height="1136" src="resources/assets/ios/splashes/default_568h@2x_iphone_640x1136.png" width="640"/>
-        <splash height="1242" src="resources/assets/ios/splashes/default_1242@3x_iphone6s_landscape_2208x1242.png" width="2208"/>
-        <splash height="1334" src="resources/assets/ios/splashes/default_750@2x_iphone6_portrait_750x1334.png" width="750"/>
-        <splash height="1496" src="resources/assets/ios/splashes/default_Landscape@2x_ipad_2048x1496.png" width="2048"/>
-        <splash height="1536" src="resources/assets/ios/splashes/default_Landscape@2x_ipad_2048x1536.png" width="2048"/>
-        <splash height="2008" src="resources/assets/ios/splashes/default_Portrait@2x_ipad_1536x2008.png" width="1536"/>
-        <splash height="2048" src="resources/assets/ios/splashes/default_ipad.png" width="1536"/>
-        <splash height="2208" src="resources/assets/ios/splashes/default_1242@3x_iphone6s_portrait_1242x2208.png" width="1242"/>
-        <splash height="2436" src="resources/assets/ios/splashes/default_1125@3x_iphoneX_portrait_1125x2436.png" width="1125"/>
-        <icon height="29" src="resources/assets/ios/icons/icon-29.png" width="29"/>
-        <icon height="40" src="resources/assets/ios/icons/icon-40.png" width="40"/>
-        <icon height="50" src="resources/assets/ios/icons/icon-50.png" width="50"/>
-        <icon height="57" src="resources/assets/ios/icons/icon.png" width="57"/>
-        <icon height="58" src="resources/assets/ios/icons/icon-58.png" width="58"/>
-        <icon height="60" src="resources/assets/ios/icons/icon-60.png" width="60"/>
-        <icon height="72" src="resources/assets/ios/icons/icon-72.png" width="72"/>
-        <icon height="76" src="resources/assets/ios/icons/icon-76.png" width="76"/>
-        <icon height="80" src="resources/assets/ios/icons/icon-40@2x.png" width="80"/>
-        <icon height="80" src="resources/assets/ios/icons/icon-80.png" width="80"/>
-        <icon height="100" src="resources/assets/ios/icons/icon-100.png" width="100"/>
-        <icon height="114" src="resources/assets/ios/icons/icon@2x.png" width="114"/>
-        <icon height="120" src="resources/assets/ios/icons/icon-60@2x.png" width="120"/>
-        <icon height="144" src="resources/assets/ios/icons/icon-72@2x.png" width="144"/>
-        <icon height="152" src="resources/assets/ios/icons/icon-76@2x.png" width="152"/>
-        <icon height="180" src="resources/assets/ios/icons/icon-60@3x.png" width="180"/>
+        <splash height="320" src="resources/assets/ios/splashes/VCC480320.png" width="480"/>
+        <splash height="480" src="resources/assets/ios/splashes/VCC320480.png" width="320"/>
+        <splash height="640" src="resources/assets/ios/splashes/VVC960640.png" width="960"/>
+        <splash height="640" src="resources/assets/ios/splashes/VCC1136640.png" width="1136"/>
+        <splash height="748" src="resources/assets/ios/splashes/VCC1024748.png" width="1024"/>
+        <splash height="750" src="resources/assets/ios/splashes/VCC1334750.png" width="1334"/>
+        <splash height="768" src="resources/assets/ios/splashes/VCC1024768.png" width="1024"/>
+        <splash height="960" src="resources/assets/ios/splashes/vcc640960.png" width="640"/>
+        <splash height="1004" src="resources/assets/ios/splashes/VCC7681004.png" width="768"/>
+        <splash height="1024" src="resources/assets/ios/splashes/VCC7861024.png" width="768"/>
+        <splash height="1125" src="resources/assets/ios/splashes/VCC24361125.png" width="2436"/>
+        <splash height="1136" src="resources/assets/ios/splashes/VCC6401136.png" width="640"/>
+        <splash height="1242" src="resources/assets/ios/splashes/VCC22081242.png" width="2208"/>
+        <splash height="1334" src="resources/assets/ios/splashes/VCC7501334.png" width="750"/>
+        <splash height="1496" src="resources/assets/ios/splashes/VCC20481496.png" width="2048"/>
+        <splash height="1536" src="resources/assets/ios/splashes/VCC20481536.png" width="2048"/>
+        <splash height="2008" src="resources/assets/ios/splashes/VCC15362008.png" width="1536"/>
+        <splash height="2048" src="resources/assets/ios/splashes/VCC15362048.png" width="1536"/>
+        <splash height="2208" src="resources/assets/ios/splashes/VCC12422208.png" width="1242"/>
+        <splash height="2436" src="resources/assets/ios/splashes/VCC11252436.png" width="1125"/>
+        <icon height="29" src="resources/assets/ios/icons/VClogo29.png" width="29"/>
+        <icon height="40" src="resources/assets/ios/icons/VClogo40.png" width="40"/>
+        <icon height="50" src="resources/assets/ios/icons/VClogo50.png" width="50"/>
+        <icon height="57" src="resources/assets/ios/icons/VClogo57.png" width="57"/>
+        <icon height="58" src="resources/assets/ios/icons/VClogo58.png" width="58"/>
+        <icon height="60" src="resources/assets/ios/icons/VClogo60.png" width="60"/>
+        <icon height="72" src="resources/assets/ios/icons/VClogo72.png" width="72"/>
+        <icon height="76" src="resources/assets/ios/icons/VClogo76.png" width="76"/>
+        <icon height="80" src="resources/assets/ios/icons/VClogo80.png" width="80"/>
+        <icon height="80" src="resources/assets/ios/icons/VClogo80.png" width="80"/>
+        <icon height="100" src="resources/assets/ios/icons/VClogo100.png" width="100"/>
+        <icon height="114" src="resources/assets/ios/icons/VClogo114.png" width="114"/>
+        <icon height="120" src="resources/assets/ios/icons/VClogo120.png" width="120"/>
+        <icon height="144" src="resources/assets/ios/icons/VClogo144.png" width="144"/>
+        <icon height="152" src="resources/assets/ios/icons/VClogo152.png" width="152"/>
+        <icon height="180" src="resources/assets/ios/icons/VClogo180.png" width="180"/>
         <preference name="orientation" value="all"/>
         <preference name="deployment-target" value="9.0"/>
         <preference name="StatusBarStyle" value="lightcontent"/>

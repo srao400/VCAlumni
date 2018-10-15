@@ -16,8 +16,30 @@ import com.vcalumni.vcadb_users.models.query.*;
 
 public interface VCADB_usersQueryExecutorService {
 
+    Page<RegisteredAttendeesResponse> executeRegisteredAttendees(String eventId, Pageable pageable);
+
+    void exportRegisteredAttendees(String eventId, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<EventsListResponse> executeEventsList(String eventtype, Pageable pageable);
+
+    void exportEventsList(String eventtype, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<AttendeeEventDetailsResponse> executeAttendeeEventDetails(String email, String eventname, Pageable pageable);
+
+    void exportAttendeeEventDetails(String email, String eventname, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
     Page<GetuserResponse> executeGetuser(String email, Pageable pageable);
 
     void exportGetuser(String email, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<EventParticipantsResponse> executeEventParticipants(String eventname, Pageable pageable);
+
+    void exportEventParticipants(String eventname, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Integer executeUpdateAttendees(UpdateAttendeesRequest updateAttendeesRequest);
+
+    Page<EventDetailsResponse> executeEventDetails(String eventId, Pageable pageable);
+
+    void exportEventDetails(String eventId, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
 }

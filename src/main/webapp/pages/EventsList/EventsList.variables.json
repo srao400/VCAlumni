@@ -1,0 +1,55 @@
+{
+  "events_list_var" : {
+    "_id" : "wm-events_list_var-wm.ServiceVariable-1539551649834",
+    "name" : "events_list_var",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "eventtype",
+      "value" : "bind:pageParams.eventtype",
+      "type" : "string"
+    } ],
+    "type" : "com.vcalumni.vcadb_users.models.query.EventsListResponse",
+    "service" : "VCADB_users",
+    "operation" : "executeEventsList",
+    "operationId" : "QueryExecutionController_executeEventsList",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "VCADB_usersExecuteEventsList" : {
+    "_id" : "wm-VCADB_usersExecuteEventsList-wm.ServiceVariable-1539551893003",
+    "name" : "VCADB_usersExecuteEventsList",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "eventtype",
+      "value" : "bind:pageParams.eventtype",
+      "type" : "string"
+    } ],
+    "type" : "com.vcalumni.vcadb_users.models.query.EventsListResponse",
+    "service" : "VCADB_users",
+    "operation" : "executeEventsList",
+    "operationId" : "QueryExecutionController_executeEventsList",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "QueryExecution"
+  }
+}

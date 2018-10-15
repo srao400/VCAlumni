@@ -1,1 +1,90 @@
-{ }
+{
+  "add_attendee" : {
+    "name" : "add_attendee",
+    "description" : "Add attendee",
+    "version" : "V2",
+    "procedureString" : "CALL add_attendee(:email_id,:event_id,:action_id)",
+    "parameters" : [ {
+      "name" : "email_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "event_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "action_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.vcalumni.vcadb_users.models.procedure.AddAttendeeRequest",
+      "method" : "POST"
+    },
+    "response" : {
+      "typeRef" : "java.lang.Void",
+      "returns" : "PRIMITIVE",
+      "responseType" : "SINGLE"
+    }
+  },
+  "change_attendee" : {
+    "name" : "change_attendee",
+    "description" : "Change Attendee status",
+    "version" : "V2",
+    "procedureString" : "CALL change_attendee(:email_id,:event_id,:action_id)",
+    "parameters" : [ {
+      "name" : "email_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "event_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "action_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "response" : {
+      "typeRef" : "java.lang.Void",
+      "returns" : "PRIMITIVE",
+      "responseType" : "SINGLE"
+    }
+  }
+}

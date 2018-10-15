@@ -1,7 +1,40 @@
 [ {
+  "name" : "AddEvent",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "AddVenue",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "Common",
   "type" : "PARTIAL",
   "params" : [ ]
+}, {
+  "name" : "EditEvents",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "EditVenues",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
+  "name" : "EventDetails",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "email",
+    "type" : "string"
+  }, {
+    "name" : "eventname",
+    "type" : "string"
+  } ]
+}, {
+  "name" : "EventsList",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "eventtype",
+    "type" : "string"
+  } ]
 }, {
   "name" : "Login",
   "type" : "PAGE",

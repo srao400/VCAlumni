@@ -1,27 +1,23 @@
 <wm-page data-ng-controller="MainPageController" name="mainpage">
     <wm-left-panel content="leftnav" name="left_panel1"></wm-left-panel>
-    <wm-mobile-navbar name="mobile_navbar1" title="Title" leftnavpaneliconclass="wi wi-menu" backbutton="false">
-        <wm-anchor caption="" name="AddLink" iconclass="wi wi-gear"></wm-anchor>
+    <wm-mobile-navbar name="mobile_navbar1" title="Event Types" leftnavpaneliconclass="wi wi-menu" backbutton="false">
+        <wm-menu caption="" autoclose="outsideClick" name="menu1" iconclass="wi wi-more-vert" type="anchor" dataset="Logout" on-select="Actions.logoutAction.invoke()"></wm-menu>
     </wm-mobile-navbar>
     <wm-content name="content1">
         <wm-page-content columnwidth="12" name="page_content1">
             <wm-container name="container1">
                 <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="event_typesList1" dataset="bind:Variables.event_types.dataSet" navigation="Pager">
                     <wm-listtemplate layout="inline" name="listtemplate1">
-                        <wm-container class="media-left" name="container2">
-                            <wm-picture width="32pt" height="32pt" name="Picture" shape="circle" class="media-object"></wm-picture>
-                        </wm-container>
+                        <wm-container class="media-left badge" name="container2" fontunit="em"></wm-container>
                         <wm-container class="media-body" padding="unset unset unset 1.25em" name="container3">
-                            <wm-label name="Name" class="p media-heading" caption="bind:Variables.event_types.dataSet.dataValue" fontsize="1.143" fontunit="em"></wm-label>
-                            <wm-label name="JobTitle" caption="JobTitle" class="p text-muted"></wm-label>
+                            <wm-label name="Name" class="p media-heading" caption="bind:Variables.event_types.dataSet.dataValue" fontsize="1.5" fontunit="em" fontweight="bold"></wm-label>
                         </wm-container>
                         <wm-container class="media-right media-top" name="container4">
-                            <wm-button class="btn-transparent" iconclass="wi wi-forward fa-3x" name="button1" padding="5px unset unset unset"></wm-button>
+                            <wm-button class="btn-transparent" iconclass="wi wi-forward fa-2x" name="button1" padding="5px unset unset unset" on-tap="Actions.goToPage_EventsList.invoke()"></wm-button>
                         </wm-container>
                     </wm-listtemplate>
                 </wm-list>
             </wm-container>
         </wm-page-content>
     </wm-content>
-    <wm-mobile-tabbar dataset="Logout" name="mobile_tabbar1" on-select="Actions.logoutAction.invoke()"></wm-mobile-tabbar>
 </wm-page>
