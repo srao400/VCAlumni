@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.vca" version="0.0.8">
+<widget id="com.vca" version="1.0.0">
     <name>VCAlumni</name>
     <description>Vancouver College Alumni Association</description>
     <author email="srao.yvr@gmail.com" href="">Srinivas Rao</author>
     <content src="index.html"/>
     <access origin="http://*/*"/>
     <access origin="https://*/*"/>
+    <access origin="https://ec2-54-202-110-83.us-west-2.compute.amazonaws.com/VCAlumni/*"/>
     <access origin="{{DEVELOPMENT_URL}}/*"/>
     <plugin name="cordova-cookie-emperor" spec="https://github.com/RTK/cordova-cookie-emperor.git#3a73cfd"/>
     <plugin name="cordova-plugin-app-version" spec="0.1.9"/>
