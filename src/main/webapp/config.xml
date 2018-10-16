@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.vca" version="1.0.0">
+<widget id="com.vca" version="1.0.2">
     <name>VCAlumni</name>
     <description>Vancouver College Alumni Association</description>
     <author email="srao.yvr@gmail.com" href="">Srinivas Rao</author>
@@ -16,6 +16,7 @@
     <plugin name="cordova-plugin-customurlscheme" spec="4.3.0">
         <variable name="URL_SCHEME" value="com.vcalumni"/>
     </plugin>
+    <plugin name="cordova-plugin-datepicker" spec="0.9.3"/>
     <plugin name="cordova-plugin-device" spec="2.0.0"/>
     <plugin name="cordova-plugin-file" spec="6.0.1"/>
     <plugin name="cordova-plugin-file-opener2" spec="https://github.com/wavemaker/cordova-plugin-file-opener2.git#d382e11"/>
