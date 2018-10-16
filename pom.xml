@@ -7,8 +7,8 @@
   <version>1.0</version>
   <packaging>war</packaging>
   <properties>
-    <spring.version>4.3.14.RELEASE</spring.version>
     <profile.props.file>development.properties</profile.props.file>
+    <spring.version>4.3.14.RELEASE</spring.version>
     <spring.security.version>4.2.4.RELEASE</spring.security.version>
     <wavemaker.studio.version>9.4.0.1</wavemaker.studio.version>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -309,12 +309,6 @@
           <version>${wavemaker.studio.version}</version>
         </dependency>
       </dependencies>
-    </profile>
-    <profile>
-      <id>QA</id>
-      <properties>
-        <profile.props.file>QA.properties</profile.props.file>
-      </properties>
     </profile>
   </profiles>
 </project>
