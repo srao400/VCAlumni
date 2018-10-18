@@ -10,19 +10,22 @@
                     <wm-container name="container2">
                         <wm-container class="media-left" padding="unset unset unset 0.5em" name="container3"></wm-container>
                         <wm-container class="media-body" name="container4">
-                            <wm-label class="h4" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet.eventname" name="Name" margin="0px unset" whitespace="nowrap" backgroundcolor="grey" color="white"></wm-label>
+                            <wm-label class="h4" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet.eventname" name="Name" margin="0px unset" whitespace="nowrap" width="98%"></wm-label>
                             <wm-label class="p" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventdetails" name="label5" show="false"></wm-label>
+                            <wm-composite name="composite2">
+                                <wm-container class="col-xs-8" name="container6" width="96%">
+                                    <wm-datetime name="datetime2" datavalue="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventdate + &quot; &quot; + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventtime" readonly="true"
+                                        disabled="true"></wm-datetime>
+                                </wm-container>
+                            </wm-composite>
                         </wm-container>
                         <wm-card name="card1">
                             <wm-card-content padding=".1em" name="card_content1" backgroundcolor="white">
-                                <wm-label name="Description" class="p" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet.eventdetails"></wm-label>
-                                <wm-label class="p h6" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventdate" name="label12" width="50%"></wm-label>
-                                <wm-label class="p h6" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventtime" name="label13" width="50%"></wm-label>
+                                <wm-label name="Description" class="h5" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet.eventdetails"></wm-label>
                                 <wm-layoutgrid name="layoutgrid2">
                                     <wm-gridrow name="gridrow3">
                                         <wm-gridcolumn columnwidth="12" name="gridcolumn3">
-                                            <wm-label padding="unset 0.5em" name="label7" width="100%" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].venuename" fontweight="bold" textdecoration="underline" backgroundcolor="grey"
-                                                color="white"></wm-label>
+                                            <wm-label padding="unset 0.5em" name="label7" width="100%" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].venuename" fontweight="bold" textdecoration="underline"></wm-label>
                                         </wm-gridcolumn>
                                     </wm-gridrow>
                                     <wm-gridrow name="gridrow4">
@@ -38,7 +41,7 @@
                                             <wm-button class="btn-default" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].button" type="button" margin="unset 0.5em" name="button1" width="96%" on-tap="Variables.add_attendee_var.invoke();Actions.notificationAction1.invoke();Actions.goToPage_EventsList.invoke()"
                                                 disabled="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].button != 'Get ticket'" backgroundcolor="white" color="green" fontweight="bold" fontstyle="italic"></wm-button>
                                         </wm-gridcolumn>
-                                        <wm-gridcolumn columnwidth="4" name="gridcolumn5_1" padding="1.5px unset unset unset">
+                                        <wm-gridcolumn columnwidth="4" name="gridcolumn5_1">
                                             <wm-button class="btn-default" caption="Change" type="button" name="button2" show="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].button != 'Get ticket'" margin="unset .5px" on-tap="button2Tap($event, $scope, item, currentItemWidgets)"
                                                 backgroundcolor="white" color="#f22b50" fontsize="12"></wm-button>
                                         </wm-gridcolumn>

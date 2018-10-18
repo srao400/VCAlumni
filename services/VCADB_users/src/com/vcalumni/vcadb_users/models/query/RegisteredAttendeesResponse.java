@@ -26,6 +26,15 @@ public class RegisteredAttendeesResponse implements Serializable {
     @ColumnAlias("eventname")
     private String eventname;
 
+    @ColumnAlias("attended")
+    private Boolean attended;
+
+    @ColumnAlias("status")
+    private Boolean status;
+
+    @ColumnAlias("button")
+    private String button;
+
     public String getFirstname() {
         return this.firstname;
     }
@@ -58,6 +67,30 @@ public class RegisteredAttendeesResponse implements Serializable {
         this.eventname = eventname;
     }
 
+    public Boolean getAttended() {
+        return this.attended;
+    }
+
+    public void setAttended(Boolean attended) {
+        this.attended = attended;
+    }
+
+    public Boolean getStatus() {
+        return this.status;
+    }
+
+    public void setStatus(Boolean status) {
+        this.status = status;
+    }
+
+    public String getButton() {
+        return this.button;
+    }
+
+    public void setButton(String button) {
+        this.button = button;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -66,7 +99,10 @@ public class RegisteredAttendeesResponse implements Serializable {
         return Objects.equals(getFirstname(), registeredAttendeesResponse.getFirstname()) &&
                 Objects.equals(getLastname(), registeredAttendeesResponse.getLastname()) &&
                 Objects.equals(getEmail(), registeredAttendeesResponse.getEmail()) &&
-                Objects.equals(getEventname(), registeredAttendeesResponse.getEventname());
+                Objects.equals(getEventname(), registeredAttendeesResponse.getEventname()) &&
+                Objects.equals(getAttended(), registeredAttendeesResponse.getAttended()) &&
+                Objects.equals(getStatus(), registeredAttendeesResponse.getStatus()) &&
+                Objects.equals(getButton(), registeredAttendeesResponse.getButton());
     }
 
     @Override
@@ -74,6 +110,9 @@ public class RegisteredAttendeesResponse implements Serializable {
         return Objects.hash(getFirstname(),
                 getLastname(),
                 getEmail(),
-                getEventname());
+                getEventname(),
+                getAttended(),
+                getStatus(),
+                getButton());
     }
 }

@@ -1,0 +1,63 @@
+{
+  "update_attendee_var" : {
+    "_id" : "wm-update_attendee_var-wm.ServiceVariable-1539886569458",
+    "name" : "update_attendee_var",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "attended",
+      "value" : "bind:Widgets.executeRegisteredAttendeesList1.selectedItemWidgets.checkbox1.datavalue",
+      "type" : "boolean"
+    }, {
+      "target" : "email",
+      "value" : "bind:Widgets.executeRegisteredAttendeesList1.selecteditem.email",
+      "type" : "string"
+    }, {
+      "target" : "eventname",
+      "value" : "bind:Widgets.executeRegisteredAttendeesList1.selecteditem.eventname",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "VCADB_users",
+    "operation" : "executeUpdateAttendees",
+    "operationId" : "QueryExecutionController_executeUpdateAttendees",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
+  },
+  "VCADB_usersExecuteRegisteredAttendees" : {
+    "_id" : "wm-VCADB_usersExecuteRegisteredAttendees-wm.ServiceVariable-1539886367326",
+    "name" : "VCADB_usersExecuteRegisteredAttendees",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "event_id",
+      "value" : "bind:pageParams.eventname",
+      "type" : "string"
+    } ],
+    "type" : "com.vcalumni.vcadb_users.models.query.RegisteredAttendeesResponse",
+    "service" : "VCADB_users",
+    "operation" : "executeRegisteredAttendees",
+    "operationId" : "QueryExecutionController_executeRegisteredAttendees",
+    "operationType" : "get",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : true,
+    "maxResults" : 20,
+    "startUpdate" : true,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "isDefault" : true,
+    "controller" : "QueryExecution"
+  }
+}

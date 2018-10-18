@@ -91,7 +91,9 @@
     <security:http auto-config="false" use-expressions="true" entry-point-ref="WMSecAuthEntryPoint" disable-url-rewriting="true" name="interceptUrlsBean" authentication-manager-ref="authenticationManager">
         <security:intercept-url pattern="/j_spring_security_check" access="permitAll"/>
         <security:intercept-url pattern="/j_spring_security_logout" access="permitAll"/>
+        <security:intercept-url pattern="/pages/AddEvent/**" access="isAuthenticated()"/>
         <security:intercept-url pattern="/pages/Login/**" access="permitAll"/>
+        <security:intercept-url pattern="/pages/Register/**" access="permitAll"/>
         <security:intercept-url pattern="/pages/SignUp/**" access="permitAll"/>
         <security:intercept-url pattern="/services/VCADB_users/**" access="permitAll"/>
         <security:intercept-url pattern="/services/application/i18n/**" access="permitAll"/>
@@ -203,7 +205,7 @@
             <map key-type="java.lang.String" value-type="com.wavemaker.commons.model.security.RoleConfig">
                 <entry key="admin">
                     <bean class="com.wavemaker.commons.model.security.RoleConfig">
-                        <property name="landingPage" value="EditEvents"/>
+                        <property name="landingPage" value="adminMenu"/>
                     </bean>
                 </entry>
                 <entry key="user">

@@ -18,6 +18,8 @@ import org.springframework.transaction.annotation.Transactional;
 import com.wavemaker.runtime.data.dao.procedure.WMProcedureExecutor;
 
 import com.vcalumni.vcadb_users.models.procedure.AddAttendeeRequest;
+import com.vcalumni.vcadb_users.models.procedure.AddAttendeesRequest;
+import com.vcalumni.vcadb_users.models.procedure.AddNewUserEventsRequest;
 
 @Service
 public class VCADB_usersProcedureExecutorServiceImpl implements VCADB_usersProcedureExecutorService {
@@ -27,6 +29,28 @@ public class VCADB_usersProcedureExecutorServiceImpl implements VCADB_usersProce
     @Autowired
     @Qualifier("VCADB_usersWMProcedureExecutor")
     private WMProcedureExecutor procedureExecutor;
+
+    @Transactional(value = "VCADB_usersTransactionManager")
+    @Override
+    public Void executeChange_attendee(String emailId, String eventId, String actionId) {
+        Map<String, Object> params = new HashMap<>(3);
+
+        params.put("email_id", emailId);
+        params.put("event_id", eventId);
+        params.put("action_id", actionId);
+
+        return procedureExecutor.executeNamedProcedure("change_attendee", params, Void.class);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager")
+    @Override
+    public Void executeAdd_attendees(AddAttendeesRequest addAttendeesRequest) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("event_id", addAttendeesRequest.getEventId());
+
+        return procedureExecutor.executeNamedProcedure("add_attendees", params, Void.class);
+    }
 
     @Transactional(value = "VCADB_usersTransactionManager")
     @Override
@@ -42,14 +66,12 @@ public class VCADB_usersProcedureExecutorServiceImpl implements VCADB_usersProce
 
     @Transactional(value = "VCADB_usersTransactionManager")
     @Override
-    public Void executeChange_attendee(String emailId, String eventId, String actionId) {
-        Map<String, Object> params = new HashMap<>(3);
+    public Void executeAdd_new_user_events(AddNewUserEventsRequest addNewUserEventsRequest) {
+        Map<String, Object> params = new HashMap<>(1);
 
-        params.put("email_id", emailId);
-        params.put("event_id", eventId);
-        params.put("action_id", actionId);
+        params.put("email_id", addNewUserEventsRequest.getEmailId());
 
-        return procedureExecutor.executeNamedProcedure("change_attendee", params, Void.class);
+        return procedureExecutor.executeNamedProcedure("add_new_user_events", params, Void.class);
     }
 
 }

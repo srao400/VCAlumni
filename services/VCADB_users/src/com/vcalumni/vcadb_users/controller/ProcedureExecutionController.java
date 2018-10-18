@@ -24,6 +24,8 @@ import com.wordnik.swagger.annotations.Api;
 import com.wordnik.swagger.annotations.ApiOperation;
 
 import com.vcalumni.vcadb_users.models.procedure.AddAttendeeRequest;
+import com.vcalumni.vcadb_users.models.procedure.AddAttendeesRequest;
+import com.vcalumni.vcadb_users.models.procedure.AddNewUserEventsRequest;
 import com.vcalumni.vcadb_users.service.VCADB_usersProcedureExecutorService;
 
 @RestController(value = "VCADB_users.ProcedureExecutionController")
@@ -36,6 +38,26 @@ public class ProcedureExecutionController {
     @Autowired
     private VCADB_usersProcedureExecutorService procedureService;
 
+    @RequestMapping(value = "/procedure/execute/change_attendee", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Change Attendee status")
+    public Void executeChange_attendee(@RequestParam(value = "email_id") String emailId, @RequestParam(value = "event_id") String eventId, @RequestParam(value = "action_id") String actionId, HttpServletRequest _request) {
+        LOGGER.debug("Executing named procedure: change_attendee");
+        Void _result = procedureService.executeChange_attendee(emailId, eventId, actionId);
+        LOGGER.debug("got the result for named procedure: change_attendee, result:{}", _result);
+        return _result;
+    }
+
+    @RequestMapping(value = "/procedure/execute/add_attendees", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Add attendees to new event")
+    public Void executeAdd_attendees(@Valid @RequestBody AddAttendeesRequest addAttendeesRequest, HttpServletRequest _request) {
+        LOGGER.debug("Executing named procedure: add_attendees");
+        Void _result = procedureService.executeAdd_attendees(addAttendeesRequest);
+        LOGGER.debug("got the result for named procedure: add_attendees, result:{}", _result);
+        return _result;
+    }
+
     @RequestMapping(value = "/procedure/execute/add_attendee", method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "Add attendee")
@@ -46,13 +68,13 @@ public class ProcedureExecutionController {
         return _result;
     }
 
-    @RequestMapping(value = "/procedure/execute/change_attendee", method = RequestMethod.GET)
+    @RequestMapping(value = "/procedure/execute/add_new_user_events", method = RequestMethod.POST)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
-    @ApiOperation(value = "Change Attendee status")
-    public Void executeChange_attendee(@RequestParam(value = "email_id") String emailId, @RequestParam(value = "event_id") String eventId, @RequestParam(value = "action_id") String actionId, HttpServletRequest _request) {
-        LOGGER.debug("Executing named procedure: change_attendee");
-        Void _result = procedureService.executeChange_attendee(emailId, eventId, actionId);
-        LOGGER.debug("got the result for named procedure: change_attendee, result:{}", _result);
+    @ApiOperation(value = "Add events to newly registered user")
+    public Void executeAdd_new_user_events(@Valid @RequestBody AddNewUserEventsRequest addNewUserEventsRequest, HttpServletRequest _request) {
+        LOGGER.debug("Executing named procedure: add_new_user_events");
+        Void _result = procedureService.executeAdd_new_user_events(addNewUserEventsRequest);
+        LOGGER.debug("got the result for named procedure: add_new_user_events, result:{}", _result);
         return _result;
     }
 

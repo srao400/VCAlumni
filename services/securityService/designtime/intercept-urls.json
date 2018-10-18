@@ -1,10 +1,15 @@
 [ {
+  "urlPattern" : "/pages/AddEvent/**",
+  "permission" : "Authenticated",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
   "urlPattern" : "/pages/Login/**",
   "permission" : "PermitAll",
   "roles" : [ ],
   "httpMethod" : null
 }, {
-  "urlPattern" : "/pages/SignUp/**",
+  "urlPattern" : "/pages/Register/**",
   "permission" : "PermitAll",
   "roles" : [ ],
   "httpMethod" : null

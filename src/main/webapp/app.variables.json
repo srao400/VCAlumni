@@ -171,6 +171,36 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_adminMenu" : {
+    "_id" : "wm-goToPage_adminMenu-wm.NavigationVariable-1539811676256",
+    "name" : "goToPage_adminMenu",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "adminMenu",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
+  "goToPage_Attendees" : {
+    "_id" : "wm-goToPage_Attendees-wm.NavigationVariable-1539886284971",
+    "name" : "goToPage_Attendees",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "Attendees",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "pageName" : "Attendees",
+    "dataSet" : [ {
+      "type" : "string",
+      "target" : "eventname",
+      "value" : "bind:Widgets.EventsList1.selecteditem.eventname"
+    } ],
+    "pageTransitions" : "none"
+  },
   "goToPage_EditEvents" : {
     "_id" : "wm-goToPage_EditEvents-wm.NavigationVariable-1539624066541",
     "name" : "goToPage_EditEvents",
@@ -243,14 +273,14 @@
     "operation" : "gotoPage",
     "pageName" : "Main"
   },
-  "goToPage_SignUp" : {
-    "_id" : "wm-goToPage_SignUp-wm.NavigationVariable-1539547369450",
-    "name" : "goToPage_SignUp",
+  "goToPage_Register" : {
+    "_id" : "wm-goToPage_Register-wm.NavigationVariable-1539751160222",
+    "name" : "goToPage_Register",
     "owner" : "App",
     "category" : "wm.NavigationVariable",
     "dataBinding" : [ ],
     "operation" : "gotoPage",
-    "pageName" : "SignUp",
+    "pageName" : "Register",
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
@@ -315,6 +345,29 @@
     "redirectTo" : "Login",
     "useDefaultSuccessHandler" : true
   },
+  "menuOptions" : {
+    "_id" : "wm-menuOptions-wm.Variable-1539810935374",
+    "name" : "menuOptions",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "id" : "1",
+      "dataValue" : "Add Event"
+    }, {
+      "id" : "2",
+      "dataValue" : "Edit Events"
+    }, {
+      "id" : "3",
+      "dataValue" : "Add Venue"
+    }, {
+      "id" : "4",
+      "dataValue" : "Edit Venue"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
   "networkInfo" : {
     "_id" : "wm-networkInfo-wm.DeviceVariable-1539535918897",
     "name" : "networkInfo",
@@ -347,7 +400,7 @@
     "category" : "wm.NotificationVariable",
     "dataBinding" : [ {
       "target" : "text",
-      "value" : "Your ticket fr this event has been reserved",
+      "value" : "Your ticket for this event has been reserved",
       "type" : "string"
     }, {
       "target" : "title",

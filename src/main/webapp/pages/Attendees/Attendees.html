@@ -1,0 +1,26 @@
+<wm-page data-ng-controller="AttendeesPageController" name="page1">
+    <wm-mobile-navbar name="mobile_navbar1" title="Event Attendees"></wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-container name="container1">
+                <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="executeRegisteredAttendeesList1" dataset="bind:Variables.VCADB_usersExecuteRegisteredAttendees.dataSet"
+                    navigation="Pager" orderby="firstname:asc,lastname:asc,attended:asc">
+                    <wm-listtemplate layout="inline" name="listtemplate1">
+                        <wm-container class="media-left" name="container2">
+                            <wm-icon name="icon1" iconclass="wi wi-star fa-2x" show="bind:Variables.VCADB_usersExecuteRegisteredAttendees.dataSet[$i].button === 'Attended'" animation="rotateInDownRight" color="#0e2fb3"></wm-icon>
+                        </wm-container>
+                        <wm-container class="media-body" padding="unset unset unset 1.25em" name="container3">
+                            <wm-label name="Name" class="p media-heading" caption="bind:Variables.VCADB_usersExecuteRegisteredAttendees.dataSet[$i].firstname + ' ' + Variables.VCADB_usersExecuteRegisteredAttendees.dataSet[$i].lastname" fontsize="1.143" fontunit="em"></wm-label>
+                            <wm-label name="JobTitle" caption="bind:Variables.VCADB_usersExecuteRegisteredAttendees.dataSet.email" class="p text-muted"></wm-label>
+                        </wm-container>
+                        <wm-container class="media-right media-top" name="container4">
+                            <wm-composite name="composite1">
+                                <wm-checkbox caption="" name="checkbox1" datavalue="0" checkedvalue="true" uncheckedvalue="false" show="bind:Variables.VCADB_usersExecuteRegisteredAttendees.dataSet[$i].button != 'Attended'" on-change="Variables.update_attendee_var.invoke()"></wm-checkbox>
+                            </wm-composite>
+                        </wm-container>
+                    </wm-listtemplate>
+                </wm-list>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

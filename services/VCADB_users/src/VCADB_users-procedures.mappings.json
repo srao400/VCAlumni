@@ -1,4 +1,48 @@
 {
+  "change_attendee" : {
+    "procedureString" : "CALL change_attendee(?,?,?)",
+    "parameters" : [ {
+      "name" : "email_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "event_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    }, {
+      "name" : "action_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
+  "add_attendees" : {
+    "procedureString" : "CALL add_attendee_records(?)",
+    "parameters" : [ {
+      "name" : "event_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    } ]
+  },
   "add_attendee" : {
     "procedureString" : "CALL add_attendee(?,?,?)",
     "parameters" : [ {
@@ -30,33 +74,15 @@
       "parameterType" : "IN"
     } ]
   },
-  "change_attendee" : {
-    "procedureString" : "CALL change_attendee(?,?,?)",
+  "add_new_user_events" : {
+    "procedureString" : "CALL add_events_newuser(?)",
     "parameters" : [ {
       "name" : "email_id",
       "type" : "string",
       "list" : false,
       "variableType" : "PROMPT",
       "variableName" : "",
-      "testValue" : "test",
-      "required" : true,
-      "parameterType" : "IN"
-    }, {
-      "name" : "event_id",
-      "type" : "string",
-      "list" : false,
-      "variableType" : "PROMPT",
-      "variableName" : "",
-      "testValue" : "test",
-      "required" : true,
-      "parameterType" : "IN"
-    }, {
-      "name" : "action_id",
-      "type" : "string",
-      "list" : false,
-      "variableType" : "PROMPT",
-      "variableName" : "",
-      "testValue" : "test",
+      "testValue" : "as@mail.com",
       "required" : true,
       "parameterType" : "IN"
     } ]

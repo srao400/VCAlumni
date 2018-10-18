@@ -4,7 +4,9 @@
 <hibernate-mapping>
     <sql-query name="RegisteredAttendees">
         <![CDATA[
-        select firstname, lastname, a.email, eventname
+        select firstname, lastname, a.email, eventname, attended, status, 
+case when attended = 1 then 'Attended' 
+     else 'No ticket' end as button
 from attendees as a left join users as b on a.email = b.email 
 where eventname = :event_id
         ]]>
@@ -13,7 +15,9 @@ where eventname = :event_id
 
     <sql-query name="RegisteredAttendees__count">
         <![CDATA[
-        select count(*) from (select firstname, lastname, a.email, eventname
+        select count(*) from (select firstname, lastname, a.email, eventname, attended, status, 
+case when attended = 1 then 'Attended' 
+     else 'No ticket' end as button
 from attendees as a left join users as b on a.email = b.email 
 where eventname = :event_id) wmTempTable
         ]]>
@@ -24,18 +28,22 @@ where eventname = :event_id) wmTempTable
         <![CDATA[
         Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode
 from events as a left join venues as b on a.venuename = b.venuename
-where eventtype= :eventtype
+where eventtype= :eventtype and eventdate >= :SERVER__DATE__datetoday 
+order by eventdate, eventtime
         ]]>
     <query-param name="eventtype" type="java.lang.String"/>
+    <query-param name="SERVER__DATE__datetoday" type="java.sql.Date"/>
     </sql-query>
 
     <sql-query name="EventsList__count">
         <![CDATA[
         select count(*) from (Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode
 from events as a left join venues as b on a.venuename = b.venuename
-where eventtype= :eventtype) wmTempTable
+where eventtype= :eventtype and eventdate >= :SERVER__DATE__datetoday 
+order by eventdate, eventtime) wmTempTable
         ]]>
     <query-param name="eventtype" type="java.lang.String"/>
+    <query-param name="SERVER__DATE__datetoday" type="java.sql.Date"/>
     </sql-query>
 
     <sql-query name="AttendeeEventDetails">
@@ -111,7 +119,7 @@ where eventname = :eventname and status is not NULL) wmTempTable
         Update attendees set attended = :attended
 where email = :email and eventname = :eventname
         ]]>
-    <query-param name="attended" type="java.lang.String"/>
+    <query-param name="attended" type="java.lang.Boolean"/>
     <query-param name="email" type="java.lang.String"/>
     <query-param name="eventname" type="java.lang.String"/>
     </sql-query>

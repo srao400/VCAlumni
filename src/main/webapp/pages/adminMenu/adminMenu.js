@@ -1,4 +1,4 @@
-Application.$controller("SignUpPageController", ["$scope", function ($scope) {
+Application.$controller("adminMenuPageController", ["$scope", function ($scope) {
     "use strict";
 
     /* perform any action on widgets/variables within this block */
@@ -15,11 +15,3 @@ Application.$controller("SignUpPageController", ["$scope", function ($scope) {
     };
 
 }]);
-
-
-Application.$controller("UsersLiveForm1Controller", ["$scope",
-	function($scope) {
-		"use strict";
-		$scope.ctrlScope = $scope;
-	}
-]);

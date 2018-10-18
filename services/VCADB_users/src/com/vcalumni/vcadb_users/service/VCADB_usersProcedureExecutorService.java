@@ -7,11 +7,17 @@ package com.vcalumni.vcadb_users.service;
 
 
 import com.vcalumni.vcadb_users.models.procedure.AddAttendeeRequest;
+import com.vcalumni.vcadb_users.models.procedure.AddAttendeesRequest;
+import com.vcalumni.vcadb_users.models.procedure.AddNewUserEventsRequest;
 
 public interface VCADB_usersProcedureExecutorService {
 
+    Void executeChange_attendee(String emailId, String eventId, String actionId);
+
+    Void executeAdd_attendees(AddAttendeesRequest addAttendeesRequest);
+
     Void executeAdd_attendee(AddAttendeeRequest addAttendeeRequest);
 
-    Void executeChange_attendee(String emailId, String eventId, String actionId);
+    Void executeAdd_new_user_events(AddNewUserEventsRequest addNewUserEventsRequest);
 
 }

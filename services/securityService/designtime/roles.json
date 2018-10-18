@@ -2,7 +2,7 @@
   "name" : "admin",
   "description" : null,
   "roleConfig" : {
-    "landingPage" : "EditEvents"
+    "landingPage" : "adminMenu"
   }
 }, {
   "name" : "user",

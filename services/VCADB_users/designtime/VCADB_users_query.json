@@ -392,8 +392,8 @@
     "name" : "EventsList",
     "description" : "List of events",
     "version" : "V2",
-    "queryString" : "Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode\nfrom events as a left join venues as b on a.venuename = b.venuename\nwhere eventtype= :eventtype",
-    "countQueryString" : "select count(*) from (Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode\nfrom events as a left join venues as b on a.venuename = b.venuename\nwhere eventtype= :eventtype) wmTempTable",
+    "queryString" : "Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode\nfrom events as a left join venues as b on a.venuename = b.venuename\nwhere eventtype= :eventtype and eventdate >= :datetoday \norder by eventdate, eventtime",
+    "countQueryString" : "select count(*) from (Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode\nfrom events as a left join venues as b on a.venuename = b.venuename\nwhere eventtype= :eventtype and eventdate >= :datetoday \norder by eventdate, eventtime) wmTempTable",
     "nativeSql" : true,
     "fetchCount" : true,
     "type" : "SELECT",
@@ -403,7 +403,15 @@
       "list" : false,
       "variableType" : "PROMPT",
       "variableName" : "",
-      "testValue" : "test",
+      "testValue" : "Alumni",
+      "required" : true
+    }, {
+      "name" : "datetoday",
+      "type" : "date",
+      "list" : false,
+      "variableType" : "SERVER",
+      "variableName" : "DATE",
+      "testValue" : "2018-10-28",
       "required" : true
     } ],
     "request" : {
@@ -504,8 +512,8 @@
     "name" : "RegisteredAttendees",
     "description" : "People registered for an event",
     "version" : "V2",
-    "queryString" : "select firstname, lastname, a.email, eventname\nfrom attendees as a left join users as b on a.email = b.email \nwhere eventname = :event_id",
-    "countQueryString" : "select count(*) from (select firstname, lastname, a.email, eventname\nfrom attendees as a left join users as b on a.email = b.email \nwhere eventname = :event_id) wmTempTable",
+    "queryString" : "select firstname, lastname, a.email, eventname, attended, status, \ncase when attended = 1 then 'Attended' \n     else 'No ticket' end as button\nfrom attendees as a left join users as b on a.email = b.email \nwhere eventname = :event_id",
+    "countQueryString" : "select count(*) from (select firstname, lastname, a.email, eventname, attended, status, \ncase when attended = 1 then 'Attended' \n     else 'No ticket' end as button\nfrom attendees as a left join users as b on a.email = b.email \nwhere eventname = :event_id) wmTempTable",
     "nativeSql" : true,
     "fetchCount" : true,
     "type" : "SELECT",
@@ -515,7 +523,7 @@
       "list" : false,
       "variableType" : "PROMPT",
       "variableName" : "",
-      "testValue" : "test",
+      "testValue" : "Varsity football Game 3",
       "required" : true
     } ],
     "request" : {
@@ -564,6 +572,33 @@
           "typeRef" : "java.lang.String",
           "list" : false
         }
+      }, {
+        "name" : "attended",
+        "fieldName" : "attended",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Boolean",
+          "list" : false
+        }
+      }, {
+        "name" : "status",
+        "fieldName" : "status",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.Boolean",
+          "list" : false
+        }
+      }, {
+        "name" : "button",
+        "fieldName" : "button",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
       } ]
     }
   },
@@ -578,11 +613,11 @@
     "type" : "UPDATE",
     "parameters" : [ {
       "name" : "attended",
-      "type" : "string",
+      "type" : "boolean",
       "list" : false,
       "variableType" : "PROMPT",
       "variableName" : "",
-      "testValue" : "test",
+      "testValue" : true,
       "required" : true
     }, {
       "name" : "email",
@@ -590,7 +625,7 @@
       "list" : false,
       "variableType" : "PROMPT",
       "variableName" : "",
-      "testValue" : "test",
+      "testValue" : "sraouser@gmail.com",
       "required" : true
     }, {
       "name" : "eventname",
@@ -598,7 +633,7 @@
       "list" : false,
       "variableType" : "PROMPT",
       "variableName" : "",
-      "testValue" : "test",
+      "testValue" : "Varsity football Game 2",
       "required" : true
     } ],
     "request" : {

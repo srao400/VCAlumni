@@ -275,7 +275,7 @@
       "primaryFields" : [ "eventname" ]
     },
     "isDefault" : true,
-    "bindCount" : 1,
+    "bindCount" : 6,
     "tableName" : "events",
     "tableType" : "TABLE",
     "properties" : [ "venues" ],

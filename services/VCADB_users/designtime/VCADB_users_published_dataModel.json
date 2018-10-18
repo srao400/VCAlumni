@@ -97,10 +97,10 @@
       "columnValue" : {
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null,
+        "defaultValue" : "",
         "type" : "user-defined"
       },
-      "constraintList" : null,
+      "constraintList" : [ ],
       "fieldName" : "attended",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -121,6 +121,35 @@
       "scale" : 0,
       "sequenceSchema" : null,
       "sqlType" : "boolean",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "fieldName" : "_count",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "count",
+      "nullable" : true,
+      "oldName" : "count",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "period" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
       "unique" : false
     } ],
     "constraints" : [ ],

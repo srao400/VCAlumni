@@ -1,6 +1,31 @@
 {
+  "add_newuser_events_var" : {
+    "_id" : "wm-add_newuser_events_var-wm.ServiceVariable-1539749733257",
+    "name" : "add_newuser_events_var",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "email_id",
+      "value" : "bind:Widgets.UsersLiveForm1.formWidgets.email.datavalue",
+      "type" : "string"
+    } ],
+    "service" : "VCADB_users",
+    "operation" : "executeAdd_new_user_events",
+    "operationId" : "ProcedureExecutionController_executeAdd_new_user_events",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
   "VCADB_usersUsersData" : {
-    "_id" : "wm-VCADB_usersUsersData-wm.LiveVariable-1539547454581",
+    "_id" : "wm-VCADB_usersUsersData-wm.LiveVariable-1539751318398",
     "name" : "VCADB_usersUsersData",
     "owner" : "Page",
     "category" : "wm.LiveVariable",
@@ -13,8 +38,8 @@
     "maxResults" : 20,
     "designMaxResults" : 10,
     "inFlightBehavior" : "executeLast",
-    "startUpdate" : true,
-    "autoUpdate" : true,
+    "startUpdate" : false,
+    "autoUpdate" : false,
     "transformationRequired" : false,
     "liveSource" : "VCADB_users",
     "ignoreCase" : true,
@@ -129,7 +154,18 @@
     "tableType" : "TABLE",
     "properties" : [ ],
     "relatedTables" : [ ],
-    "filterExpressions" : { },
+    "filterFields" : { },
+    "filterExpressions" : {
+      "condition" : "AND",
+      "rules" : [ {
+        "target" : "",
+        "type" : "string",
+        "matchMode" : "anywhereignorecase",
+        "value" : "",
+        "required" : false,
+        "secondvalue" : ""
+      } ]
+    },
     "package" : "com.vcalumni.vcadb_users.Users"
   }
 }

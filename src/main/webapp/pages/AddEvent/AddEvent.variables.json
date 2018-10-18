@@ -1,4 +1,29 @@
 {
+  "add_attendees_var" : {
+    "_id" : "wm-add_attendees_var-wm.ServiceVariable-1539748418195",
+    "name" : "add_attendees_var",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "event_id",
+      "value" : "bind:Widgets.EventsLiveForm1.formWidgets.eventname.datavalue",
+      "type" : "string"
+    } ],
+    "service" : "VCADB_users",
+    "operation" : "executeAdd_attendees",
+    "operationId" : "ProcedureExecutionController_executeAdd_attendees",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
   "VCADB_usersEventsData" : {
     "_id" : "wm-VCADB_usersEventsData-wm.LiveVariable-1539625839123",
     "name" : "VCADB_usersEventsData",

@@ -33,6 +33,7 @@ public class Attendees implements Serializable {
     private String eventname;
     private Boolean status;
     private Boolean attended;
+    private Integer _count;
     private Users users;
 
     @Id
@@ -71,6 +72,15 @@ public class Attendees implements Serializable {
 
     public void setAttended(Boolean attended) {
         this.attended = attended;
+    }
+
+    @Column(name = "`count`", nullable = true, scale = 0, precision = 10)
+    public Integer get_count() {
+        return this._count;
+    }
+
+    public void set_count(Integer _count) {
+        this._count = _count;
     }
 
     @ManyToOne(fetch = FetchType.EAGER)

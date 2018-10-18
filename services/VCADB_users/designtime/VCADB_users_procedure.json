@@ -43,6 +43,58 @@
       "responseType" : "SINGLE"
     }
   },
+  "add_attendees" : {
+    "name" : "add_attendees",
+    "description" : "Add attendees to new event",
+    "version" : "V2",
+    "procedureString" : "CALL add_attendee_records(:event_id)",
+    "parameters" : [ {
+      "name" : "event_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.vcalumni.vcadb_users.models.procedure.AddAttendeesRequest",
+      "method" : "POST"
+    },
+    "response" : {
+      "typeRef" : "java.lang.Void",
+      "returns" : "PRIMITIVE",
+      "responseType" : "SINGLE"
+    }
+  },
+  "add_new_user_events" : {
+    "name" : "add_new_user_events",
+    "description" : "Add events to newly registered user",
+    "version" : "V2",
+    "procedureString" : "CALL add_events_newuser(:email_id)",
+    "parameters" : [ {
+      "name" : "email_id",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "as@mail.com",
+      "required" : true,
+      "parameterType" : "IN"
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.vcalumni.vcadb_users.models.procedure.AddNewUserEventsRequest",
+      "method" : "POST"
+    },
+    "response" : {
+      "typeRef" : "java.lang.Void",
+      "returns" : "PRIMITIVE",
+      "responseType" : "SINGLE"
+    }
+  },
   "change_attendee" : {
     "name" : "change_attendee",
     "description" : "Change Attendee status",

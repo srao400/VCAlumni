@@ -18,7 +18,7 @@ public class UpdateAttendeesRequest implements Serializable {
 
     @JsonProperty("attended")
     @NotNull
-    private String attended;
+    private Boolean attended;
 
     @JsonProperty("email")
     @NotNull
@@ -28,11 +28,11 @@ public class UpdateAttendeesRequest implements Serializable {
     @NotNull
     private String eventname;
 
-    public String getAttended() {
+    public Boolean getAttended() {
         return this.attended;
     }
 
-    public void setAttended(String attended) {
+    public void setAttended(Boolean attended) {
         this.attended = attended;
     }
 
