@@ -7,7 +7,7 @@
                     navigation="Pager" orderby="firstname:asc,lastname:asc,attended:asc">
                     <wm-listtemplate layout="inline" name="listtemplate1">
                         <wm-container class="media-left" name="container2">
-                            <wm-icon name="icon1" iconclass="wi wi-star fa-2x" show="bind:Variables.VCADB_usersExecuteRegisteredAttendees.dataSet[$i].button === 'Attended'" animation="rotateInDownRight" color="#0e2fb3"></wm-icon>
+                            <wm-icon name="icon1" iconclass="wi wi-check-circle fa-2x" show="bind:Variables.VCADB_usersExecuteRegisteredAttendees.dataSet[$i].button === 'Attended'" animation="rotateInDownRight" color="#0eb354"></wm-icon>
                         </wm-container>
                         <wm-container class="media-body" padding="unset unset unset 1.25em" name="container3">
                             <wm-label name="Name" class="p media-heading" caption="bind:Variables.VCADB_usersExecuteRegisteredAttendees.dataSet[$i].firstname + ' ' + Variables.VCADB_usersExecuteRegisteredAttendees.dataSet[$i].lastname" fontsize="1.143" fontunit="em"></wm-label>

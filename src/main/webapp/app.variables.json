@@ -55,6 +55,19 @@
     "isList" : true,
     "saveInPhonegap" : false
   },
+  "contactus" : {
+    "_id" : "wm-contactus-wm.Variable-1540226689563",
+    "name" : "contactus",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "https://www.vc.bc.ca/about/contact-us"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  },
   "datasyncPull" : {
     "_id" : "wm-datasyncPull-wm.DeviceVariable-1539535918897",
     "name" : "datasyncPull",

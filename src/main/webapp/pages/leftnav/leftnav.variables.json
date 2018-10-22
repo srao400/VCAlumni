@@ -1,1 +1,15 @@
-{ }
+{
+  "vcTwitter" : {
+    "_id" : "wm-vcTwitter-wm.Variable-1540226778698",
+    "name" : "vcTwitter",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "dataValue" : "@VanCollegeNews"
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}
