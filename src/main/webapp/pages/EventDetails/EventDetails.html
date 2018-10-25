@@ -13,10 +13,7 @@
                             <wm-label class="h4" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet.eventname" name="Name" margin="0px unset" whitespace="nowrap" width="98%"></wm-label>
                             <wm-label class="p" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventdetails" name="label5" show="false"></wm-label>
                             <wm-composite name="composite2">
-                                <wm-container class="col-xs-8" name="container6" width="96%">
-                                    <wm-datetime name="datetime2" datavalue="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventdate + &quot; &quot; + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventtime" readonly="true"
-                                        disabled="true" placeholder="" showbuttonbar="false"></wm-datetime>
-                                </wm-container>
+                                <wm-label padding="unset 0.5em" name="label9_1" fontsize="10" color="red" fontweight="bold" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventdate + ' ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventtime    | toDate: 'dd-MMM-yyyy hh:mm a'"></wm-label>
                             </wm-composite>
                         </wm-container>
                         <wm-card name="card1">
@@ -25,7 +22,7 @@
                                 <wm-layoutgrid name="layoutgrid2">
                                     <wm-gridrow name="gridrow3">
                                         <wm-gridcolumn columnwidth="12" name="gridcolumn3">
-                                            <wm-label padding="unset 0.5em" name="label7" width="100%" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].venuename" fontweight="bold" textdecoration="underline"></wm-label>
+                                            <wm-label padding="unset 0.5em" name="label7" width="100%" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].venuename"></wm-label>
                                         </wm-gridcolumn>
                                     </wm-gridrow>
                                     <wm-gridrow name="gridrow4">
@@ -39,11 +36,11 @@
                                     <wm-gridrow name="gridrow4_1">
                                         <wm-gridcolumn columnwidth="8" name="gridcolumn4">
                                             <wm-button class="btn-default" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].button" type="button" margin="unset 0.5em" name="button1" width="96%" on-tap="Variables.add_attendee_var.invoke();Actions.notificationAction1.invoke();Actions.goToPage_EventsList.invoke()"
-                                                disabled="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].button != 'Get ticket'" backgroundcolor="white" color="green" fontweight="bold" fontstyle="italic"></wm-button>
+                                                disabled="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].button != 'Get ticket'"></wm-button>
                                         </wm-gridcolumn>
                                         <wm-gridcolumn columnwidth="4" name="gridcolumn5_1">
                                             <wm-button class="btn-default" caption="Change" type="button" name="button2" show="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].button != 'Get ticket'" margin="unset .5px" on-tap="button2Tap($event, $scope, item, currentItemWidgets)"
-                                                backgroundcolor="white" color="#f22b50" fontsize="12"></wm-button>
+                                                backgroundcolor="white" color="red" fontsize="10" fontweight="bold" iconclass=""></wm-button>
                                         </wm-gridcolumn>
                                     </wm-gridrow>
                                     <wm-gridrow name="gridrow5"></wm-gridrow>

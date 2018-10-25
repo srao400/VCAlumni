@@ -15,12 +15,11 @@ Application.$controller("RegisterPageController", ["$scope", function($scope) {
     };
 
 
-        $scope.UsersLiveForm1Beforeservicecall = function ($event, $operation, $data, options) { 
+    $scope.UsersLiveForm1Beforeservicecall = function($event, $operation, $data, options) {
 
-        };
- 
-    }
-]);
+    };
+
+}]);
 
 
 Application.$controller("UsersLiveForm1Controller", ["$scope",
@@ -30,7 +29,8 @@ Application.$controller("UsersLiveForm1Controller", ["$scope",
 
         $scope.password1Blur = function($event, $isolateScope) {
             if ($scope.Widgets.password.datavalue === $scope.Widgets.password1.datavalue) {
-
+                // $scope.Variables.md5InsertJava.invoke();
+                // $data.password1 = $scope.Variables.md5InsertJava.dataSet.value;
             } else {
                 $scope.Widgets.label1.caption = "Error Occured - Password, Confirm Password don't match";
             }

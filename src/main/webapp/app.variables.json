@@ -46,10 +46,10 @@
       "dataValue" : "Grand Parent"
     }, {
       "id" : "4",
-      "dataValue" : "Donor"
+      "dataValue" : "Staff"
     }, {
       "id" : "5",
-      "dataValue" : "Well wisher"
+      "dataValue" : "Friend of VC"
     } ],
     "type" : "string",
     "isList" : true,
@@ -357,6 +357,32 @@
     "transformationRequired" : false,
     "redirectTo" : "Login",
     "useDefaultSuccessHandler" : true
+  },
+  "md5Check" : {
+    "_id" : "wm-md5Check-wm.ServiceVariable-1540500095669",
+    "name" : "md5Check",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "bind:Widgets.passwordtext.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "string",
+    "service" : "MD5Encryption",
+    "operation" : "md5Spring",
+    "operationId" : "MD5EncryptionController_md5Spring",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "MD5Encryption"
   },
   "menuOptions" : {
     "_id" : "wm-menuOptions-wm.Variable-1539810935374",

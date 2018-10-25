@@ -4,22 +4,6 @@
     </wm-mobile-navbar>
     <wm-content name="content1">
         <wm-page-content columnwidth="12" name="page_content1">
-            <wm-container name="container1">
-                <wm-layoutgrid name="layoutgrid1">
-                    <wm-gridrow name="gridrow1">
-                        <wm-gridcolumn columnwidth="4" name="gridcolumn2">
-                            <wm-anchor margin="unset 0.5em" name="anchor3" caption="Add Venue" on-tap="Actions.goToPage_AddVenue.invoke()"></wm-anchor>
-                        </wm-gridcolumn>
-                        <wm-gridcolumn columnwidth="4" name="gridcolumn5">
-                            <wm-anchor margin="unset 0.5em" name="anchor2" caption="Add Event" on-tap="Actions.goToPage_AddEvent.invoke()"></wm-anchor>
-                        </wm-gridcolumn>
-                        <wm-gridcolumn columnwidth="4" name="gridcolumn6">
-                            <wm-anchor margin="unset 0.5em" name="anchor1" caption="Edit Event" on-tap="Actions.goToPage_EditEvents.invoke()"></wm-anchor>
-                        </wm-gridcolumn>
-                    </wm-gridrow>
-                    <wm-gridrow name="gridrow2"></wm-gridrow>
-                </wm-layoutgrid>
-            </wm-container>
             <wm-container name="container2"></wm-container>
             <wm-list listclass="list-group" itemclass="list-group-item media" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="VenuesList1" dataset="bind:Variables.VCADB_usersVenuesData.dataSet" navigation="Pager">
                 <wm-listtemplate layout="media" name="listtemplate1">
@@ -28,7 +12,7 @@
                         <wm-label caption="bind:Variables.VCADB_usersVenuesData.dataSet.venuename" name="Name" class="p media-heading"></wm-label>
                         <wm-label caption="bind:Variables.VCADB_usersVenuesData.dataSet.venuedetails" class="p text-muted" name="Title"></wm-label>
                     </wm-container>
-                    <wm-container class="media-right media-top" width="20%" name="container9" horizontalalign="right">
+                    <wm-container class="media-right media-top" width="12%" name="container9" horizontalalign="right">
                         <wm-buttongroup name="buttongroup1">
                             <wm-button class="btn-transparent edit-list-item" caption="" name="button1" iconclass="wi wi-pencil fa-2x" margin="unset 0.2em unset unset"></wm-button>
                             <wm-button class="btn-transparent delete-list-item" caption="" name="button2" iconclass="wi wi-trash fa-2x"></wm-button>

@@ -94,9 +94,9 @@
         <security:intercept-url pattern="/pages/AddEvent/**" access="isAuthenticated()"/>
         <security:intercept-url pattern="/pages/Login/**" access="permitAll"/>
         <security:intercept-url pattern="/pages/Register/**" access="permitAll"/>
-        <security:intercept-url pattern="/pages/SignUp/**" access="permitAll"/>
         <security:intercept-url pattern="/services/VCADB_users/**" access="permitAll"/>
         <security:intercept-url pattern="/services/application/i18n/**" access="permitAll"/>
+        <security:intercept-url pattern="/services/mD5Encryption/**" access="permitAll"/>
         <security:intercept-url pattern="/services/prefabs/**/servicedefs" access="permitAll"/>
         <security:intercept-url pattern="/services/security/**" access="permitAll"/>
         <security:intercept-url pattern="/services/servicedefs" access="permitAll"/>

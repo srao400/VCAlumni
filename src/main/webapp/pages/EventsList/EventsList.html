@@ -9,11 +9,12 @@
                     <wm-listtemplate layout="inline" name="listtemplate1">
                         <wm-container class="media-left" name="container2"></wm-container>
                         <wm-container class="media-body" padding="unset unset unset 1.25em" name="container3" on-tap="Actions.goToPage_EventDetails.invoke()">
-                            <wm-label name="Name" class="p media-heading" caption="bind:Variables.VCADB_usersExecuteEventsList.dataSet.eventname" fontsize="1.143" fontunit="em" color="black"></wm-label>
+                            <wm-label name="Name" class="p media-heading" caption="bind:Variables.VCADB_usersExecuteEventsList.dataSet.eventname" fontsize="1.143" fontunit="em"></wm-label>
                             <wm-label name="JobTitle" caption="bind:Variables.VCADB_usersExecuteEventsList.dataSet.venuename" class="p media-heading" fontsize="1.1" fontunit="em"></wm-label>
                             <wm-composite name="composite1" fontsize="8">
                                 <wm-container class="col-xs-8" name="container5" width="100%">
-                                    <wm-datetime name="datetime1" datavalue="bind:Variables.VCADB_usersExecuteEventsList.dataSet[$i].eventdate + ' ' + Variables.VCADB_usersExecuteEventsList.dataSet[$i].eventtime " width="100%" disabled="true" readonly="true"></wm-datetime>
+                                    <wm-label padding="unset 0.5em" name="label3" caption="bind:Variables.VCADB_usersExecuteEventsList.dataSet[$i].eventdate + ' ' + Variables.VCADB_usersExecuteEventsList.dataSet[$i].eventtime | toDate: 'dd-MMM-yyyy hh:mm a'"
+                                        fontsize="10" color="red" fontweight="bold"></wm-label>
                                 </wm-container>
                             </wm-composite>
                         </wm-container>

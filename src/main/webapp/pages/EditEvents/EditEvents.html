@@ -10,6 +10,9 @@
                     <wm-container class="media-left" name="container2"></wm-container>
                     <wm-container class="media-body" name="container3">
                         <wm-label caption="bind:Variables.VCADB_usersEventsData.dataSet.eventname" name="Name" class="p media-heading"></wm-label>
+                        <wm-composite name="composite1"></wm-composite>
+                        <wm-label padding="unset 0.5em" name="label3" width="100%" caption="bind:Variables.VCADB_usersEventsData.dataSet.data[$i].eventdate + ' ' + Variables.VCADB_usersEventsData.dataSet.data[$i].eventtime | toDate: 'dd-MMM-yyyy HH:mm a'"
+                            fontsize="10" color="red" fontweight="bold"></wm-label>
                         <wm-button class="btn-default" caption="Check In" type="button" margin="unset 0.5em" name="button3" iconclass="wi wi-people fa-2x" on-tap="Actions.goToPage_Attendees.invoke()"></wm-button>
                     </wm-container>
                     <wm-container class="media-right media-top" width="12%" name="container9" horizontalalign="right" padding="4px 10px unset 10px">

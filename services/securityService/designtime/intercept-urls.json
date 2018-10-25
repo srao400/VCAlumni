@@ -23,4 +23,9 @@
   "permission" : "PermitAll",
   "roles" : [ ],
   "httpMethod" : null
+}, {
+  "urlPattern" : "/services/mD5Encryption/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
 } ]
