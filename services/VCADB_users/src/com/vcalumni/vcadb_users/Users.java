@@ -93,7 +93,7 @@ public class Users implements Serializable {
         this.role = role;
     }
 
-    @Column(name = "`password`", nullable = false, length = 10)
+    @Column(name = "`password`", nullable = false, length = 64)
     public String getPassword() {
         return this.password;
     }

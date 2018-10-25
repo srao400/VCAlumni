@@ -2,19 +2,19 @@
     <wm-mobile-navbar name="mobile_navbar1" title="Sign Up"></wm-mobile-navbar>
     <wm-content name="content1">
         <wm-page-content columnwidth="12" name="page_content1">
-            <wm-liveform errormessage="" title="Details" iconclass="wi wi-edit" formlayout="page" defaultmode="Edit" dataset="bind:Variables.VCADB_usersUsersData.dataSet" captionalign="left" captionposition="top" name="UsersLiveForm1" on-success="Actions.goToPage_Main.invoke()"
+            <wm-liveform errormessage="" title="Details" iconclass="wi wi-edit" formlayout="page" defaultmode="Edit" dataset="bind:Variables.VCADB_usersUsersData.dataSet" captionalign="left" captionposition="top" name="UsersLiveForm1" on-success="Actions.goToPage_Main.invoke();Variables.sendMail_successfulRegistration.invoke()"
                 on-result="Variables.add_newuser_events_var.invoke()" on-beforeservicecall="UsersLiveForm1Beforeservicecall($event, $operation, $data, options)">
                 <wm-layoutgrid columns="1" name="layoutgrid1">
                     <wm-gridrow name="gridrow1">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn1">
                             <wm-form-field name="email" displayname="Email address" required="true" show="true" generator="assigned" primary-key="true" key="email" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true" widget="text"
-                                placeholder="Enter email address" inputtype="email" validationmessage="Invalid email address"></wm-form-field>
+                                placeholder="Enter email address" inputtype="email" validationmessage="Invalid email address" updateon="default"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow2">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn2">
                             <wm-form-field name="password" displayname="Password" required="true" show="true" generator="assigned" primary-key="false" key="password" type="string" is-related="false" maxchars="10" pc-display="true" mobile-display="true" widget="password"
-                                placeholder="Enter password" regexp="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[0-9a-zA-Z!@#$%^&amp;*()]*$" validationmessage="password must contain 1 uppercase, 1 lowercase and 1 number"></wm-form-field>
+                                placeholder="Enter password" regexp="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[0-9a-zA-Z!@#$%^&amp;*()]*$" validationmessage="password must contain 1 uppercase, 1 lowercase and 1 number" updateon="default"></wm-form-field>
                             <wm-form-field displayname="Confirm Password" required="true" show="true" generator="assigned" primary-key="false" key="password" type="string" is-related="false" maxchars="10" pc-display="true" mobile-display="true"
                                 widget="password" name="password1" placeholder="Retype password" on-blur="password1Blur($event, $scope)" regexp="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[0-9a-zA-Z!@#$%^&amp;*()]*$"></wm-form-field>
                             <wm-label padding="unset 0.5em" name="label1" caption="Password must contain 1 uppercase, 1 lowercase and 1 number" fontsize="10" conditionalclass="bind:{'text-danger': Widgets.UsersLiveForm1.formWidgets.password1.datavalue != Widgets.UsersLiveForm1.formWidgets.password.datavalue}"></wm-label>
@@ -23,19 +23,19 @@
                     <wm-gridrow name="gridrow3">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn3">
                             <wm-form-field name="firstname" displayname="First name" required="true" show="true" generator="assigned" primary-key="false" key="firstname" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
-                                widget="text" placeholder="Enter first name"></wm-form-field>
+                                widget="text" placeholder="Enter first name" updateon="default"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow4">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn4">
                             <wm-form-field name="lastname" displayname="Last name" required="true" show="true" generator="assigned" primary-key="false" key="lastname" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
-                                widget="text" placeholder="Enter last name"></wm-form-field>
+                                widget="text" placeholder="Enter last name" updateon="default"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow5">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn5">
                             <wm-form-field name="phone" displayname="Phone number" required="true" show="true" generator="assigned" primary-key="false" key="phone" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" placeholder="Phone number"
-                                displayformat="(999) 999-9999" inputtype="text"></wm-form-field>
+                                displayformat="(999) 999-9999" inputtype="text" updateon="default"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow6">
@@ -46,7 +46,8 @@
                     </wm-gridrow>
                     <wm-gridrow name="gridrow7">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn7">
-                            <wm-form-field name="yearof" displayname="Year graduated" required="false" show="true" generator="assigned" primary-key="false" key="yearof" type="short" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            <wm-form-field name="yearof" displayname="Year graduated" required="false" show="true" generator="assigned" primary-key="false" key="yearof" type="short" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"
+                                updateon="default"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                 </wm-layoutgrid>

@@ -326,7 +326,7 @@
       "type" : "string"
     }, {
       "target" : "password",
-      "value" : "bind:Widgets.passwordtext.datavalue",
+      "value" : "bind:Variables.md5Check.dataSet.value",
       "type" : "string"
     }, {
       "target" : "rememberme",

@@ -50,6 +50,40 @@
     "saveInPhonegap" : false,
     "controller" : "MD5Encryption"
   },
+  "sendMail_successfulRegistration" : {
+    "_id" : "wm-sendMailVar-wm.ServiceVariable-1540507885957",
+    "name" : "sendMail_successfulRegistration",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "toEmailAddress",
+      "value" : "bind:Widgets.UsersLiveForm1.formWidgets.email.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "emailSubject",
+      "value" : "bind:'Registration Successful' ",
+      "type" : "string"
+    }, {
+      "target" : "emailMessage",
+      "value" : "bind:'You have successfully registered to the Vancouver College Alumni events application.'",
+      "type" : "string"
+    } ],
+    "type" : "object",
+    "service" : "EmailService",
+    "operation" : "sendEmail",
+    "operationId" : "EmailController_sendEmail",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeAll",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Email"
+  },
   "VCADB_usersUsersData" : {
     "_id" : "wm-VCADB_usersUsersData-wm.LiveVariable-1539751318398",
     "name" : "VCADB_usersUsersData",
@@ -163,10 +197,11 @@
         "columnName" : "password",
         "isPrimaryKey" : false,
         "notNull" : true,
-        "length" : 10,
+        "length" : 64,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       } ],
       "entityName" : "Users",

@@ -28,4 +28,9 @@
   "permission" : "PermitAll",
   "roles" : [ ],
   "httpMethod" : null
+}, {
+  "urlPattern" : "/services/email/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
 } ]
