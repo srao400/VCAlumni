@@ -8,8 +8,8 @@
                 <wm-layoutgrid columns="1" name="layoutgrid1">
                     <wm-gridrow name="gridrow1">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn1">
-                            <wm-form-field name="eventtype" displayname="Event Type" show="true" primary-key="false" generator="assigned" period="false" key="eventtype" type="string" readonly="false" widget="select" inputtype="text" dataset="bind:Variables.event_types.dataSet"
-                                datafield="dataValue" displayfield="dataValue" width="100%"></wm-form-field>
+                            <wm-form-field name="eventtype" displayname="Event Type" show="true" primary-key="false" generator="assigned" period="false" key="eventtype" type="string" readonly="false" widget="select" maxchars="20" dataset="bind:Variables.event_types.dataSet"
+                                datafield="dataValue" displayfield="dataValue" width="100%" placeholder="Select value"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow2">
@@ -26,7 +26,7 @@
                     </wm-gridrow>
                     <wm-gridrow name="gridrow4">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn4">
-                            <wm-form-field name="eventdate" displayname="Date" show="true" primary-key="false" generator="assigned" period="false" key="eventdate" type="date" readonly="false" required="true" widget="date" placeholder="Select date" outputformat="yyyy, MMM dd"
+                            <wm-form-field name="eventdate" displayname="Date" show="true" primary-key="false" generator="assigned" period="false" key="eventdate" type="date" readonly="false" required="true" widget="date" placeholder="Select date" outputformat="yyyy-MM-dd"
                                 width="100%"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
@@ -44,7 +44,7 @@
                     <wm-gridrow name="gridrow7">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn7">
                             <wm-form-field name="deadlinedate" displayname="Registration Deadline" show="true" primary-key="false" generator="assigned" period="false" key="deadlinedate" type="date" readonly="false" required="false" widget="date" placeholder="Select date"
-                                outputformat="yyyy, MMM dd"></wm-form-field>
+                                outputformat="yyyy-MM-dd"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow8">
