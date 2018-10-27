@@ -3,14 +3,33 @@
  with the terms of the source code license agreement you entered into with rubaya.io*/
 package com.vcalumni.emailservice;
 
-import javax.servlet.http.HttpServletRequest;
+// import javax.servlet.http.HttpServletRequest;
 
+// import org.slf4j.Logger;
+// import org.slf4j.LoggerFactory;
+
+// import org.springframework.beans.factory.annotation.Autowired;
+
+// import javax.annotation.PostConstruct;
+// import org.springframework.beans.factory.annotation.Value;
+// import java.util.Properties;
+// import javax.mail.Message;
+// import javax.mail.Authenticator;
+// import javax.mail.MessagingException;
+// import javax.mail.Session;
+// import javax.mail.Transport;
+// import javax.mail.internet.InternetAddress;
+// import javax.mail.internet.MimeMessage;
+// import javax.mail.PasswordAuthentication;
+// import com.wavemaker.runtime.security.SecurityService;
+// import com.wavemaker.runtime.service.annotations.ExposeToClient;
+// import com.wavemaker.runtime.service.annotations.HideFromClient;
+
+import javax.servlet.http.HttpServletRequest;
+import javax.annotation.PostConstruct;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-
 import org.springframework.beans.factory.annotation.Autowired;
-
-import javax.annotation.PostConstruct;
 import org.springframework.beans.factory.annotation.Value;
 import java.util.Properties;
 import javax.mail.Message;
@@ -25,7 +44,7 @@ import com.wavemaker.runtime.security.SecurityService;
 import com.wavemaker.runtime.service.annotations.ExposeToClient;
 import com.wavemaker.runtime.service.annotations.HideFromClient;
 
-//import com.vcalumni.emailservice.model.*;
+// import com.vcalumni.emailservice.model.*;
 
 /**
  * This is a singleton class with all its public methods exposed as REST APIs via generated controller class.
