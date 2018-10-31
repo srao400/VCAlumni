@@ -268,6 +268,19 @@
         "generator" : "assigned",
         "isRelated" : false,
         "scale" : 0
+      }, {
+        "fieldName" : "eventUrl",
+        "type" : "string",
+        "fullyQualifiedType" : "string",
+        "columnName" : "eventURL",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 255,
+        "precision" : 0,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
       } ],
       "entityName" : "Events",
       "fullyQualifiedName" : "com.vcalumni.vcadb_users.Events",

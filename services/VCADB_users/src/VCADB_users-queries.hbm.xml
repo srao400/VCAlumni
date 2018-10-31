@@ -126,7 +126,7 @@ where email = :email and eventname = :eventname
 
     <sql-query name="EventDetails">
         <![CDATA[
-        Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode
+        Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode, eventurl
 from events as a left join venues as b on a.venuename = b.venuename
 where eventname = :event_id
         ]]>
@@ -135,7 +135,7 @@ where eventname = :event_id
 
     <sql-query name="EventDetails__count">
         <![CDATA[
-        select count(*) from (Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode
+        select count(*) from (Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode, eventurl
 from events as a left join venues as b on a.venuename = b.venuename
 where eventname = :event_id) wmTempTable
         ]]>

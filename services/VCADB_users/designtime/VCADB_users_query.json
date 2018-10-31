@@ -195,8 +195,8 @@
     "name" : "EventDetails",
     "description" : "Event Details",
     "version" : "V2",
-    "queryString" : "Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode\nfrom events as a left join venues as b on a.venuename = b.venuename\nwhere eventname = :event_id",
-    "countQueryString" : "select count(*) from (Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode\nfrom events as a left join venues as b on a.venuename = b.venuename\nwhere eventname = :event_id) wmTempTable",
+    "queryString" : "Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode, eventurl\nfrom events as a left join venues as b on a.venuename = b.venuename\nwhere eventname = :event_id",
+    "countQueryString" : "select count(*) from (Select eventname, eventdate, eventtime, eventdetails, a.venuename, addressline1, city, province, zipcode, eventurl\nfrom events as a left join venues as b on a.venuename = b.venuename\nwhere eventname = :event_id) wmTempTable",
     "nativeSql" : true,
     "fetchCount" : true,
     "type" : "SELECT",
@@ -206,7 +206,7 @@
       "list" : false,
       "variableType" : "PROMPT",
       "variableName" : "",
-      "testValue" : "test",
+      "testValue" : "Dedication",
       "required" : true
     } ],
     "request" : {
@@ -294,6 +294,15 @@
       }, {
         "name" : "zipcode",
         "fieldName" : "zipcode",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "eventurl",
+        "fieldName" : "eventurl",
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",

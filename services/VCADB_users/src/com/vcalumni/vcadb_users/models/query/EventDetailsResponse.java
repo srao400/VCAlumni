@@ -43,6 +43,9 @@ public class EventDetailsResponse implements Serializable {
     @ColumnAlias("zipcode")
     private String zipcode;
 
+    @ColumnAlias("eventurl")
+    private String eventurl;
+
     public String getEventname() {
         return this.eventname;
     }
@@ -115,6 +118,14 @@ public class EventDetailsResponse implements Serializable {
         this.zipcode = zipcode;
     }
 
+    public String getEventurl() {
+        return this.eventurl;
+    }
+
+    public void setEventurl(String eventurl) {
+        this.eventurl = eventurl;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) return true;
@@ -128,7 +139,8 @@ public class EventDetailsResponse implements Serializable {
                 Objects.equals(getAddressline1(), eventDetailsResponse.getAddressline1()) &&
                 Objects.equals(getCity(), eventDetailsResponse.getCity()) &&
                 Objects.equals(getProvince(), eventDetailsResponse.getProvince()) &&
-                Objects.equals(getZipcode(), eventDetailsResponse.getZipcode());
+                Objects.equals(getZipcode(), eventDetailsResponse.getZipcode()) &&
+                Objects.equals(getEventurl(), eventDetailsResponse.getEventurl());
     }
 
     @Override
@@ -141,6 +153,7 @@ public class EventDetailsResponse implements Serializable {
                 getAddressline1(),
                 getCity(),
                 getProvince(),
-                getZipcode());
+                getZipcode(),
+                getEventurl());
     }
 }

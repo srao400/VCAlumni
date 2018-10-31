@@ -5,13 +5,13 @@
             <wm-login name="loginForm" data-ng-controller="loginFormController">
                 <wm-composite name="userNameField">
                     <wm-label caption="Email address" name="userNameLabel" class="control-label"></wm-label>
-                    <wm-text placeholder="Enter email address" name="usernametext" class="app-login-username" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="default"></wm-text>
+                    <wm-text placeholder="Enter email address" name="usernametext" class="app-login-username" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="blur"></wm-text>
                 </wm-composite>
                 <wm-composite name="passwordField">
                     <wm-label caption="Password" name="passwordLabel" class="control-label"></wm-label>
-                    <wm-text type="password" name="passwordtext" placeholder="Enter password" class="app-login-password" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="blur"></wm-text>
+                    <wm-text type="password" name="passwordtext" placeholder="Enter password" class="app-login-password" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="default"></wm-text>
                 </wm-composite>
-                <wm-button type="submit" caption="Sign in" width="100%" class="app-login-button btn-primary" name="loginButton" on-tap="Actions.loginAction.invoke()"></wm-button>
+                <wm-button type="submit" caption="Sign in" width="100%" class="app-login-button btn-primary" name="loginButton" on-tap="Actions.loginAction.invoke()" on-blur="Actions.loginAction.invoke()"></wm-button>
                 <wm-composite name="remembermeField" class="app-login-rememberme">
                     <wm-checkbox caption="Remember Me" name="remembermecheck"></wm-checkbox>
                 </wm-composite>

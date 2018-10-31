@@ -28,56 +28,61 @@
                 <wm-layoutgrid columns="1" name="layoutgrid1">
                     <wm-gridrow name="gridrow1">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn1">
-                            <wm-form-field name="eventtype" displayname="Event Type" required="true" show="true" generator="assigned" primary-key="false" key="eventtype" type="string" is-related="false" maxchars="20" pc-display="true" mobile-display="true"
-                                widget="text"></wm-form-field>
+                            <wm-form-field name="eventtype" displayname="Event Type" show="true" primary-key="false" generator="assigned" period="false" key="eventtype" type="string" readonly="false" required="true" widget="text" maxchars="20" inputtype="text"
+                                placeholder="Enter value"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow2">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn2">
-                            <wm-form-field name="eventname" displayname="Event" required="true" show="true" generator="assigned" primary-key="true" key="eventname" type="string" is-related="false" maxchars="60" pc-display="true" mobile-display="true" widget="text"></wm-form-field>
+                            <wm-form-field name="eventname" displayname="Event" show="true" primary-key="true" generator="assigned" period="false" key="eventname" type="string" readonly="false" required="true" widget="text" maxchars="60" inputtype="text"
+                                placeholder="Enter value"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow3">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn3">
-                            <wm-form-field name="eventdetails" displayname="Details" required="true" show="true" generator="assigned" primary-key="false" key="eventdetails" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
-                                widget="textarea"></wm-form-field>
+                            <wm-form-field name="eventdetails" displayname="Details" show="true" primary-key="false" generator="assigned" period="false" key="eventdetails" type="string" readonly="false" required="true" widget="textarea" maxchars="255" placeholder="Enter value"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow4">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn4">
-                            <wm-form-field name="eventdate" displayname="Date" required="true" show="true" generator="assigned" primary-key="false" key="eventdate" type="date" is-related="false" pc-display="true" mobile-display="true" widget="date"></wm-form-field>
+                            <wm-form-field name="eventdate" displayname="Date" show="true" primary-key="false" generator="assigned" period="false" key="eventdate" type="date" readonly="false" required="true" widget="date" placeholder="Select date" outputformat="yyyy-MM-dd"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow5">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn5">
-                            <wm-form-field name="eventtime" displayname="Time" required="true" show="true" generator="assigned" primary-key="false" key="eventtime" type="time" is-related="false" pc-display="true" mobile-display="true" widget="time"></wm-form-field>
+                            <wm-form-field name="eventtime" displayname="Time" show="true" primary-key="false" generator="assigned" period="false" key="eventtime" type="time" readonly="false" required="true" widget="time" placeholder="Select time" outputformat="HH:mm:ss"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow6">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn6">
-                            <wm-form-field name="venues" displayname="Venue" required="true" show="true" generator="assigned" primary-key="false" key="venues" type="list" is-related="true" maxchars="40" pc-display="true" mobile-display="true" widget="select"></wm-form-field>
+                            <wm-form-field name="venues" displayname="Venue" show="true" primary-key="false" generator="assigned" period="false" key="venues" type="list" is-related="true" readonly="false" required="true" widget="select" maxchars="40" placeholder="Select value"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow7">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn7">
-                            <wm-form-field name="deadlinedate" displayname="Registration Deadline" required="false" show="true" generator="assigned" primary-key="false" key="deadlinedate" type="date" is-related="false" pc-display="true" mobile-display="true"
-                                widget="date"></wm-form-field>
+                            <wm-form-field name="deadlinedate" displayname="Registration Deadline" show="true" primary-key="false" generator="assigned" period="false" key="deadlinedate" type="date" readonly="false" required="false" widget="date" placeholder="Select date"
+                                outputformat="yyyy-MM-dd"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow8">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn8">
-                            <wm-form-field name="fees" displayname="Fees" required="false" show="true" generator="assigned" primary-key="false" key="fees" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"></wm-form-field>
+                            <wm-form-field name="fees" displayname="Fees" show="true" primary-key="false" generator="assigned" period="false" key="fees" type="integer" readonly="false" required="false" step="0" widget="number" inputtype="number" placeholder="Enter value"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow9">
                         <wm-gridcolumn columnwidth="12" name="gridcolumn9">
-                            <wm-form-field name="maxtickets" displayname="Max. no of tickets" required="false" show="true" generator="assigned" primary-key="false" key="maxtickets" type="integer" is-related="false" step="0" pc-display="true" mobile-display="true"
-                                widget="number"></wm-form-field>
+                            <wm-form-field name="maxtickets" displayname="Max. no of tickets" show="true" primary-key="false" generator="assigned" period="false" key="maxtickets" type="integer" readonly="false" required="false" step="0" widget="number" inputtype="number"
+                                placeholder="Enter value"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn name="gridcolumn1" columnwidth="12">
+                            <wm-form-field name="eventUrl" displayname="Event Url" show="true" primary-key="false" generator="assigned" period="false" key="eventUrl" type="string" readonly="false" required="false" widget="text" maxchars="255"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
                 </wm-layoutgrid>
-                <wm-form-action key="cancel" class="form-cancel btn-secondary" iconclass="wi wi-cancel" action="cancel()" display-name="Cancel" show="true" type="button" update-mode="true"></wm-form-action>
-                <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+                <wm-form-action key="cancel" display-name="Cancel" show="true" class="form-cancel btn-secondary" iconclass="wi wi-cancel" title="Cancel" action="cancel()" disabled="false" type="button" update-mode="true"></wm-form-action>
+                <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action>
             </wm-liveform>
         </wm-page-content>
     </wm-content>

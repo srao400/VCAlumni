@@ -258,12 +258,12 @@
         </property>
     </bean>
     <bean class="com.wavemaker.runtime.security.provider.database.authorities.DefaultAuthoritiesProviderImpl" id="defaultAuthoritiesProvider">
-        <property name="hql" value="true"/>
+        <property name="hql" value="false"/>
         <property name="rolePrefix">
             <value>ROLE_</value>
         </property>
         <property name="authoritiesByUsernameQuery">
-            <value>SELECT email, role FROM Users WHERE email = ?</value>
+            <value>SELECT role FROM users WHERE email = :LOGGED_IN_USERNAME</value>
         </property>
         <property name="rolesByQuery" value="true"/>
         <property name="hibernateTemplate">

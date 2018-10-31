@@ -8,12 +8,12 @@
   "uidColumnName" : "email",
   "pwPropertyName" : "password",
   "pwColumnName" : "password",
-  "rolePropertyName" : "role",
-  "roleColumnName" : "role",
-  "useRolesQuery" : false,
-  "rolesByUsernameQuery" : "",
+  "rolePropertyName" : "",
+  "roleColumnName" : "",
+  "useRolesQuery" : true,
+  "rolesByUsernameQuery" : "SELECT role FROM users WHERE email = :LOGGED_IN_USERNAME",
   "tenantIdField" : null,
   "defTenantId" : 0,
   "tenantIdPropertyName" : null,
-  "queryType" : "HQL"
+  "queryType" : "NATIVE_SQL"
 }

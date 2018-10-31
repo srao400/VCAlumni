@@ -59,6 +59,11 @@
                                 placeholder="Enter value"></wm-form-field>
                         </wm-gridcolumn>
                     </wm-gridrow>
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn name="gridcolumn1" columnwidth="12">
+                            <wm-form-field name="eventUrl" displayname="Event URL" show="true" primary-key="false" generator="assigned" period="false" key="eventUrl" type="string" readonly="false" required="false" widget="text" maxchars="255"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
                 </wm-layoutgrid>
                 <wm-form-action key="reset" display-name="Reset" show="true" class="form-reset btn-secondary" iconclass="wi wi-refresh" title="Reset" action="reset()" disabled="false" type="button" update-mode="true"></wm-form-action>
                 <wm-form-action key="save" display-name="Save" show="true" class="form-save btn-success" iconclass="wi wi-save" title="Save" disabled="false" type="submit" update-mode="true"></wm-form-action>

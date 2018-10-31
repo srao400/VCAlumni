@@ -40,6 +40,7 @@ public class Events implements Serializable {
     private Integer fees;
     private String venuename;
     private String eventtype;
+    private String eventUrl;
     private Venues venues;
 
     @Id
@@ -140,6 +141,15 @@ public class Events implements Serializable {
 
     public void setEventtype(String eventtype) {
         this.eventtype = eventtype;
+    }
+
+    @Column(name = "`eventURL`", nullable = true, length = 255)
+    public String getEventUrl() {
+        return this.eventUrl;
+    }
+
+    public void setEventUrl(String eventUrl) {
+        this.eventUrl = eventUrl;
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
