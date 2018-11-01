@@ -58,6 +58,9 @@ public class AttendeeEventDetailsResponse implements Serializable {
     @ColumnAlias("eventtype")
     private String eventtype;
 
+    @ColumnAlias("eventURL")
+    private String eventUrl;
+
     @ColumnAlias("button")
     private String button;
 
@@ -179,6 +182,14 @@ public class AttendeeEventDetailsResponse implements Serializable {
         this.eventtype = eventtype;
     }
 
+    public String getEventUrl() {
+        return this.eventUrl;
+    }
+
+    public void setEventUrl(String eventUrl) {
+        this.eventUrl = eventUrl;
+    }
+
     public String getButton() {
         return this.button;
     }
@@ -222,6 +233,7 @@ public class AttendeeEventDetailsResponse implements Serializable {
                 Objects.equals(getPhone(), attendeeEventDetailsResponse.getPhone()) &&
                 Objects.equals(getStatus(), attendeeEventDetailsResponse.getStatus()) &&
                 Objects.equals(getEventtype(), attendeeEventDetailsResponse.getEventtype()) &&
+                Objects.equals(getEventUrl(), attendeeEventDetailsResponse.getEventUrl()) &&
                 Objects.equals(getButton(), attendeeEventDetailsResponse.getButton()) &&
                 Objects.equals(getNextStatus(), attendeeEventDetailsResponse.getNextStatus()) &&
                 Objects.equals(getIncluderow(), attendeeEventDetailsResponse.getIncluderow());
@@ -243,6 +255,7 @@ public class AttendeeEventDetailsResponse implements Serializable {
                 getPhone(),
                 getStatus(),
                 getEventtype(),
+                getEventUrl(),
                 getButton(),
                 getNextStatus(),
                 getIncluderow());

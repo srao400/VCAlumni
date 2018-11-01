@@ -1,4 +1,29 @@
 {
+  "add_newuser_events_var" : {
+    "_id" : "wm-add_newuser_events_var-wm.ServiceVariable-1539749733257",
+    "name" : "add_newuser_events_var",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "email_id",
+      "value" : "bind:Widgets.UsersLiveForm1.formWidgets.email.datavalue",
+      "type" : "string"
+    } ],
+    "service" : "VCADB_users",
+    "operation" : "executeAdd_new_user_events",
+    "operationId" : "ProcedureExecutionController_executeAdd_new_user_events",
+    "operationType" : "post",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "ProcedureExecution"
+  },
   "appInfo" : {
     "_id" : "wm-getAppInfo-wm.DeviceVariable-1444134876543",
     "name" : "appInfo",
@@ -297,6 +322,17 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_SignUp" : {
+    "_id" : "wm-goToPage_SignUp-wm.NavigationVariable-1541098884536",
+    "name" : "goToPage_SignUp",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "SignUp",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "loggedInUser" : {
     "_id" : "wm-loggedInUser-wm.Variable-1539460882395",
     "name" : "loggedInUser",
@@ -451,6 +487,40 @@
       "type" : "string"
     } ],
     "operation" : "alert"
+  },
+  "sendMail_successfulRegistration" : {
+    "_id" : "wm-sendMailVar-wm.ServiceVariable-1540507885957",
+    "name" : "sendMail_successfulRegistration",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "toEmailAddress",
+      "value" : "bind:Widgets.UsersLiveForm1.formWidgets.email.datavalue",
+      "type" : "string"
+    }, {
+      "target" : "emailSubject",
+      "value" : "bind:'Registration Successful' ",
+      "type" : "string"
+    }, {
+      "target" : "emailMessage",
+      "value" : "bind:'You have successfully registered to the Vancouver College Alumni events application.'",
+      "type" : "string"
+    } ],
+    "type" : "object",
+    "service" : "EmailService",
+    "operation" : "sendEmail",
+    "operationId" : "EmailController_sendEmail",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeAll",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Email"
   },
   "supportedLocale" : {
     "_id" : "wm-wm.Variable1402640443182",

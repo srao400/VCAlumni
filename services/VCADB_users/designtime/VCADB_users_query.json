@@ -3,8 +3,8 @@
     "name" : "AttendeeEventDetails",
     "description" : "Events for attendees",
     "version" : "V2",
-    "queryString" : "Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, \ncase when status is null then 'Get ticket' \n     when status =  1 then 'Your going'\n     else 'Your not going' end as button, \ncase when status = 1 then 'Your not going' \n     else 'Your going' end as next_status, \ncase when  email is not null and email <> :email then 1 else 0 end as includerow \nfrom events as a left join venues as b on a.venuename = b.venuename \nleft join attendees as c on a.eventname = c.eventname\nwhere a.eventname = :eventname\nhaving includerow = 0",
-    "countQueryString" : "select count(*) from (Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, \ncase when status is null then 'Get ticket' \n     when status =  1 then 'Your going'\n     else 'Your not going' end as button, \ncase when status = 1 then 'Your not going' \n     else 'Your going' end as next_status, \ncase when  email is not null and email <> :email then 1 else 0 end as includerow \nfrom events as a left join venues as b on a.venuename = b.venuename \nleft join attendees as c on a.eventname = c.eventname\nwhere a.eventname = :eventname\nhaving includerow = 0) wmTempTable",
+    "queryString" : "Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, \ncase when status is null then 'Get ticket' \n     when status =  1 then 'Your going'\n     else 'Your not going' end as button, \ncase when status = 1 then 'Your not going' \n     else 'Your going' end as next_status, \ncase when  email is not null and email <> :email then 1 else 0 end as includerow \nfrom events as a left join venues as b on a.venuename = b.venuename \nleft join attendees as c on a.eventname = c.eventname\nwhere a.eventname = :eventname\nhaving includerow = 0",
+    "countQueryString" : "select count(*) from (Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, \ncase when status is null then 'Get ticket' \n     when status =  1 then 'Your going'\n     else 'Your not going' end as button, \ncase when status = 1 then 'Your not going' \n     else 'Your going' end as next_status, \ncase when  email is not null and email <> :email then 1 else 0 end as includerow \nfrom events as a left join venues as b on a.venuename = b.venuename \nleft join attendees as c on a.eventname = c.eventname\nwhere a.eventname = :eventname\nhaving includerow = 0) wmTempTable",
     "nativeSql" : true,
     "fetchCount" : true,
     "type" : "SELECT",
@@ -155,6 +155,15 @@
       }, {
         "name" : "eventtype",
         "fieldName" : "eventtype",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
+        "name" : "eventURL",
+        "fieldName" : "eventUrl",
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",

@@ -16,7 +16,7 @@
                             <wm-form-field name="password" displayname="Password" required="true" show="true" generator="assigned" primary-key="false" key="password" type="string" is-related="false" maxchars="10" pc-display="true" mobile-display="true" widget="password"
                                 placeholder="Enter password" regexp="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[0-9a-zA-Z!@#$%^&amp;*()]*$" validationmessage="password must contain 1 uppercase, 1 lowercase and 1 number" updateon="default"></wm-form-field>
                             <wm-form-field displayname="Confirm Password" required="true" show="true" generator="assigned" primary-key="false" key="password" type="string" is-related="false" maxchars="10" pc-display="true" mobile-display="true"
-                                widget="password" name="password1" placeholder="Retype password" on-blur="password1Blur($event, $scope)" regexp="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[0-9a-zA-Z!@#$%^&amp;*()]*$"></wm-form-field>
+                                widget="password" name="password1" placeholder="Retype password" on-blur="password1Blur($event, $scope)" regexp="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[0-9a-zA-Z!@#$%^&amp;*()]*$" updateon="default"></wm-form-field>
                             <wm-label padding="unset 0.5em" name="label1" caption="Password must contain 1 uppercase, 1 lowercase and 1 number" fontsize="10" conditionalclass="bind:{'text-danger': Widgets.UsersLiveForm1.formWidgets.password1.datavalue != Widgets.UsersLiveForm1.formWidgets.password.datavalue}"></wm-label>
                         </wm-gridcolumn>
                     </wm-gridrow>

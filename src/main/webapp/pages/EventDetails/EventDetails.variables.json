@@ -87,6 +87,40 @@
     "saveInPhonegap" : false,
     "controller" : "ProcedureExecution"
   },
+  "sendEmailGotTicket" : {
+    "_id" : "wm-sendEmailGotTicket-wm.ServiceVariable-1541026037068",
+    "name" : "sendEmailGotTicket",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "toEmailAddress",
+      "value" : "bind:Variables.loggedInUser.dataSet.id",
+      "type" : "string"
+    }, {
+      "target" : "emailSubject",
+      "value" : "bind:\"Ticket successfully reserved!\"",
+      "type" : "string"
+    }, {
+      "target" : "emailMessage",
+      "value" : "bind:'Your ticket for the event, ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventname + ' has been reserved. The following link will provide you with additional details of the event, and instructions on how to pay to attend the event. ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventUrl",
+      "type" : "string"
+    } ],
+    "type" : "object",
+    "service" : "EmailService",
+    "operation" : "sendEmail",
+    "operationId" : "EmailController_sendEmail",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : false,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "Email"
+  },
   "VCADB_usersExecuteAttendeeEventDetails" : {
     "_id" : "wm-VCADB_usersExecuteAttendeeEventDetails-wm.ServiceVariable-1539560841525",
     "name" : "VCADB_usersExecuteAttendeeEventDetails",

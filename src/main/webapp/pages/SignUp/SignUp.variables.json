@@ -1,6 +1,32 @@
 {
+  "md5InsertJava" : {
+    "_id" : "wm-md5InsertJava-wm.ServiceVariable-1540499902187",
+    "name" : "md5InsertJava",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "bind:Widgets.UsersLiveForm1.formWidgets.password1.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "string",
+    "service" : "MD5Encryption",
+    "operation" : "md5Spring",
+    "operationId" : "MD5EncryptionController_md5Spring",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "MD5Encryption"
+  },
   "VCADB_usersUsersData" : {
-    "_id" : "wm-VCADB_usersUsersData-wm.LiveVariable-1539751318398",
+    "_id" : "wm-VCADB_usersUsersData-wm.LiveVariable-1541098943124",
     "name" : "VCADB_usersUsersData",
     "owner" : "Page",
     "category" : "wm.LiveVariable",
@@ -130,18 +156,7 @@
     "tableType" : "TABLE",
     "properties" : [ ],
     "relatedTables" : [ ],
-    "filterFields" : { },
-    "filterExpressions" : {
-      "condition" : "AND",
-      "rules" : [ {
-        "target" : "",
-        "type" : "string",
-        "matchMode" : "anywhereignorecase",
-        "value" : "",
-        "required" : false,
-        "secondvalue" : ""
-      } ]
-    },
+    "filterExpressions" : { },
     "package" : "com.vcalumni.vcadb_users.Users"
   }
 }

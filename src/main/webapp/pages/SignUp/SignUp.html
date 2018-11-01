@@ -1,0 +1,59 @@
+<wm-page data-ng-controller="SignUpPageController" name="page1">
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-container name="container1"></wm-container>
+            <wm-liveform errormessage="" title="User Information" iconclass="wi wi-edit" formlayout="inline" defaultmode="Edit" dataset="bind:Variables.VCADB_usersUsersData.dataSet" captionalign="left" captionposition="top" name="UsersLiveForm1"
+                on-beforeservicecall="UsersLiveForm1Beforeservicecall($event, $operation, $data, options)" on-result="Variables.add_newuser_events_var.invoke()" on-success="Variables.sendMail_successfulRegistration.invoke();Actions.goToPage_Main.invoke();Actions.appNotification.invoke()">
+                <wm-layoutgrid columns="1" name="layoutgrid1">
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn1">
+                            <wm-form-field name="email" displayname="Email" required="true" show="true" generator="assigned" primary-key="true" key="email" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true" widget="text"
+                                inputtype="email" placeholder="Email address" validationmessage="Please enter a valid email address"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow2">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn2">
+                            <wm-form-field name="password" displayname="Password" required="true" show="true" generator="assigned" primary-key="false" key="password" type="string" is-related="false" maxchars="64" pc-display="true" mobile-display="true" widget="password"
+                                placeholder="Enter password" regexp="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[0-9a-zA-Z!@#$%^&amp;*()]*$"></wm-form-field>
+                            <wm-form-field displayname="Confirm Password" required="true" show="true" generator="assigned" primary-key="false" key="password" type="string" is-related="false" maxchars="64" pc-display="true" mobile-display="true"
+                                widget="password" name="password1" placeholder="Retype password" regexp="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[0-9a-zA-Z!@#$%^&amp;*()]*$" on-blur="password1Blur($event, $scope)"></wm-form-field>
+                            <wm-label padding="unset 0.5em" name="label1" caption="Password must contain at least 1 uppercase and lowercase alphabet and 1 number" fontsize="10" conditionalclass="bind:{'text-danger': Widgets.UsersLiveForm1.formWidgets.password1.datavalue != Widgets.UsersLiveForm1.formWidgets.password.datavalue}"></wm-label>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow3">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn3">
+                            <wm-form-field name="firstname" displayname="Firstname" required="true" show="true" generator="assigned" primary-key="false" key="firstname" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                widget="text" placeholder="First name" validationmessage="First name is required"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow4">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn4">
+                            <wm-form-field name="lastname" displayname="Lastname" required="true" show="true" generator="assigned" primary-key="false" key="lastname" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true" widget="text"
+                                placeholder="last name" validationmessage="Last name is required"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow5">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn5">
+                            <wm-form-field name="phone" displayname="Phone number" required="true" show="true" generator="assigned" primary-key="false" key="phone" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" displayformat="(999) 999-9999"
+                                validationmessage="Phone number is required"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow6">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn6">
+                            <wm-form-field name="association" displayname="Association" required="true" show="true" generator="assigned" primary-key="false" key="association" type="string" is-related="false" maxchars="255" pc-display="true" mobile-display="true"
+                                widget="select" dataset="bind:Variables.association.dataSet" datafield="dataValue" displayfield="dataValue"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow7">
+                        <wm-gridcolumn columnwidth="12" name="gridcolumn7">
+                            <wm-form-field name="yearof" displayname="Year graduated" required="false" show="true" generator="assigned" primary-key="false" key="yearof" type="short" is-related="false" step="0" pc-display="true" mobile-display="true" widget="number"
+                                minvalue="1922" maxvalue="2018" placeholder="Year of graduation"></wm-form-field>
+                        </wm-gridcolumn>
+                    </wm-gridrow>
+                </wm-layoutgrid>
+                <wm-form-action key="reset" class="form-reset btn-secondary" iconclass="wi wi-refresh" action="reset()" display-name="Reset" show="true" type="button" update-mode="true"></wm-form-action>
+                <wm-form-action key="save" class="form-save btn-success" iconclass="wi wi-save" display-name="Save" show="true" type="submit" update-mode="true"></wm-form-action>
+            </wm-liveform>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

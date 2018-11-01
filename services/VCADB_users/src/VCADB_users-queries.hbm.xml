@@ -48,7 +48,7 @@ order by eventdate, eventtime) wmTempTable
 
     <sql-query name="AttendeeEventDetails">
         <![CDATA[
-        Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, 
+        Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, 
 case when status is null then 'Get ticket' 
      when status =  1 then 'Your going'
      else 'Your not going' end as button, 
@@ -66,7 +66,7 @@ having includerow = 0
 
     <sql-query name="AttendeeEventDetails__count">
         <![CDATA[
-        select count(*) from (Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, 
+        select count(*) from (Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, 
 case when status is null then 'Get ticket' 
      when status =  1 then 'Your going'
      else 'Your not going' end as button, 
