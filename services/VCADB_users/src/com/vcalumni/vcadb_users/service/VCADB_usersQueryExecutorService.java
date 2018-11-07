@@ -16,6 +16,8 @@ import com.vcalumni.vcadb_users.models.query.*;
 
 public interface VCADB_usersQueryExecutorService {
 
+    Integer executeChangePassword(ChangePasswordRequest changePasswordRequest);
+
     Page<RegisteredAttendeesResponse> executeRegisteredAttendees(String eventId, Pageable pageable);
 
     void exportRegisteredAttendees(String eventId, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
@@ -23,6 +25,12 @@ public interface VCADB_usersQueryExecutorService {
     Page<EventsListResponse> executeEventsList(String eventtype, Pageable pageable);
 
     void exportEventsList(String eventtype, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Integer executeUpdatePassword(UpdatePasswordRequest updatePasswordRequest);
+
+    Page<ValidateUserResponse> executeValidateUser(String email, Pageable pageable);
+
+    void exportValidateUser(String email, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
     Page<AttendeeEventDetailsResponse> executeAttendeeEventDetails(String email, String eventname, Pageable pageable);
 
@@ -35,6 +43,10 @@ public interface VCADB_usersQueryExecutorService {
     Page<EventParticipantsResponse> executeEventParticipants(String eventname, Pageable pageable);
 
     void exportEventParticipants(String eventname, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
+
+    Page<GetOldPasswordResponse> executeGetOldPassword(String email, Pageable pageable);
+
+    void exportGetOldPassword(String email, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream);
 
     Integer executeUpdateAttendees(UpdateAttendeesRequest updateAttendeesRequest);
 

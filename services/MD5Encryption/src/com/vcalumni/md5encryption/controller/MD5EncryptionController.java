@@ -23,6 +23,8 @@ public class MD5EncryptionController {
     private MD5Encryption mD5Encryption;
 
     @RequestMapping(value = "/md5Spring", produces = "application/json", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "")
     public String md5Spring(@RequestParam(value = "text", required = false) String text) {
         return mD5Encryption.md5Spring(text);
     }

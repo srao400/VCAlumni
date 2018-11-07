@@ -45,6 +45,16 @@ public class QueryExecutionController {
     @Autowired
 	private ExportedFileManager exportedFileManager;
 
+    @RequestMapping(value = "/queries/ChangePassword", method = RequestMethod.PUT)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Change user Password")
+    public IntegerWrapper executeChangePassword(@Valid @RequestBody ChangePasswordRequest changePasswordRequest, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: ChangePassword");
+        Integer _result = queryService.executeChangePassword(changePasswordRequest);
+        LOGGER.debug("got the result for named query: ChangePassword, result:{}", _result);
+        return new IntegerWrapper(_result);
+    }
+
     @RequestMapping(value = "/queries/RegisteredAttendees", method = RequestMethod.GET)
     @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
     @ApiOperation(value = "People registered for an event")
@@ -97,6 +107,44 @@ public class QueryExecutionController {
 
         String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
                         outputStream -> queryService.exportEventsList(eventtype,  exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
+    @RequestMapping(value = "/queries/updatePassword", method = RequestMethod.PUT)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "update user password")
+    public IntegerWrapper executeUpdatePassword(@Valid @RequestBody UpdatePasswordRequest updatePasswordRequest, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: updatePassword");
+        Integer _result = queryService.executeUpdatePassword(updatePasswordRequest);
+        LOGGER.debug("got the result for named query: updatePassword, result:{}", _result);
+        return new IntegerWrapper(_result);
+    }
+
+    @RequestMapping(value = "/queries/validateUser", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "validate user exists")
+    public Page<ValidateUserResponse> executeValidateUser(@RequestParam(value = "email") String email, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: validateUser");
+        Page<ValidateUserResponse> _result = queryService.executeValidateUser(email, pageable);
+        LOGGER.debug("got the result for named query: validateUser, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query validateUser")
+    @RequestMapping(value = "/queries/validateUser/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public StringWrapper exportValidateUser(@RequestParam(value = "email") String email, @RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: validateUser");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "validateUser";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportValidateUser(email,  exportOptions, pageable, outputStream));
 
         return new StringWrapper(exportedUrl);
     }
@@ -181,6 +229,34 @@ public class QueryExecutionController {
 
         String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
                         outputStream -> queryService.exportEventParticipants(eventname,  exportOptions, pageable, outputStream));
+
+        return new StringWrapper(exportedUrl);
+    }
+
+    @RequestMapping(value = "/queries/GetOldPassword", method = RequestMethod.GET)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    @ApiOperation(value = "Get existing password from users table")
+    public Page<GetOldPasswordResponse> executeGetOldPassword(@RequestParam(value = "email") String email, Pageable pageable, HttpServletRequest _request) {
+        LOGGER.debug("Executing named query: GetOldPassword");
+        Page<GetOldPasswordResponse> _result = queryService.executeGetOldPassword(email, pageable);
+        LOGGER.debug("got the result for named query: GetOldPassword, result:{}", _result);
+        return _result;
+    }
+
+    @ApiOperation(value = "Returns downloadable file url for query GetOldPassword")
+    @RequestMapping(value = "/queries/GetOldPassword/export", method = RequestMethod.POST)
+    @WMAccessVisibility(value = AccessSpecifier.APP_ONLY)
+    public StringWrapper exportGetOldPassword(@RequestParam(value = "email") String email, @RequestBody ExportOptions exportOptions, Pageable pageable) {
+        LOGGER.debug("Exporting named query: GetOldPassword");
+
+        String exportedFileName = exportOptions.getFileName();
+        if(exportedFileName == null || exportedFileName.isEmpty()) {
+            exportedFileName = "GetOldPassword";
+        }
+        exportedFileName += exportOptions.getExportType().getExtension();
+
+        String exportedUrl = exportedFileManager.registerAndGetURL(exportedFileName,
+                        outputStream -> queryService.exportGetOldPassword(email,  exportOptions, pageable, outputStream));
 
         return new StringWrapper(exportedUrl);
     }

@@ -28,6 +28,7 @@ public class Users implements Serializable {
     private String phone;
     private String role;
     private String password;
+    private Boolean passwordflag;
 
     @Id
     @Column(name = "`email`", nullable = false, length = 255)
@@ -100,6 +101,15 @@ public class Users implements Serializable {
 
     public void setPassword(String password) {
         this.password = password;
+    }
+
+    @Column(name = "`passwordflag`", nullable = true)
+    public Boolean getPasswordflag() {
+        return this.passwordflag;
+    }
+
+    public void setPasswordflag(Boolean passwordflag) {
+        this.passwordflag = passwordflag;
     }
 
 

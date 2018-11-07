@@ -239,6 +239,17 @@
     } ],
     "pageTransitions" : "none"
   },
+  "goToPage_ChangePassword" : {
+    "_id" : "wm-goToPage_NewPassword-wm.NavigationVariable-1541541269142",
+    "name" : "goToPage_ChangePassword",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ChangePassword",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_EditEvents" : {
     "_id" : "wm-goToPage_EditEvents-wm.NavigationVariable-1539624066541",
     "name" : "goToPage_EditEvents",
@@ -303,6 +314,17 @@
     } ],
     "pageTransitions" : "none"
   },
+  "goToPage_ForgotPassword" : {
+    "_id" : "wm-goToPage_ForgotPassword-wm.NavigationVariable-1541449175281",
+    "name" : "goToPage_ForgotPassword",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "ForgotPassword",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_Main" : {
     "_id" : "wm-wm.NavigationVariable1389180517517",
     "name" : "goToPage_Main",
@@ -310,6 +332,25 @@
     "category" : "wm.NavigationVariable",
     "operation" : "gotoPage",
     "pageName" : "Main"
+  },
+  "goToPage_Map" : {
+    "_id" : "wm-goToPage_Map-wm.NavigationVariable-1541533251502",
+    "name" : "goToPage_Map",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ {
+      "target" : "pageName",
+      "value" : "Map",
+      "type" : "string"
+    } ],
+    "operation" : "gotoPage",
+    "pageName" : "Map",
+    "dataSet" : [ {
+      "type" : "string",
+      "target" : "address",
+      "value" : "bind:Widgets.executeAttendeeEventDetailsList1.selectedItemWidgets.label8.caption"
+    } ],
+    "pageTransitions" : "none"
   },
   "goToPage_Register" : {
     "_id" : "wm-goToPage_Register-wm.NavigationVariable-1539751160222",
@@ -332,6 +373,26 @@
     "pageName" : "SignUp",
     "dataSet" : [ ],
     "pageTransitions" : "none"
+  },
+  "InvalidEmail" : {
+    "_id" : "wm-InvalidEmail-wm.NotificationVariable-1541526185300",
+    "name" : "InvalidEmail",
+    "owner" : "App",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Email address does not exist",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Error",
+      "type" : "string"
+    }, {
+      "target" : "alerttype",
+      "value" : "error",
+      "type" : "string"
+    } ],
+    "operation" : "alert"
   },
   "loggedInUser" : {
     "_id" : "wm-loggedInUser-wm.Variable-1539460882395",
@@ -420,6 +481,54 @@
     "saveInPhonegap" : false,
     "controller" : "MD5Encryption"
   },
+  "md5InsertJava" : {
+    "_id" : "wm-md5InsertJava-wm.ServiceVariable-1540499902187",
+    "name" : "md5InsertJava",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "bind:Widgets.UsersLiveForm1.formWidgets.password1.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "string",
+    "service" : "MD5Encryption",
+    "operation" : "md5Spring",
+    "operationId" : "MD5EncryptionController_md5Spring",
+    "operationType" : "get",
+    "serviceType" : "JavaService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "MD5Encryption"
+  },
+  "menuItems" : {
+    "_id" : "wm-menuItems-wm.Variable-1541543377331",
+    "name" : "menuItems",
+    "owner" : "App",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : [ {
+      "id" : "1",
+      "label" : "Main Page",
+      "link" : "#Main"
+    }, {
+      "id" : "2",
+      "label" : "Change Password",
+      "link" : "#ChangePassword"
+    }, {
+      "id" : "3",
+      "label" : "Logout"
+    } ],
+    "type" : "string",
+    "isList" : true,
+    "saveInPhonegap" : false
+  },
   "menuOptions" : {
     "_id" : "wm-menuOptions-wm.Variable-1539810935374",
     "name" : "menuOptions",
@@ -488,6 +597,26 @@
     } ],
     "operation" : "alert"
   },
+  "passwordReset" : {
+    "_id" : "wm-passwordReset-wm.NotificationVariable-1541541911029",
+    "name" : "passwordReset",
+    "owner" : "App",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "text",
+      "value" : "Your password has been reset. An email has been sent to your email address with the new password.",
+      "type" : "string"
+    }, {
+      "target" : "title",
+      "value" : "Password Reset",
+      "type" : "string"
+    }, {
+      "target" : "alerttype",
+      "value" : "information",
+      "type" : "string"
+    } ],
+    "operation" : "alert"
+  },
   "sendMail_successfulRegistration" : {
     "_id" : "wm-sendMailVar-wm.ServiceVariable-1540507885957",
     "name" : "sendMail_successfulRegistration",
@@ -533,5 +662,35 @@
     "type" : "string",
     "isList" : false,
     "saveInPhonegap" : false
+  },
+  "updateUserPassword" : {
+    "_id" : "wm-updateUserPassword-wm.ServiceVariable-1541461001029",
+    "name" : "updateUserPassword",
+    "owner" : "App",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "newpassword",
+      "value" : "bind:Widgets.label4_1.caption",
+      "type" : "string"
+    }, {
+      "target" : "email",
+      "value" : "bind:Widgets.emailaddress.datavalue",
+      "type" : "string"
+    } ],
+    "type" : "com.wavemaker.commons.wrapper.IntegerWrapper",
+    "service" : "VCADB_users",
+    "operation" : "executeUpdatePassword",
+    "operationId" : "QueryExecutionController_executeUpdatePassword",
+    "operationType" : "put",
+    "serviceType" : "DataService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "QueryExecution"
   }
 }

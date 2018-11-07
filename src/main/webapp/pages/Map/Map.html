@@ -1,0 +1,13 @@
+<wm-page data-ng-controller="MapPageController" name="page1">
+    <wm-mobile-navbar name="mobile_navbar1" title="Map"></wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-container name="container1"></wm-container>
+            <wm-prefab prefabname="googlemaps" name="googlemaps1" viewtype="ROADMAP" zoom="15" markertype="LatLng" maptype="Markers" origin="bind:'5400 Cartier St+Vancouver+BC+V6M 3A5'" lat="geometry.location.lat" lng="geometry.location.lng"
+                locations="bind:Variables.getGeocode.dataSet.results"></wm-prefab>
+            <wm-container name="container2"></wm-container>
+            <wm-label padding="unset 0.5em" name="label2" caption="Address:" width="100%"></wm-label>
+            <wm-label padding=".6em 0.5em unset 0.5em" name="label1" caption="bind:pageParams.address" fontweight="bold"></wm-label>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

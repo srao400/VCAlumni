@@ -7,13 +7,15 @@
             <wm-container name="container1"></wm-container>
             <wm-list listclass="list-group" template="true" itemsperrow="xs-1 sm-2 md-2 lg-3" class="media list-card" name="executeAttendeeEventDetailsList1" dataset="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet" navigation="Basic">
                 <wm-listtemplate layout="media" name="listtemplate1">
-                    <wm-container name="container2">
+                    <wm-container name="container2" height="400px">
                         <wm-container class="media-left" padding="unset unset unset 0.5em" name="container3"></wm-container>
                         <wm-container class="media-body" name="container4">
                             <wm-label class="h4" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet.eventname" name="Name" margin="0px unset" whitespace="nowrap" width="98%"></wm-label>
                             <wm-label class="p" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventdetails" name="label5" show="false"></wm-label>
                             <wm-composite name="composite2">
-                                <wm-label padding="unset 0.5em" name="label9_1" fontsize="10" color="red" fontweight="bold" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventdate + ' ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventtime    | toDate: 'dd-MMM-yyyy hh:mm a'"></wm-label>
+                                <wm-label padding="unset 0.5em" name="label9_1" fontsize="10" color="red" fontweight="bold" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventdate + ' ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventtime    | toDate: 'dd-MMM-yyyy hh:mm a'"
+                                    width="100%"></wm-label>
+                                <wm-anchor margin="unset 0.5em" name="anchor1" fontsize="12" width="50%" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventUrl"></wm-anchor>
                             </wm-composite>
                         </wm-container>
                         <wm-card name="card1">
@@ -22,13 +24,28 @@
                                 <wm-layoutgrid name="layoutgrid2">
                                     <wm-gridrow name="gridrow3">
                                         <wm-gridcolumn columnwidth="12" name="gridcolumn3">
-                                            <wm-label padding="unset 0.5em" name="label7" width="100%" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].venuename"></wm-label>
+                                            <wm-label padding="unset 0.5em unset unset" name="label7" width="100%" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].venuename" fontweight="bold"></wm-label>
                                         </wm-gridcolumn>
                                     </wm-gridrow>
                                     <wm-gridrow name="gridrow4">
                                         <wm-gridcolumn columnwidth="12" name="gridcolumn5">
-                                            <wm-label padding="unset 0.5em" name="label8" width="100%" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].addressline1  + ', '"></wm-label>
-                                            <wm-label padding="unset 0.5em" name="label9" width="100%" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].city + ', ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].province + ' ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].zipcode"></wm-label>
+                                            <wm-layoutgrid name="layoutgrid3">
+                                                <wm-gridrow name="gridrow5_1">
+                                                    <wm-gridcolumn columnwidth="10" name="gridcolumn5_2">
+                                                        <wm-label padding=".5em 0.5em unset 0.5em" name="label8" width="80%" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].addressline1  + ', ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].city + ', ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].province + ' ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].zipcode"
+                                                            fontunit="px" fontsize="12"></wm-label>
+                                                    </wm-gridcolumn>
+                                                    <wm-gridcolumn columnwidth="2" name="gridcolumn6">
+                                                        <wm-anchor name="anchor2" iconclass="wi wi-map-marker fa-2x" caption="" textalign="left" on-tap="Actions.goToPage_Map.invoke()"></wm-anchor>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow7">
+                                                    <wm-gridcolumn columnwidth="12" name="gridcolumn9">
+                                                        <wm-label padding="unset 0.5em" name="label9" width="100%" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].venuedetails" fontsize="12"></wm-label>
+                                                    </wm-gridcolumn>
+                                                </wm-gridrow>
+                                                <wm-gridrow name="gridrow6"></wm-gridrow>
+                                            </wm-layoutgrid>
                                         </wm-gridcolumn>
                                     </wm-gridrow>
                                 </wm-layoutgrid>

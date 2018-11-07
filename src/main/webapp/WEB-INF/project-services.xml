@@ -3,5 +3,6 @@
     <import resource="classpath:EmailService.spring.xml"/>
     <import resource="classpath:MD5Encryption.spring.xml"/>
     <import resource="classpath:VCADB_users.spring.xml"/>
+    <import resource="classpath:googleapis_geocode.spring.xml"/>
     <import resource="classpath:securityService.spring.xml"/>
 </beans>

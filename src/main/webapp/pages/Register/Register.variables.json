@@ -118,6 +118,19 @@
         "isRelated" : false,
         "defaultValue" : "",
         "scale" : 0
+      }, {
+        "fieldName" : "passwordflag",
+        "type" : "boolean",
+        "fullyQualifiedType" : "boolean",
+        "columnName" : "passwordflag",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 1,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
       } ],
       "entityName" : "Users",
       "fullyQualifiedName" : "com.vcalumni.vcadb_users.Users",

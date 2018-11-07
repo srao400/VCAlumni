@@ -73,9 +73,9 @@ public class MD5Encryption {
             }
             digest = sb.toString();
         } catch (UnsupportedEncodingException ex) {
-            //Logger.getLogger(StringReplace.class.getName()).log(Level.SEVERE, null, ex);
+            // Logger.getLogger(StringReplace.class.getName()).log(Level.SEVERE, null, ex);
         } catch (NoSuchAlgorithmException ex) {
-           // Logger.getLogger(StringReplace.class.getName()).log(Level.SEVERE, null, ex);
+            // Logger.getLogger(StringReplace.class.getName()).log(Level.SEVERE, null, ex);
         }
         return digest;
  

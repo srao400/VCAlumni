@@ -1,0 +1,218 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "version" : "2.0",
+    "x-WM-USE_PROXY_FOR_WEB" : false,
+    "x-WM-USE_PROXY_FOR_MOBILE" : false,
+    "x-WM-API_ID" : "9af203ee-50bc-488d-b1dd-ad13b28dce6e",
+    "x-WM-SERVICE_ID" : "googleapis",
+    "x-WM-SERVICE_TYPE" : "RestService"
+  },
+  "host" : "maps.googleapis.com",
+  "basePath" : "",
+  "tags" : [ {
+    "name" : "RestServiceVirtualController",
+    "description" : "Rest service swagger documentation"
+  } ],
+  "schemes" : [ "https" ],
+  "paths" : {
+    "/googleapis_geocode/invoke/api/geocode/json" : {
+      "get" : {
+        "tags" : [ "RestServiceVirtualController" ],
+        "operationId" : "googleapis_geocode_RestServiceVirtualController-invoke",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "name" : "address",
+          "in" : "query",
+          "description" : "address",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        }, {
+          "name" : "key",
+          "in" : "query",
+          "description" : "key",
+          "required" : false,
+          "type" : "string",
+          "format" : "string",
+          "x-WM-EDITABLE" : false
+        } ],
+        "responses" : {
+          "200" : {
+            "description" : "Success",
+            "schema" : {
+              "$ref" : "#/definitions/RootResponse"
+            }
+          }
+        },
+        "x-WM-METHOD_NAME" : "invoke",
+        "x-WM-ACCESS_SPECIFIER" : "APP_ONLY"
+      },
+      "x-WM-BASE_PATH" : "/googleapis_geocode/invoke/api/geocode/json",
+      "x-WM-TAG" : "RestServiceVirtualController",
+      "x-WM-RELATIVE_PATH" : "",
+      "x-WM-COMPLETE_PATH" : "${rest.googleapis_geocode.scheme}://${rest.googleapis_geocode.host}${rest.googleapis_geocode.basepath}/api/geocode/json"
+    }
+  },
+  "definitions" : {
+    "southwest" : {
+      "required" : [ "lat", "lng" ],
+      "properties" : {
+        "lng" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_geocode.southwest",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "viewport" : {
+      "required" : [ "northeast", "southwest" ],
+      "properties" : {
+        "southwest" : {
+          "$ref" : "#/definitions/southwest"
+        },
+        "northeast" : {
+          "$ref" : "#/definitions/northeast"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_geocode.viewport",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "address_componentsEntryItem" : {
+      "required" : [ "long_name", "short_name", "types" ],
+      "properties" : {
+        "types" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "short_name" : {
+          "type" : "string"
+        },
+        "long_name" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_geocode.address_componentsEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "northeast" : {
+      "required" : [ "lat", "lng" ],
+      "properties" : {
+        "lng" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_geocode.northeast",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "geometry" : {
+      "required" : [ "location", "location_type", "viewport" ],
+      "properties" : {
+        "viewport" : {
+          "$ref" : "#/definitions/viewport"
+        },
+        "location" : {
+          "$ref" : "#/definitions/location"
+        },
+        "location_type" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_geocode.geometry",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "location" : {
+      "required" : [ "lat", "lng" ],
+      "properties" : {
+        "lng" : {
+          "type" : "number",
+          "format" : "double"
+        },
+        "lat" : {
+          "type" : "number",
+          "format" : "double"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_geocode.location",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "resultsEntryItem" : {
+      "required" : [ "address_components", "formatted_address", "geometry", "place_id", "plus_code", "types" ],
+      "properties" : {
+        "formatted_address" : {
+          "type" : "string"
+        },
+        "types" : {
+          "type" : "array",
+          "items" : {
+            "type" : "string"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "geometry" : {
+          "$ref" : "#/definitions/geometry"
+        },
+        "address_components" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/address_componentsEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "plus_code" : {
+          "$ref" : "#/definitions/plus_code"
+        },
+        "place_id" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_geocode.resultsEntryItem",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "plus_code" : {
+      "required" : [ "compound_code", "global_code" ],
+      "properties" : {
+        "compound_code" : {
+          "type" : "string"
+        },
+        "global_code" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_geocode.plus_code",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    },
+    "RootResponse" : {
+      "required" : [ "results", "status" ],
+      "properties" : {
+        "results" : {
+          "type" : "array",
+          "items" : {
+            "$ref" : "#/definitions/resultsEntryItem"
+          },
+          "x-WM-IS_LIST" : true
+        },
+        "status" : {
+          "type" : "string"
+        }
+      },
+      "x-WM-FULLY_QUALIFIED_NAME" : "googleapis_geocode.RootResponse",
+      "x-WM-TAGS" : [ "RestServiceVirtualController" ]
+    }
+  }
+}

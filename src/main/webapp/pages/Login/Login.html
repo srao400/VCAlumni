@@ -2,29 +2,36 @@
     <wm-mobile-navbar title="Login" backbutton="false" name="mobile_navbar1"></wm-mobile-navbar>
     <wm-content name="content1">
         <wm-page-content columnwidth="12" name="page_content1">
-            <wm-login name="loginForm" data-ng-controller="loginFormController">
+            <wm-login name="loginForm" data-ng-controller="loginFormController" height="60%">
                 <wm-composite name="userNameField">
                     <wm-label caption="Email address" name="userNameLabel" class="control-label"></wm-label>
                     <wm-text placeholder="Enter email address" name="usernametext" class="app-login-username" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="blur"></wm-text>
                 </wm-composite>
                 <wm-composite name="passwordField">
                     <wm-label caption="Password" name="passwordLabel" class="control-label"></wm-label>
-                    <wm-text type="password" name="passwordtext" placeholder="Enter password" class="app-login-password" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="blur"></wm-text>
+                    <wm-text type="password" name="passwordtext" placeholder="Enter password" class="app-login-password" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="default" updatedelay="100" maxchars="10"></wm-text>
                 </wm-composite>
-                <wm-button type="button" caption="Sign in" width="100%" class="app-login-button btn-primary" name="loginButton" on-tap="Actions.loginAction.invoke()" on-doubletap="Actions.loginAction.invoke()"></wm-button>
+                <wm-container height="25px" name="container3">
+                    <wm-anchor margin="unset 0.5em" name="anchor2" width="100%" textalign="right" caption="Forgot Password" fontsize="10" on-tap="Actions.goToPage_ForgotPassword.invoke()"></wm-anchor>
+                </wm-container>
+                <wm-button type="submit" caption="Sign in" width="100%" class="app-login-button btn-primary" name="loginButton" on-tap="Actions.loginAction.invoke()" on-doubletap="Actions.loginAction.invoke()"></wm-button>
                 <wm-composite name="remembermeField" class="app-login-rememberme">
                     <wm-checkbox caption="Remember Me" name="remembermecheck"></wm-checkbox>
                 </wm-composite>
+                <wm-container height="10%" name="container4"></wm-container>
                 <wm-button type="button" caption="New User" width="100%" class="app-login-button btn-primary" name="button2" on-tap="Actions.goToPage_SignUp.invoke()"></wm-button>
             </wm-login>
-            <wm-container name="container1" height="200px"></wm-container>
-            <wm-container name="container2" backgroundcolor="#103ee8">
+            <wm-container name="container1" height="20%">
+                <wm-label padding="unset 0.5em" name="label3" caption="bind:Variables.md5Check.dataSet.value" show="false"></wm-label>
+            </wm-container>
+            <wm-container name="container2" height="10%">
                 <wm-layoutgrid name="layoutgrid1">
                     <wm-gridrow name="gridrow1">
                         <wm-gridcolumn columnwidth="5" name="gridcolumn1"></wm-gridcolumn>
-                        <wm-gridcolumn columnwidth="7" name="gridcolumn2" horizontalalign="right">
-                            <wm-anchor margin="unset 0.5em" name="anchor1" caption="Crowe Mackay LLP" color="yellow" backgroundcolor="#103ee8" fontsize="9" textalign="right" hyperlink="https://crowemackay.ca/services/information-technology/"></wm-anchor>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn2" horizontalalign="right">
+                            <wm-anchor margin="unset 0.5em" name="anchor1" caption="Crowe Mackay LLP" color="#2907fa" fontsize="9" textalign="center" hyperlink="https://crowemackay.ca/services/information-technology/" fontunit="pt"></wm-anchor>
                         </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="1" name="gridcolumn3"></wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow2"></wm-gridrow>
                 </wm-layoutgrid>

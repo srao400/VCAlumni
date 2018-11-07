@@ -34,6 +34,13 @@
             </resource>
             <resource>
                 <filtering>true</filtering>
+                <directory>services/googleapis_geocode/src</directory>
+                <excludes>
+                    <exclude>**/*.java</exclude>
+                </excludes>
+            </resource>
+            <resource>
+                <filtering>true</filtering>
                 <directory>services/securityService/src</directory>
                 <excludes>
                     <exclude>**/*.java</exclude>
@@ -123,6 +130,7 @@
                                 <source>services/EmailService/src</source>
                                 <source>services/MD5Encryption/src</source>
                                 <source>services/VCADB_users/src</source>
+                                <source>services/googleapis_geocode/src</source>
                                 <source>services/securityService/src</source>
                             </sources>
                         </configuration>

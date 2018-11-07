@@ -33,6 +33,17 @@ public class VCADB_usersQueryExecutorServiceImpl implements VCADB_usersQueryExec
     @Qualifier("VCADB_usersWMQueryExecutor")
     private WMQueryExecutor queryExecutor;
 
+    @Transactional(value = "VCADB_usersTransactionManager")
+    @Override
+    public Integer executeChangePassword(ChangePasswordRequest changePasswordRequest) {
+        Map<String, Object> params = new HashMap<>(2);
+
+        params.put("password", changePasswordRequest.getPassword());
+        params.put("email", changePasswordRequest.getEmail());
+
+        return queryExecutor.executeNamedQueryForUpdate("ChangePassword", params);
+    }
+
     @Transactional(value = "VCADB_usersTransactionManager", readOnly = true)
     @Override
     public Page<RegisteredAttendeesResponse> executeRegisteredAttendees(String eventId, Pageable pageable) {
@@ -73,6 +84,39 @@ public class VCADB_usersQueryExecutorServiceImpl implements VCADB_usersQueryExec
         params.put("eventtype", eventtype);
 
         QueryProcedureInput queryInput = new QueryProcedureInput("EventsList", params, EventsListResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager")
+    @Override
+    public Integer executeUpdatePassword(UpdatePasswordRequest updatePasswordRequest) {
+        Map<String, Object> params = new HashMap<>(2);
+
+        params.put("newpassword", updatePasswordRequest.getNewpassword());
+        params.put("email", updatePasswordRequest.getEmail());
+
+        return queryExecutor.executeNamedQueryForUpdate("updatePassword", params);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", readOnly = true)
+    @Override
+    public Page<ValidateUserResponse> executeValidateUser(String email, Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("email", email);
+
+        return queryExecutor.executeNamedQuery("validateUser", params, ValidateUserResponse.class, pageable);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportValidateUser(String email, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("email", email);
+
+        QueryProcedureInput queryInput = new QueryProcedureInput("validateUser", params, ValidateUserResponse.class);
 
         queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
     }
@@ -141,6 +185,28 @@ public class VCADB_usersQueryExecutorServiceImpl implements VCADB_usersQueryExec
         params.put("eventname", eventname);
 
         QueryProcedureInput queryInput = new QueryProcedureInput("EventParticipants", params, EventParticipantsResponse.class);
+
+        queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", readOnly = true)
+    @Override
+    public Page<GetOldPasswordResponse> executeGetOldPassword(String email, Pageable pageable) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("email", email);
+
+        return queryExecutor.executeNamedQuery("GetOldPassword", params, GetOldPasswordResponse.class, pageable);
+    }
+
+    @Transactional(value = "VCADB_usersTransactionManager", timeout = 300, readOnly = true)
+    @Override
+    public void exportGetOldPassword(String email, ExportOptions exportOptions, Pageable pageable, OutputStream outputStream) {
+        Map<String, Object> params = new HashMap<>(1);
+
+        params.put("email", email);
+
+        QueryProcedureInput queryInput = new QueryProcedureInput("GetOldPassword", params, GetOldPasswordResponse.class);
 
         queryExecutor.exportNamedQueryData(queryInput, exportOptions, pageable, outputStream);
     }

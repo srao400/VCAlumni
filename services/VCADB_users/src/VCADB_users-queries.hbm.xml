@@ -2,6 +2,14 @@
 <!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
         "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
+    <sql-query name="ChangePassword">
+        <![CDATA[
+        update users set password = :password where email = :email
+        ]]>
+    <query-param name="password" type="java.lang.String"/>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
     <sql-query name="RegisteredAttendees">
         <![CDATA[
         select firstname, lastname, a.email, eventname, attended, status, 
@@ -46,9 +54,31 @@ order by eventdate, eventtime) wmTempTable
     <query-param name="SERVER__DATE__datetoday" type="java.sql.Date"/>
     </sql-query>
 
+    <sql-query name="updatePassword">
+        <![CDATA[
+        update users set password = :newpassword where email = :email
+        ]]>
+    <query-param name="newpassword" type="java.lang.String"/>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="validateUser">
+        <![CDATA[
+        Select email as emailaddress from users where email = :email
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="validateUser__count">
+        <![CDATA[
+        select count(*) from (Select email as emailaddress from users where email = :email) wmTempTable
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
     <sql-query name="AttendeeEventDetails">
         <![CDATA[
-        Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, 
+        Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, venuedetails,
 case when status is null then 'Get ticket' 
      when status =  1 then 'Your going'
      else 'Your not going' end as button, 
@@ -66,7 +96,7 @@ having includerow = 0
 
     <sql-query name="AttendeeEventDetails__count">
         <![CDATA[
-        select count(*) from (Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, 
+        select count(*) from (Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, venuedetails,
 case when status is null then 'Get ticket' 
      when status =  1 then 'Your going'
      else 'Your not going' end as button, 
@@ -112,6 +142,20 @@ from attendees as a left join users as b on a.email = b.email
 where eventname = :eventname and status is not NULL) wmTempTable
         ]]>
     <query-param name="eventname" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="GetOldPassword">
+        <![CDATA[
+        Select password from users where email = :email
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
+    </sql-query>
+
+    <sql-query name="GetOldPassword__count">
+        <![CDATA[
+        select count(*) from (Select password from users where email = :email) wmTempTable
+        ]]>
+    <query-param name="email" type="java.lang.String"/>
     </sql-query>
 
     <sql-query name="UpdateAttendees">

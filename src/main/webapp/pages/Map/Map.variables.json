@@ -1,0 +1,48 @@
+{
+  "getGeocode" : {
+    "_id" : "wm-getGeocode-wm.ServiceVariable-1541536829338",
+    "name" : "getGeocode",
+    "owner" : "Page",
+    "category" : "wm.ServiceVariable",
+    "dataBinding" : [ {
+      "target" : "address",
+      "value" : "bind:pageParams.address",
+      "type" : "string"
+    }, {
+      "target" : "key",
+      "value" : "AIzaSyB4hd8G4s9V3xwrTklLsFro0AU77WcL0QQ",
+      "type" : "string"
+    } ],
+    "type" : "googleapis_geocode.RootResponse",
+    "service" : "googleapis_geocode",
+    "operation" : "invoke",
+    "operationId" : "googleapis_geocode_RestServiceVirtualController-invoke",
+    "operationType" : "get",
+    "serviceType" : "RestService",
+    "dataSet" : [ ],
+    "isList" : false,
+    "maxResults" : 20,
+    "startUpdate" : false,
+    "autoUpdate" : true,
+    "inFlightBehavior" : "executeLast",
+    "transformationRequired" : false,
+    "saveInPhonegap" : false,
+    "controller" : "RestServiceVirtual"
+  },
+  "markers" : {
+    "_id" : "wm-markers-wm.Variable-1541535940326",
+    "name" : "markers",
+    "owner" : "Page",
+    "category" : "wm.Variable",
+    "dataBinding" : [ ],
+    "dataSet" : {
+      "coords" : {
+        "lat" : 49.232429,
+        "lng" : -123.138051
+      }
+    },
+    "type" : "string",
+    "isList" : false,
+    "saveInPhonegap" : false
+  }
+}

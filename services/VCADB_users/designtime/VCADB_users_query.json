@@ -3,8 +3,8 @@
     "name" : "AttendeeEventDetails",
     "description" : "Events for attendees",
     "version" : "V2",
-    "queryString" : "Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, \ncase when status is null then 'Get ticket' \n     when status =  1 then 'Your going'\n     else 'Your not going' end as button, \ncase when status = 1 then 'Your not going' \n     else 'Your going' end as next_status, \ncase when  email is not null and email <> :email then 1 else 0 end as includerow \nfrom events as a left join venues as b on a.venuename = b.venuename \nleft join attendees as c on a.eventname = c.eventname\nwhere a.eventname = :eventname\nhaving includerow = 0",
-    "countQueryString" : "select count(*) from (Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, \ncase when status is null then 'Get ticket' \n     when status =  1 then 'Your going'\n     else 'Your not going' end as button, \ncase when status = 1 then 'Your not going' \n     else 'Your going' end as next_status, \ncase when  email is not null and email <> :email then 1 else 0 end as includerow \nfrom events as a left join venues as b on a.venuename = b.venuename \nleft join attendees as c on a.eventname = c.eventname\nwhere a.eventname = :eventname\nhaving includerow = 0) wmTempTable",
+    "queryString" : "Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, venuedetails,\ncase when status is null then 'Get ticket' \n     when status =  1 then 'Your going'\n     else 'Your not going' end as button, \ncase when status = 1 then 'Your not going' \n     else 'Your going' end as next_status, \ncase when  email is not null and email <> :email then 1 else 0 end as includerow \nfrom events as a left join venues as b on a.venuename = b.venuename \nleft join attendees as c on a.eventname = c.eventname\nwhere a.eventname = :eventname\nhaving includerow = 0",
+    "countQueryString" : "select count(*) from (Select a.eventname, eventdetails, eventdate, eventtime, a.venuename, addressline1, city, province, zipcode, country, email, phone, status, eventtype, eventURL, venuedetails,\ncase when status is null then 'Get ticket' \n     when status =  1 then 'Your going'\n     else 'Your not going' end as button, \ncase when status = 1 then 'Your not going' \n     else 'Your going' end as next_status, \ncase when  email is not null and email <> :email then 1 else 0 end as includerow \nfrom events as a left join venues as b on a.venuename = b.venuename \nleft join attendees as c on a.eventname = c.eventname\nwhere a.eventname = :eventname\nhaving includerow = 0) wmTempTable",
     "nativeSql" : true,
     "fetchCount" : true,
     "type" : "SELECT",
@@ -171,6 +171,15 @@
           "list" : false
         }
       }, {
+        "name" : "venuedetails",
+        "fieldName" : "venuedetails",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      }, {
         "name" : "button",
         "fieldName" : "button",
         "optional" : false,
@@ -198,6 +207,44 @@
           "list" : false
         }
       } ]
+    }
+  },
+  "ChangePassword" : {
+    "name" : "ChangePassword",
+    "description" : "Change user Password",
+    "version" : "V2",
+    "queryString" : "update users set password = :password where email = :email",
+    "countQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "password",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true
+    }, {
+      "name" : "email",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.vcalumni.vcadb_users.models.query.ChangePasswordRequest",
+      "method" : "PUT"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
     }
   },
   "EventDetails" : {
@@ -526,6 +573,46 @@
       } ]
     }
   },
+  "GetOldPassword" : {
+    "name" : "GetOldPassword",
+    "description" : "Get existing password from users table",
+    "version" : "V2",
+    "queryString" : "Select password from users where email = :email",
+    "countQueryString" : "select count(*) from (Select password from users where email = :email) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "email",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.vcalumni.vcadb_users.models.query.GetOldPasswordResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "password",
+        "fieldName" : "password",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
   "RegisteredAttendees" : {
     "name" : "RegisteredAttendees",
     "description" : "People registered for an event",
@@ -760,6 +847,84 @@
       }, {
         "name" : "password",
         "fieldName" : "password",
+        "optional" : false,
+        "fieldType" : {
+          "type" : "PRIMITIVE",
+          "typeRef" : "java.lang.String",
+          "list" : false
+        }
+      } ]
+    }
+  },
+  "updatePassword" : {
+    "name" : "updatePassword",
+    "description" : "update user password",
+    "version" : "V2",
+    "queryString" : "update users set password = :newpassword where email = :email",
+    "countQueryString" : null,
+    "nativeSql" : true,
+    "fetchCount" : false,
+    "type" : "UPDATE",
+    "parameters" : [ {
+      "name" : "newpassword",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true
+    }, {
+      "name" : "email",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "test",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : true,
+      "typeRef" : "com.vcalumni.vcadb_users.models.query.UpdatePasswordRequest",
+      "method" : "PUT"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "java.lang.Integer",
+      "returns" : "ENTITY",
+      "responseType" : "SINGLE"
+    }
+  },
+  "validateUser" : {
+    "name" : "validateUser",
+    "description" : "validate user exists",
+    "version" : "V2",
+    "queryString" : "Select email as emailaddress from users where email = :email",
+    "countQueryString" : "select count(*) from (Select email as emailaddress from users where email = :email) wmTempTable",
+    "nativeSql" : true,
+    "fetchCount" : true,
+    "type" : "SELECT",
+    "parameters" : [ {
+      "name" : "email",
+      "type" : "string",
+      "list" : false,
+      "variableType" : "PROMPT",
+      "variableName" : "",
+      "testValue" : "email",
+      "required" : true
+    } ],
+    "request" : {
+      "wrapped" : false,
+      "typeRef" : null,
+      "method" : "GET"
+    },
+    "identifiers" : [ ],
+    "response" : {
+      "typeRef" : "com.vcalumni.vcadb_users.models.query.ValidateUserResponse",
+      "returns" : "CUSTOM",
+      "responseType" : "PAGINATED",
+      "properties" : [ {
+        "name" : "emailaddress",
+        "fieldName" : "emailaddress",
         "optional" : false,
         "fieldType" : {
           "type" : "PRIMITIVE",

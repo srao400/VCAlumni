@@ -14,6 +14,10 @@
     "type" : "string"
   } ]
 }, {
+  "name" : "ChangePassword",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "Common",
   "type" : "PARTIAL",
   "params" : [ ]
@@ -43,6 +47,10 @@
     "type" : "string"
   } ]
 }, {
+  "name" : "ForgotPassword",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "Login",
   "type" : "PAGE",
   "params" : [ ]
@@ -50,6 +58,13 @@
   "name" : "Main",
   "type" : "PAGE",
   "params" : [ ]
+}, {
+  "name" : "Map",
+  "type" : "PAGE",
+  "params" : [ {
+    "name" : "address",
+    "type" : "string"
+  } ]
 }, {
   "name" : "Register",
   "type" : "PAGE",
