@@ -686,6 +686,7 @@
     "dataSet" : [ ],
     "isList" : false,
     "maxResults" : 20,
+    "onError" : "Actions.passwordReset.invoke()",
     "startUpdate" : false,
     "autoUpdate" : true,
     "inFlightBehavior" : "executeLast",
