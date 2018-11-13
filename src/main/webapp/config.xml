@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.vca" version="1.2.6">
+<widget id="com.vca" version="2.0">
     <name>VCAlumni</name>
     <description>Vancouver College Alumni Association</description>
-    <author email="srao.yvr@gmail.com" href="">Srinivas Rao</author>
+    <author email="srinivas.rao@crowemackay.ca" href="https://crowemackay.ca/services/information-technology/">Srinivas Rao</author>
     <content src="index.html"/>
     <access origin="http://*/*"/>
     <access origin="http://pkhn47nrj220.live.wavemakeronline.com/VCAlumni/*"/>
