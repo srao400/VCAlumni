@@ -29,6 +29,7 @@ public class Users implements Serializable {
     private String role;
     private String password;
     private Boolean passwordflag;
+    private Integer id;
 
     @Id
     @Column(name = "`email`", nullable = false, length = 255)
@@ -85,7 +86,7 @@ public class Users implements Serializable {
         this.phone = phone;
     }
 
-    @Column(name = "`role`", nullable = true, length = 10)
+    @Column(name = "`role`", nullable = false, length = 10)
     public String getRole() {
         return this.role;
     }
@@ -110,6 +111,15 @@ public class Users implements Serializable {
 
     public void setPasswordflag(Boolean passwordflag) {
         this.passwordflag = passwordflag;
+    }
+
+    @Column(name = "`id`", nullable = true, scale = 0, precision = 10)
+    public Integer getId() {
+        return this.id;
+    }
+
+    public void setId(Integer id) {
+        this.id = id;
     }
 
 

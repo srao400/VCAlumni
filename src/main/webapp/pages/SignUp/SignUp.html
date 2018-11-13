@@ -3,7 +3,7 @@
     <wm-content name="content1">
         <wm-page-content columnwidth="12" name="page_content1">
             <wm-container name="container1"></wm-container>
-            <wm-liveform errormessage="" title="User Information" iconclass="wi wi-edit" formlayout="inline" defaultmode="Edit" dataset="bind:Variables.VCADB_usersUsersData.dataSet" captionalign="left" captionposition="top" name="UsersLiveForm1"
+            <wm-liveform errormessage="" title="User Details" iconclass="wi wi-edit" formlayout="inline" defaultmode="Edit" dataset="bind:Variables.VCADB_usersUsersData.dataSet" captionalign="left" captionposition="top" name="UsersLiveForm1"
                 on-beforeservicecall="UsersLiveForm1Beforeservicecall($event, $operation, $data, options)" on-result="Variables.add_newuser_events_var.invoke()" on-success="Variables.sendMail_successfulRegistration.invoke();Actions.goToPage_Main.invoke();Actions.appNotification.invoke()">
                 <wm-layoutgrid columns="1" name="layoutgrid1">
                     <wm-gridrow name="gridrow1">
@@ -19,6 +19,7 @@
                             <wm-form-field displayname="Confirm Password" required="true" show="true" generator="assigned" primary-key="false" key="password" type="string" is-related="false" maxchars="64" pc-display="true" mobile-display="true"
                                 widget="password" name="password1" placeholder="Retype password" regexp="(?=^.{8,}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s)[0-9a-zA-Z!@#$%^&amp;*()]*$" on-blur="password1Blur($event, $scope)"></wm-form-field>
                             <wm-label padding="unset 0.5em" name="label1" caption="Password must contain at least 1 uppercase and lowercase alphabet and 1 number" fontsize="10" conditionalclass="bind:{'text-danger': Widgets.UsersLiveForm1.formWidgets.password1.datavalue != Widgets.UsersLiveForm1.formWidgets.password.datavalue}"></wm-label>
+                            <wm-label padding="unset 0.5em" name="label2" caption=""></wm-label>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow3">
@@ -37,6 +38,7 @@
                         <wm-gridcolumn columnwidth="12" name="gridcolumn5">
                             <wm-form-field name="phone" displayname="Phone number" required="true" show="true" generator="assigned" primary-key="false" key="phone" type="string" is-related="false" pc-display="true" mobile-display="true" widget="text" displayformat="(999) 999-9999"
                                 validationmessage="Phone number is required"></wm-form-field>
+                            <wm-label padding="unset 0.5em" name="label3" caption=""></wm-label>
                         </wm-gridcolumn>
                     </wm-gridrow>
                     <wm-gridrow name="gridrow6">

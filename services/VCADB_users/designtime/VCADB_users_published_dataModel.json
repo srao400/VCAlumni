@@ -189,7 +189,7 @@
         "sourceColumn" : "email",
         "targetColumn" : "email"
       } ],
-      "name" : "FK_users_TO_attendees_emJZwe2",
+      "name" : "FK_users_TO_attendees_emaFgJM",
       "parentFetchOptions" : {
         "fetch" : false,
         "columnsFilter" : [ ]
@@ -700,10 +700,10 @@
       "columnValue" : {
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null,
+        "defaultValue" : "",
         "type" : "user-defined"
       },
-      "constraintList" : null,
+      "constraintList" : [ ],
       "fieldName" : "email",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -874,10 +874,10 @@
       "columnValue" : {
         "insertable" : true,
         "updatable" : true,
-        "defaultValue" : null,
+        "defaultValue" : "",
         "type" : "user-defined"
       },
-      "constraintList" : null,
+      "constraintList" : [ ],
       "fieldName" : "role",
       "foreignKey" : false,
       "generatorType" : "assigned",
@@ -886,7 +886,7 @@
       "javaType" : "string",
       "length" : 10,
       "name" : "role",
-      "nullable" : true,
+      "nullable" : false,
       "oldName" : "role",
       "partOfAnyRelation" : false,
       "partOfForeignKey" : false,
@@ -956,6 +956,35 @@
       "scale" : 0,
       "sequenceSchema" : null,
       "sqlType" : "boolean",
+      "unique" : false
+    }, {
+      "columnValue" : {
+        "insertable" : true,
+        "updatable" : true,
+        "defaultValue" : "",
+        "type" : "user-defined"
+      },
+      "constraintList" : [ ],
+      "fieldName" : "id",
+      "foreignKey" : false,
+      "generatorType" : "assigned",
+      "generatorValue" : null,
+      "hidden" : false,
+      "javaType" : "integer",
+      "length" : 0,
+      "name" : "id",
+      "nullable" : true,
+      "oldName" : "id",
+      "partOfAnyRelation" : false,
+      "partOfForeignKey" : false,
+      "partOfPrimaryKey" : false,
+      "partOfUniqueKey" : false,
+      "period" : false,
+      "precision" : 10,
+      "primaryKey" : false,
+      "scale" : 0,
+      "sequenceSchema" : null,
+      "sqlType" : "number",
       "unique" : false
     } ],
     "constraints" : [ ],

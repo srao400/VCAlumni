@@ -12,21 +12,14 @@ Application.$controller("ForgotPasswordPageController", ["$scope", function($sco
          * e.g. to get value of text widget named 'username' use following script
          * '$scope.Widgets.username.datavalue'
          */
-    };
-
-    $scope.emailaddressBlur = function($event, $isolateScope) {
         $scope.Widgets.label3.caption = $scope.Widgets.label5.caption.charAt(Math.floor(Math.random() * $scope.Widgets.label5.caption.length)) + Math.random().toString(36).slice(-7);
-
-    };
-
-
-    $scope.button3Tap = function($event, $isolateScope) {
         $scope.Variables.MD5Encryptpassword.invoke();
     };
 
-
-    $scope.MD5EncryptpasswordonSuccess = function(variable, data, options) {
-        $scope.Widgets.label4_1.caption = $scope.Variables.MD5Encryptpassword.dataSet.value;
+    $scope.button4Tap = function($event, $isolateScope) {
+        $scope.Variables.UpdatePWD.setInput("email", $scope.Widgets.text1.datavalue);
+        $scope.Variables.UpdatePWD.setInput("newpassword", $scope.Variables.MD5Encryptpassword.dataSet.value);
+        $scope.Variables.UpdatePWD.update();
     };
 
 }]);

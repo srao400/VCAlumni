@@ -352,17 +352,6 @@
     } ],
     "pageTransitions" : "none"
   },
-  "goToPage_Register" : {
-    "_id" : "wm-goToPage_Register-wm.NavigationVariable-1539751160222",
-    "name" : "goToPage_Register",
-    "owner" : "App",
-    "category" : "wm.NavigationVariable",
-    "dataBinding" : [ ],
-    "operation" : "gotoPage",
-    "pageName" : "Register",
-    "dataSet" : [ ],
-    "pageTransitions" : "none"
-  },
   "goToPage_SignUp" : {
     "_id" : "wm-goToPage_SignUp-wm.NavigationVariable-1541098884536",
     "name" : "goToPage_SignUp",
@@ -597,25 +586,33 @@
     } ],
     "operation" : "alert"
   },
-  "passwordReset" : {
-    "_id" : "wm-passwordReset-wm.NotificationVariable-1541541911029",
-    "name" : "passwordReset",
+  "passwordSuccess" : {
+    "_id" : "wm-passwordSuccess-wm.NotificationVariable-1542112982476",
+    "name" : "passwordSuccess",
     "owner" : "App",
     "category" : "wm.NotificationVariable",
     "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
       "target" : "text",
-      "value" : "Your password has been reset. An email has been sent to your email address with the new password.",
+      "value" : "Password reset successfully. Please check your email for new password.",
       "type" : "string"
     }, {
-      "target" : "title",
-      "value" : "Password Reset",
+      "target" : "duration",
+      "value" : "3000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
       "type" : "string"
     }, {
-      "target" : "alerttype",
-      "value" : "information",
+      "target" : "toasterPosition",
+      "value" : "bottom center",
       "type" : "string"
     } ],
-    "operation" : "alert"
+    "operation" : "toast"
   },
   "sendMail_successfulRegistration" : {
     "_id" : "wm-sendMailVar-wm.ServiceVariable-1540507885957",

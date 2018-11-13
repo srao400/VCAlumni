@@ -1,8 +1,8 @@
-Application.$controller("MainPageController", ["$scope", function ($scope) {
+Application.$controller("MainPageController", ["$scope", function($scope) {
     "use strict";
 
     /* perform any action on widgets/variables within this block */
-    $scope.onPageReady = function () {
+    $scope.onPageReady = function() {
         /*
          * variables can be accessed through '$scope.Variables' property here
          * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script
@@ -13,5 +13,15 @@ Application.$controller("MainPageController", ["$scope", function ($scope) {
          * '$scope.Widgets.username.datavalue'
          */
     };
+
+
+    // $scope.menu1Select = function($event, $isolateScope, $item) {
+    //     if ($item.label == "Main") {
+    //         DialogService.open("ChangePassword");
+    //     } else {
+    //         $scope.Variables.logoutVariable.invoke();
+    //     }
+
+    // };
 
 }]);

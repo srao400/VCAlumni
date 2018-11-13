@@ -84,7 +84,7 @@ public class Attendees implements Serializable {
     }
 
     @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "`email`", referencedColumnName = "`email`", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "`FK_users_TO_attendees_emJZwe2`"))
+    @JoinColumn(name = "`email`", referencedColumnName = "`email`", insertable = false, updatable = false, foreignKey = @ForeignKey(name = "`FK_users_TO_attendees_emaFgJM`"))
     @Fetch(FetchMode.JOIN)
     public Users getUsers() {
         return this.users;

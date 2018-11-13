@@ -1,7 +1,7 @@
 <wm-page data-ng-controller="MainPageController" name="mainpage">
     <wm-left-panel content="leftnav" name="left_panel1"></wm-left-panel>
     <wm-mobile-navbar name="mobile_navbar1" title="Event Types" leftnavpaneliconclass="wi wi-menu" backbutton="false">
-        <wm-menu caption="" autoclose="outsideClick" name="menu1" iconclass="wi wi-more-vert" type="anchor" dataset="Logout" on-select="Actions.logoutAction.invoke()"></wm-menu>
+        <wm-menu caption="" autoclose="outsideClick" name="menu1" iconclass="wi wi-more-vert" type="anchor" on-select="Actions.logoutAction.invoke()" dataset="Logout"></wm-menu>
     </wm-mobile-navbar>
     <wm-content name="content1">
         <wm-page-content columnwidth="12" name="page_content1">
@@ -10,7 +10,7 @@
                     <wm-listtemplate layout="inline" name="listtemplate1">
                         <wm-container class="media-left badge" name="container2" fontunit="em"></wm-container>
                         <wm-container class="media-body" padding="unset unset unset 1.25em" name="container3" on-tap="Actions.goToPage_EventsList.invoke()">
-                            <wm-label name="Name" class="p media-heading" caption="bind:Variables.event_types.dataSet.dataValue" fontunit="em" fontweight="bold" textalign="center"></wm-label>
+                            <wm-label name="Name" class="p media-heading" caption="bind:Variables.event_types.dataSet.dataValue" fontunit="px" fontweight="bold" textalign="center"></wm-label>
                         </wm-container>
                     </wm-listtemplate>
                 </wm-list>

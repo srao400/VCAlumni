@@ -4,22 +4,17 @@
   "roles" : [ ],
   "httpMethod" : null
 }, {
+  "urlPattern" : "/pages/ChangePassword/**",
+  "permission" : "PermitAll",
+  "roles" : [ ],
+  "httpMethod" : null
+}, {
   "urlPattern" : "/pages/ForgotPassword/**",
   "permission" : "PermitAll",
   "roles" : [ ],
   "httpMethod" : null
 }, {
   "urlPattern" : "/pages/Login/**",
-  "permission" : "PermitAll",
-  "roles" : [ ],
-  "httpMethod" : null
-}, {
-  "urlPattern" : "/pages/ChangePassword/**",
-  "permission" : "PermitAll",
-  "roles" : [ ],
-  "httpMethod" : null
-}, {
-  "urlPattern" : "/pages/Register/**",
   "permission" : "PermitAll",
   "roles" : [ ],
   "httpMethod" : null

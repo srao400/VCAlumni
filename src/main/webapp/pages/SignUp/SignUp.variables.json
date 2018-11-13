@@ -32,6 +32,7 @@
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "firstname",
@@ -99,11 +100,12 @@
         "fullyQualifiedType" : "string",
         "columnName" : "role",
         "isPrimaryKey" : false,
-        "notNull" : false,
+        "notNull" : true,
         "length" : 10,
         "precision" : 0,
         "generator" : "assigned",
         "isRelated" : false,
+        "defaultValue" : "",
         "scale" : 0
       }, {
         "fieldName" : "password",
@@ -127,6 +129,19 @@
         "notNull" : false,
         "length" : 0,
         "precision" : 1,
+        "generator" : "assigned",
+        "isRelated" : false,
+        "defaultValue" : "",
+        "scale" : 0
+      }, {
+        "fieldName" : "id",
+        "type" : "integer",
+        "fullyQualifiedType" : "integer",
+        "columnName" : "id",
+        "isPrimaryKey" : false,
+        "notNull" : false,
+        "length" : 0,
+        "precision" : 10,
         "generator" : "assigned",
         "isRelated" : false,
         "defaultValue" : "",
