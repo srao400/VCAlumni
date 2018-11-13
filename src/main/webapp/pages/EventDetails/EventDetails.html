@@ -52,7 +52,7 @@
                                 <wm-layoutgrid name="layoutgrid2_1">
                                     <wm-gridrow name="gridrow4_1">
                                         <wm-gridcolumn columnwidth="8" name="gridcolumn4">
-                                            <wm-button class="btn-default" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].button" type="button" margin="unset 0.5em" name="button1" width="96%" on-tap="Variables.add_attendee_var.invoke();Variables.sendEmailGotTicket.invoke();Actions.goToPage_EventsList.invoke()"
+                                            <wm-button class="btn-default" caption="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].button" type="button" margin="unset 0.5em" name="button1" width="96%" on-tap="Variables.add_attendee_var.invoke();Variables.sendEmailGotTicket.invoke();Actions.goToPage_EventsList.invoke();Actions.gotTicket.invoke()"
                                                 disabled="bind:Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].button != 'Get ticket'"></wm-button>
                                         </wm-gridcolumn>
                                         <wm-gridcolumn columnwidth="4" name="gridcolumn5_1">

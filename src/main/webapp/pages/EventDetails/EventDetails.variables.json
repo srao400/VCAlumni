@@ -87,6 +87,34 @@
     "saveInPhonegap" : false,
     "controller" : "ProcedureExecution"
   },
+  "gotTicket" : {
+    "_id" : "wm-gotTicket-wm.NotificationVariable-1542116954835",
+    "name" : "gotTicket",
+    "owner" : "Page",
+    "category" : "wm.NotificationVariable",
+    "dataBinding" : [ {
+      "target" : "content",
+      "value" : "inline",
+      "type" : "string"
+    }, {
+      "target" : "text",
+      "value" : "You are going. An email confirmation has been sent to you.",
+      "type" : "string"
+    }, {
+      "target" : "duration",
+      "value" : "3000",
+      "type" : "number"
+    }, {
+      "target" : "class",
+      "value" : "Success",
+      "type" : "string"
+    }, {
+      "target" : "toasterPosition",
+      "value" : "bottom center",
+      "type" : "string"
+    } ],
+    "operation" : "toast"
+  },
   "sendEmailGotTicket" : {
     "_id" : "wm-sendEmailGotTicket-wm.ServiceVariable-1541026037068",
     "name" : "sendEmailGotTicket",
@@ -102,7 +130,7 @@
       "type" : "string"
     }, {
       "target" : "emailMessage",
-      "value" : "bind:'Your ticket for the event, ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventname + ' has been reserved. The following link will provide you with additional details of the event, and instructions on how to pay to attend the event. ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventUrl",
+      "value" : "bind:'Your ticket for the event, ' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventname + ' has been reserved.\\n' +  'The following link will provide you with additional details of the event, and instructions on how to pay to attend the event:\\n' + Variables.VCADB_usersExecuteAttendeeEventDetails.dataSet[$i].eventUrl",
       "type" : "string"
     } ],
     "type" : "object",
