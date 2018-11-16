@@ -1,7 +1,7 @@
-Application.run(function ($rootScope) {
+Application.run(function($rootScope) {
     "use strict";
     /* perform any action with the variables inside this block(on-page-load) */
-    $rootScope.onAppVariablesReady = function () {
+    $rootScope.onAppVariablesReady = function() {
         /*
          * variables can be accessed through '$rootScope.Variables' property here
          * e.g. $rootScope.Variables.staticVariable1.getData()
@@ -9,7 +9,7 @@ Application.run(function ($rootScope) {
     };
 
     /* perform any action on session timeout here, e.g clearing some data, etc */
-    $rootScope.onSessionTimeout = function () {
+    $rootScope.onSessionTimeout = function() {
         /*
          * NOTE:
          * On re-login after session timeout:
@@ -38,7 +38,13 @@ Application.run(function ($rootScope) {
      * xhrObj:      The xhrObject used to make the service call
      *              This object contains useful information like statusCode, url, request/response body.
      */
-    $rootScope.onServiceError = function (source, errorMsg, xhrObj) {
+    $rootScope.onServiceError = function(source, errorMsg, xhrObj) {
 
     };
+
+    $rootScope.loginActiononBeforeUpdate = function(variable, inputData, options) {
+
+
+    };
+
 });

@@ -1,8 +1,8 @@
 Application.$controller("LoginPageController", ["$scope",
-    function ($scope) {
+    function($scope) {
         "use strict";
         /* perform any action on widgets/variables within this block */
-        $scope.onPageReady = function () {
+        $scope.onPageReady = function() {
             /*
              * variables can be accessed through '$scope.Variables' property here
              * e.g. to get dataSet in a staticVariable named 'loggedInUser' use following script
@@ -13,11 +13,18 @@ Application.$controller("LoginPageController", ["$scope",
              * '$scope.Widgets.username.datavalue'
              */
         };
+
+        $scope.passwordtextBlur = function($event, $isolateScope) {
+            $scope.Variables.md5check.invoke();
+            $scope.Widgets.label4.caption = $scope.Variables.md5check.dataSet.value;
+
+        };
+
     }
 ]);
 
 Application.$controller("loginFormController", ["$scope",
-    function ($scope) {
+    function($scope) {
         "use strict";
         $scope.ctrlScope = $scope;
     }

@@ -412,7 +412,7 @@
       "type" : "string"
     }, {
       "target" : "password",
-      "value" : "bind:Variables.md5Check.dataSet.value",
+      "value" : "bind:Widgets.label4.caption",
       "type" : "string"
     }, {
       "target" : "rememberme",
@@ -426,6 +426,7 @@
     },
     "type" : "string",
     "saveInPhonegap" : false,
+    "onBeforeUpdate" : "loginActiononBeforeUpdate($event, $scope)",
     "startUpdate" : false,
     "autoUpdate" : false,
     "inFlightBehavior" : "executeLast",
