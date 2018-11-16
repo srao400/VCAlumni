@@ -5,7 +5,7 @@
   "httpMethod" : null
 }, {
   "urlPattern" : "/pages/ChangePassword/**",
-  "permission" : "PermitAll",
+  "permission" : "Authenticated",
   "roles" : [ ],
   "httpMethod" : null
 }, {

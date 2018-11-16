@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<widget id="com.vca" version="2.0">
+<widget id="com.vca" version="2.3">
     <name>VCAlumni</name>
     <description>Vancouver College Alumni Association</description>
     <author email="srinivas.rao@crowemackay.ca" href="https://crowemackay.ca/services/information-technology/">Srinivas Rao</author>
@@ -36,21 +36,21 @@
     <plugin name="cordova-plugin-zeep" spec="0.0.4"/>
     <plugin name="cordova-sqlite-storage" spec="https://github.com/wavemaker/Cordova-sqlite-storage.git#2cb6cd5"/>
     <platform name="android">
-        <splash density="land-hdpi" qualifier="land-hdpi" height="0" src="resources/assets/android/splashes/drawable_land_hdpi/splash.png" width="0"/>
-        <splash density="land-ldpi" qualifier="land-ldpi" height="0" src="resources/assets/android/splashes/drawable_land_ldpi/splash.png" width="0"/>
-        <splash density="land-mdpi" qualifier="land-mdpi" height="0" src="resources/assets/android/splashes/drawable_land_mdpi/splash.png" width="0"/>
-        <splash density="land-xhdpi" qualifier="land-xhdpi" height="0" src="resources/assets/android/splashes/drawable_land_xhdpi/splash.png" width="0"/>
-        <splash density="land-xxhdpi" qualifier="land-xxhdpi" height="0" src="resources/assets/android/splashes/drawable_land_xxhdpi/splash.png" width="0"/>
-        <splash density="port-hdpi" qualifier="hdpi" height="0" src="resources/assets/android/splashes/drawable_hdpi/splash.png" width="0"/>
-        <splash density="port-ldpi" qualifier="ldpi" height="0" src="resources/assets/android/splashes/drawable_ldpi/splash.png" width="0"/>
-        <splash density="port-mdpi" qualifier="mdpi" height="0" src="resources/assets/android/splashes/drawable_mdpi/splash.png" width="0"/>
-        <splash density="port-xhdpi" qualifier="xhdpi" height="0" src="resources/assets/android/splashes/drawable_xhdpi/splash.png" width="0"/>
-        <splash density="port-xxhdpi" qualifier="xxhdpi" height="0" src="resources/assets/android/splashes/drawable_xxhdpi/splash.png" width="0"/>
-        <icon density="hdpi" height="0" src="resources/assets/android/icons/icon-hdpi.png" width="0"/>
-        <icon density="ldpi" height="0" src="resources/assets/android/icons/icon-ldpi.png" width="0"/>
-        <icon density="mdpi" height="0" src="resources/assets/android/icons/icon-mdpi.png" width="0"/>
-        <icon density="xhdpi" height="0" src="resources/assets/android/icons/icon-xhdpi.png" width="0"/>
-        <icon density="xxhdpi" height="0" src="resources/assets/android/icons/icon-xxhdpi.png" width="0"/>
+        <splash density="land-hdpi" qualifier="land-hdpi" height="0" src="resources/assets/android/splashes/drawable_land_hdpi/vcss800480.png" width="0"/>
+        <splash density="land-ldpi" qualifier="land-ldpi" height="0" src="resources/assets/android/splashes/drawable_land_ldpi/vcss320200.png" width="0"/>
+        <splash density="land-mdpi" qualifier="land-mdpi" height="0" src="resources/assets/android/splashes/drawable_land_mdpi/vcss480320.png" width="0"/>
+        <splash density="land-xhdpi" qualifier="land-xhdpi" height="0" src="resources/assets/android/splashes/drawable_land_xhdpi/vcss1280720.png" width="0"/>
+        <splash density="land-xxhdpi" qualifier="land-xxhdpi" height="0" src="resources/assets/android/splashes/drawable_land_xxhdpi/vcss1600960.png" width="0"/>
+        <splash density="port-hdpi" qualifier="hdpi" height="0" src="resources/assets/android/splashes/drawable_hdpi/VCSS480800.png" width="0"/>
+        <splash density="port-ldpi" qualifier="ldpi" height="0" src="resources/assets/android/splashes/drawable_ldpi/VCSS200320.png" width="0"/>
+        <splash density="port-mdpi" qualifier="mdpi" height="0" src="resources/assets/android/splashes/drawable_mdpi/VCSS320480.png" width="0"/>
+        <splash density="port-xhdpi" qualifier="xhdpi" height="0" src="resources/assets/android/splashes/drawable_xhdpi/VCSS7201280.png" width="0"/>
+        <splash density="port-xxhdpi" qualifier="xxhdpi" height="0" src="resources/assets/android/splashes/drawable_xxhdpi/VCSS9601600.png" width="0"/>
+        <icon density="hdpi" height="0" src="resources/assets/android/icons/VClogo72.png" width="0"/>
+        <icon density="ldpi" height="0" src="resources/assets/android/icons/vclogo36.png" width="0"/>
+        <icon density="mdpi" height="0" src="resources/assets/android/icons/vclogo48.png" width="0"/>
+        <icon density="xhdpi" height="0" src="resources/assets/android/icons/vclogo96.png" width="0"/>
+        <icon density="xxhdpi" height="0" src="resources/assets/android/icons/vclogo144.png" width="0"/>
         <preference name="orientation" value="default"/>
         <preference name="android-minSdkVersion" value="19"/>
         <preference name="SplashScreen" value="screen"/>
