@@ -2,19 +2,19 @@
     <wm-mobile-navbar title="Login" backbutton="false" name="mobile_navbar1"></wm-mobile-navbar>
     <wm-content name="content1">
         <wm-page-content columnwidth="12" name="page_content1">
-            <wm-login name="loginForm" data-ng-controller="loginFormController" height="60%">
+            <wm-login name="loginForm" data-ng-controller="loginFormController" height="60%" on-submit="loginFormSubmit($event, $scope)">
                 <wm-composite name="userNameField">
                     <wm-label caption="Email address" name="userNameLabel" class="control-label"></wm-label>
                     <wm-text placeholder="Enter email address" name="usernametext" class="app-login-username" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="blur"></wm-text>
                 </wm-composite>
                 <wm-composite name="passwordField">
                     <wm-label caption="Password" name="passwordLabel" class="control-label"></wm-label>
-                    <wm-text type="password" name="passwordtext" placeholder="Enter password" class="app-login-password" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="blur" updatedelay="100" on-blur="passwordtextBlur($event, $scope)"></wm-text>
+                    <wm-text type="password" name="passwordtext" placeholder="Enter password" class="app-login-password" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="blur" updatedelay="100" on-change="Variables.md5Check.invoke()"></wm-text>
                 </wm-composite>
                 <wm-container height="25px" name="container3">
-                    <wm-anchor margin="unset 0.5em" name="anchor2" width="100%" textalign="right" caption="Forgot Password" fontsize="10" on-tap="Actions.goToPage_ForgotPassword.invoke()"></wm-anchor>
+                    <wm-anchor margin="unset 0.5em" name="anchor2" width="98%" textalign="right" caption="Forgot Password" fontsize="10" on-tap="Actions.goToPage_ForgotPassword.invoke()" fontunit="pt"></wm-anchor>
                 </wm-container>
-                <wm-button type="button" caption="Sign in" width="100%" class="app-login-button btn-primary" name="loginButton" on-tap="Actions.loginAction.invoke()"></wm-button>
+                <wm-button type="submit" caption="Sign in" width="100%" class="app-login-button btn-primary" name="loginButton" on-tap="Actions.loginAction.invoke()"></wm-button>
                 <wm-composite name="remembermeField" class="app-login-rememberme">
                     <wm-checkbox caption="Remember Me" name="remembermecheck"></wm-checkbox>
                 </wm-composite>
@@ -22,8 +22,7 @@
                 <wm-button type="button" caption="New User" width="100%" class="app-login-button btn-primary" name="button2" on-tap="Actions.goToPage_SignUp.invoke()"></wm-button>
             </wm-login>
             <wm-container name="container1" height="20%">
-                <wm-label padding="unset 0.5em" name="label3" caption="bind:Variables.md5Check.dataSet.value" show="false"></wm-label>
-                <wm-label padding="unset 0.5em" name="label4" width="100%" caption="bind:Variables.md5Check.dataSet.value" show="false"></wm-label>
+                <wm-label padding="unset 0.5em" name="label3" show="false" caption="Page Depricated" color="#f40808" fontsize="14"></wm-label>
             </wm-container>
             <wm-container name="container2" height="10%">
                 <wm-layoutgrid name="layoutgrid1">

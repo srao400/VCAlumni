@@ -66,6 +66,10 @@
     "type" : "string"
   } ]
 }, {
+  "name" : "SignIn",
+  "type" : "PAGE",
+  "params" : [ ]
+}, {
   "name" : "SignUp",
   "type" : "PAGE",
   "params" : [ ]

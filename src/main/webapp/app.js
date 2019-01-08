@@ -47,4 +47,11 @@ Application.run(function($rootScope) {
 
     };
 
+
+    $rootScope.md5CheckonSuccess = function(variable, data, options) {
+        $scope.Widgets.label3.caption = $scope.Variables.md5check.dataSet.value;
+
+
+    };
+
 });

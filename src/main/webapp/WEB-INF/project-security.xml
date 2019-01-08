@@ -95,6 +95,8 @@
         <security:intercept-url pattern="/pages/ChangePassword/**" access="isAuthenticated()"/>
         <security:intercept-url pattern="/pages/ForgotPassword/**" access="permitAll"/>
         <security:intercept-url pattern="/pages/Login/**" access="permitAll"/>
+        <security:intercept-url pattern="/pages/Login_Copy/**" access="permitAll"/>
+        <security:intercept-url pattern="/pages/SignIn/**" access="permitAll"/>
         <security:intercept-url pattern="/pages/SignUp/**" access="permitAll"/>
         <security:intercept-url pattern="/services/VCADB_users/**" access="permitAll"/>
         <security:intercept-url pattern="/services/application/i18n/**" access="permitAll"/>

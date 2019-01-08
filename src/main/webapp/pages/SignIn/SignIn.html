@@ -1,0 +1,43 @@
+<wm-page data-ng-controller="SignInPageController" name="page1">
+    <wm-mobile-navbar name="mobile_navbar1" title="Login"></wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-login name="login1">
+                <wm-composite name="composite1">
+                    <wm-label class="col-xs-12 control-label" caption="Email address" name="label1"></wm-label>
+                    <wm-container class="col-xs-12" name="container1">
+                        <wm-text placeholder="Enter email address" name="usernametext" class="app-login-username" updateon="default"></wm-text>
+                    </wm-container>
+                </wm-composite>
+                <wm-composite name="composite2">
+                    <wm-label class="col-xs-12 control-label" caption="Password" name="label2"></wm-label>
+                    <wm-container class="col-xs-12" name="container2">
+                        <wm-text type="password" name="passwordtext" placeholder="Enter password" class="app-login-password" updateon="default" on-change="Variables.md5Check.invoke()"></wm-text>
+                    </wm-container>
+                </wm-composite>
+                <wm-container name="container3">
+                    <wm-anchor margin="unset 0.5em" name="anchor2" width="98%" caption="Forgot Password" fontsize="10" textalign="right" on-tap="Actions.goToPage_ForgotPassword.invoke()"></wm-anchor>
+                </wm-container>
+                <wm-button type="submit" caption="Login" width="100%" class="app-login-button btn-primary" name="button1" on-tap="Actions.loginAction.invoke()" textalign="center"></wm-button>
+                <wm-composite name="composite3">
+                    <wm-checkbox class="app-login-rememberme" scopedatavalue="user.rememberMe" caption="Remember Me" name="checkbox1"></wm-checkbox>
+                </wm-composite>
+                <wm-button type="submit" caption="Register" width="100%" class="app-login-button btn-primary" on-tap="Actions.goToPage_SignUp.invoke()" textalign="center" name="button3"></wm-button>
+            </wm-login>
+            <wm-label padding="unset 0.5em" name="label3" caption="bind:Variables.md5Check.dataSet.value" show="false"></wm-label>
+            <wm-container name="container4" height="20%"></wm-container>
+            <wm-container name="container5">
+                <wm-layoutgrid name="layoutgrid1">
+                    <wm-gridrow name="gridrow1">
+                        <wm-gridcolumn columnwidth="5" name="gridcolumn1"></wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="6" name="gridcolumn5">
+                            <wm-anchor margin="unset 0.5em" name="anchor2_1" caption="Crowe Mackay LLP" textalign="right" textdecoration="underline" fontsize="9" width="100%" fontunit="pt"></wm-anchor>
+                        </wm-gridcolumn>
+                        <wm-gridcolumn columnwidth="1" name="gridcolumn2"></wm-gridcolumn>
+                    </wm-gridrow>
+                    <wm-gridrow name="gridrow2"></wm-gridrow>
+                </wm-layoutgrid>
+            </wm-container>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

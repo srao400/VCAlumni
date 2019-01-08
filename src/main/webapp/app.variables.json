@@ -352,6 +352,17 @@
     } ],
     "pageTransitions" : "none"
   },
+  "goToPage_SignIn" : {
+    "_id" : "wm-goToPage_testlog-wm.NavigationVariable-1543604092399",
+    "name" : "goToPage_SignIn",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "SignIn",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "goToPage_SignUp" : {
     "_id" : "wm-goToPage_SignUp-wm.NavigationVariable-1541098884536",
     "name" : "goToPage_SignUp",
@@ -412,7 +423,7 @@
       "type" : "string"
     }, {
       "target" : "password",
-      "value" : "bind:Widgets.label4.caption",
+      "value" : "bind:Variables.md5Check.dataSet.value",
       "type" : "string"
     }, {
       "target" : "rememberme",
@@ -429,7 +440,7 @@
     "onBeforeUpdate" : "loginActiononBeforeUpdate($event, $scope)",
     "startUpdate" : false,
     "autoUpdate" : false,
-    "inFlightBehavior" : "executeLast",
+    "inFlightBehavior" : "executeAll",
     "transformationRequired" : false,
     "useDefaultSuccessHandler" : true
   },

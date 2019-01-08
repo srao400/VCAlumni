@@ -1,6 +1,6 @@
 <wm-page data-ng-controller="EditVenuesPageController" name="page1">
     <wm-mobile-navbar name="mobile_navbar1" title="Edit Venues">
-        <wm-menu caption="" autoclose="outsideClick" name="menu1" iconclass="wi wi-more-vert" type="anchor" dataset="Logout" on-select="Actions.logoutAction.invoke()"></wm-menu>
+        <wm-menu caption="" autoclose="outsideClick" name="menu1" iconclass="wi wi-more-vert" type="anchor" dataset="Logout" on-select="Actions.logoutAction.invoke();Actions.goToPage_SignIn.invoke()"></wm-menu>
     </wm-mobile-navbar>
     <wm-content name="content1">
         <wm-page-content columnwidth="12" name="page_content1">
