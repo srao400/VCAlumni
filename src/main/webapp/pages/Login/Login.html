@@ -9,7 +9,8 @@
                 </wm-composite>
                 <wm-composite name="passwordField">
                     <wm-label caption="Password" name="passwordLabel" class="control-label"></wm-label>
-                    <wm-text type="password" name="passwordtext" placeholder="Enter password" class="app-login-password" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="blur" updatedelay="100" on-change="Variables.md5Check.invoke()"></wm-text>
+                    <wm-text type="password" name="passwordtext" placeholder="Enter password" class="app-login-password" width="100%" autocomplete="off" autocorrect="off" autocapitalize="off" updateon="blur" updatedelay="100" on-change="Variables.md5Check.invoke()"
+                        on-blur="Variables.md5Check.invoke()"></wm-text>
                 </wm-composite>
                 <wm-container height="25px" name="container3">
                     <wm-anchor margin="unset 0.5em" name="anchor2" width="98%" textalign="right" caption="Forgot Password" fontsize="10" on-tap="Actions.goToPage_ForgotPassword.invoke()" fontunit="pt"></wm-anchor>

@@ -39,5 +39,10 @@ Application.$controller("UsersLiveForm1Controller", ["$scope",
             }
         };
 
+    
+        $scope.passwordBlur = function ($event, $isolateScope) { 
+
+        };
+ 
     }
 ]);

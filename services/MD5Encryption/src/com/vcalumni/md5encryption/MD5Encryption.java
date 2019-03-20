@@ -63,7 +63,7 @@ public class MD5Encryption {
         return result;
     }
     public String md5Spring(String text) {
-         String digest = null;
+        String digest = null;
         try {
             MessageDigest md = MessageDigest.getInstance("MD5");
             byte[] hash = md.digest(text.getBytes("UTF-8"));

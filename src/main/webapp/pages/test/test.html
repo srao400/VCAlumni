@@ -1,0 +1,21 @@
+<wm-page data-ng-controller="testPageController" name="page1">
+    <wm-mobile-navbar name="mobile_navbar1"></wm-mobile-navbar>
+    <wm-content name="content1">
+        <wm-page-content columnwidth="12" name="page_content1">
+            <wm-list listclass="list-group" itemclass="list-group-item" template="true" itemsperrow="xs-1 sm-1 md-1 lg-1" class="media-list" name="UsersList1" dataset="bind:Variables.VCADB_usersUsersData.dataSet" navigation="Pager">
+                <wm-listtemplate layout="inline" name="listtemplate1">
+                    <wm-container class="media-left" name="container1">
+                        <wm-picture width="32pt" height="32pt" name="Picture" shape="circle" class="media-object"></wm-picture>
+                    </wm-container>
+                    <wm-container class="media-body" padding="unset unset unset 1.25em" name="container2">
+                        <wm-label name="Name" class="p media-heading" caption="bind:Variables.VCADB_usersUsersData.dataSet.email" fontsize="1.143" fontunit="em"></wm-label>
+                        <wm-label name="JobTitle" caption="bind:Variables.VCADB_usersUsersData.dataSet.firstname" class="p text-muted"></wm-label>
+                    </wm-container>
+                    <wm-container class="media-right media-top" name="container3">
+                        <wm-button class="btn-transparent" iconclass="wi wi-share fa-2x" name="button1"></wm-button>
+                    </wm-container>
+                </wm-listtemplate>
+            </wm-list>
+        </wm-page-content>
+    </wm-content>
+</wm-page>

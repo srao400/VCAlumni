@@ -374,6 +374,17 @@
     "dataSet" : [ ],
     "pageTransitions" : "none"
   },
+  "goToPage_test" : {
+    "_id" : "wm-goToPage_test-wm.NavigationVariable-1552855700269",
+    "name" : "goToPage_test",
+    "owner" : "App",
+    "category" : "wm.NavigationVariable",
+    "dataBinding" : [ ],
+    "operation" : "gotoPage",
+    "pageName" : "test",
+    "dataSet" : [ ],
+    "pageTransitions" : "none"
+  },
   "InvalidEmail" : {
     "_id" : "wm-InvalidEmail-wm.NotificationVariable-1541526185300",
     "name" : "InvalidEmail",
